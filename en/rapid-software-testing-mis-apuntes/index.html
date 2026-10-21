@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rapid Software Testing, mis apuntes - Federico Toledo</title><meta name="description" content="Te comparto mis apuntes del curso de Rapid Software Testing que Michael Bolton dictó cuando lo llevamos a Uruguay al TestingUy"><link rel="canonical" href="https://federico-toledo.com/rapid-software-testing-mis-apuntes/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="en_US"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/rapid-software-testing-mis-apuntes/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/rapid-software-testing-mis-apuntes/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/rapid-software-testing-mis-apuntes/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/rapid-software-testing-mis-apuntes/"><meta property="og:type" content="article"><meta property="og:title" content="Rapid Software Testing, mis apuntes - Federico Toledo"><meta property="og:description" content="Te comparto mis apuntes del curso de Rapid Software Testing que Michael Bolton dictó cuando lo llevamos a Uruguay al TestingUy"><meta property="og:url" content="https://federico-toledo.com/rapid-software-testing-mis-apuntes/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://federico-toledo.com/wp-content/uploads/2022/01/rapid-software-testing.jpg"><meta property="article:published_time" content="2022-01-12T04:42:48.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/en/" aria-label="Federico Toledo, home">FT</a> <a class="header-title" href="/en/">fltoledo</a> <form class="header-search" role="search" action="/en/search/" method="get"> <label class="visually-hidden" for="header-q">Search the site</label> <input id="header-q" type="search" name="q" placeholder="Search…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Language: English"> EN <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/rapid-software-testing-mis-apuntes/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/rapid-software-testing-mis-apuntes/" lang="en" hreflang="en" aria-current="true"> English </a> </li><li> <a href="/pt/rapid-software-testing-mis-apuntes/" lang="pt-BR" hreflang="pt-BR"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/en/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/en/talks/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Talks <span class="counter">247</span> </a><a href="/en/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Archive <span class="counter">423</span> </a><a href="/en/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/en/publications/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publications  </a><a href="/en/about-me/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> About me  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Location"> <a href="/en/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/en/category/blog/">archive</a> <span aria-hidden="true">/</span>  <span aria-current="page">rapid-software-testing-mis-apuntes</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2022-01-12" data-pagefind-sort="fecha:2022-01-12"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> published on <time datetime="2022-01-12T04:42:48.000Z">January 12, 2022</time> </span> </p>  </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>This post is part of the archive.</strong> I published it in 2022, in Spanish, and I no longer keep this blog: it may be out of date.  <a href="/en/category/blog/">See the archive</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Rapid Software Testing, mis apuntes</h1> <p>En el 2017, cuando aún estaba en Uruguay y formaba parte del equipo organizador de <a href="/en/testinguy-gratis-para-los-asistentes-como-lo-logramos/">TestingUy</a> (¡hermosas épocas aquellas!) nos propusimos como un gran objetivo traer a algún referente internacional de testing a Uruguay. Y apuntamos bien alto: <a href="/en/software-testing-guru-michael-bolton/">Michael Bolton</a>, uno de los creadores de Rapid Software Testing.</p>
+<p>Luego de varias idas y vueltas para convencerlo (y para poder conseguir sponsors para cubrir el costo) llegamos al acuerdo que iría una semana a Uruguay, donde daría una charla en el evento, participaría de una mesa redonda, y además, daría el curso de Rapid Software Testing (que nos ayudaría a financiar su viaje también).</p>
+<p>En este post quiero compartir unas notas que encontré del curso, que también tuve la suerte de poder participar, y que no había llegado a publicar antes. El curso me pareció de los mejores cursos de testing que he podido hacer, pero sobre todo por cómo se ejercita el pensamiento crítico y el mindset de testing.</p>
+<p>Antes de leer mis notas, te sugiero leas las <a href="/en/apuntes-del-curso-de-rapid-software-testing-de-michael-bolton/">notas que tomó Sara</a>, quien también colaboró ese año en la organización del evento y también asistió al curso. Intenté no repetir lo que Sara ya había compartido.</p>
+<figure class="wp-block-image size-large"><img width="1024" height="535" src="/wp-content/uploads/2017/06/IMG_8399-1024x535.jpg" alt="" class="wp-image-503"><figcaption>Acá todos los que participamos del curso de Rapid Software Testing rodeando a Michael</figcaption></figure>
+<h2 id="reflexión-sobre-falta-de-documentación">Reflexión sobre falta de documentación</h2>
+<p>Hizo una dinámica en la que en silencio puso su nombre en un papel.</p>
+<p>Lo imitamos para poner nuestros nombres en un papel.</p>
+<p>Conclusión: No necesitamos instrucciones específicas para hacer algo. Muchas veces como testers nos encontramos quejándonos de “no hay especificaciones claras”, “falta documentación”.</p>
+<p>Ya esto da una pauta de cómo con cosas tan simples logra llamar a la reflexión.</p>
+<h2 id="responsables-de-la-calidad">Responsables de la calidad</h2>
+<p>De Bolton fue que aprendí y adopté la idea de que el testing no es responsable de la calidad, y que el nombre de “QA” (de Quality Assurance) no sería el más indicado (podés leer más en <a href="/en/qa-como-quality-assistance-en-lugar-de-quality-assurance/">este otro post al respecto</a> y en <a href="/en/si-un-bug-se-escapa-a-produccion-es-culpa-del-qa/">este otro de por qué no somos los únicos responsables cuando un bug pasa a producción</a>).</p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-federico-toledo wp-block-embed-federico-toledo"><div class="wp-block-embed__wrapper"><blockquote class="wp-embedded-content" data-secret="CkBUqppn8f"><a href="/en/si-un-bug-se-escapa-a-produccion-es-culpa-del-qa/">Si un bug se escapa a producción, es culpa del QA</a></blockquote></div></figure>
+<p>Algunos argumentos que resaltó en el curso de por qué no somos responsables de la calidad:</p>
+<ul>
+<li>no manejamos schedule, budget</li>
+<li>no despedimos programadores (sí, suele ser muy tajante con sus comentarios)</li>
+<li>no cambiamos el código fuente</li>
+<li>no decidimos cuándo hacer ship</li>
+</ul>
+<blockquote>
+<p>Our responsability is to shine light on problems on the product, on the quality, to let people make decisions.</p>
+</blockquote>
+<p>Nuestra responsabilidad es de alumbrar hacia los lugares donde hay problemas en el producto, en la calidad, para que la gente tome decisiones.</p>
+<p>Lo importante es cuánto coverage podés conseguir en el tiempo que te dan. Cuánto testing en las condiciones de tiempo, presión, información disponible, etc.</p>
+<p>Mencionó que no le gustan los ratios, ni los KPI ni las métricas, ya que los managers se basan en esos números que pueden hacer que se desvíen del objetivo. Hace un tiempo escribí un <a href="/en/metricas-de-testing/">post de cómo las métricas pueden generar comportamientos no deseados si están mal definidas</a>.</p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-federico-toledo wp-block-embed-federico-toledo"><div class="wp-block-embed__wrapper"><blockquote class="wp-embedded-content" data-secret="01YSTYBeIs"><a href="/en/metricas-de-testing/">Métricas de testing</a></blockquote></div></figure>
+<p>Relacionado a esto decía que mucha gente se centra en el número de bugs o número de test cases. En realidad no podemos aprender nada de esos números. Es mejor pasar la lista y el que la recibe si quiere que los cuente.</p>
+<h2 id="test-cases">Test cases</h2>
+<p>Marcó varias veces que el testing no se limita a test cases. Un test no es algo que escribís, es algo que hacés. A modo de verlo con una analogía, pensando en la música, nos mostró las notas de una canción. Esto no es música, esto es una notación. Todos sabemos que la música es algo que escuchamos.</p>
+<h2 id="qué-es-el-testing">¿Qué es el testing?</h2>
+<p>Analizamos algunas definiciones de testing, pero esta en particular es la que resulta interesante: El testing de software es una ciencia social, según lo definió Cem Kaner.</p>
+<p>Pensemos que aprendemos a probar socializando en un grupo de testers.</p>
+<p>De forma similar, hay una definición interesante de lo que es un programa de computadora: es algo que trata sobre las personas, y además tiene instrucciones para una computadora.</p>
+<p>El objetivo es dar valor, hacer algo útil para alguien.</p>
+<p>Decisiones sobre qué quiere el cliente</p>
+<ul>
+<li>política: valor para quién</li>
+<li>emocional – no pensamos racionalmente</li>
+<li>pride, fear, desire (relacionado con el concepto de calidad)</li>
+</ul>
+<p><a href="/en/estudiar-testing-de-software-pero-que-es/">En este post hay un análisis más profundo sobre lo que es el testing</a> (y al leerlo verás que está bastante influenciado por la visión de Michael). <a href="/en/libro-de-testing-introduccion-a-las-pruebas-de-sistemas-de-informacion/">En mi libro</a> en los primeros capítulos también cuento bastante sobre los conceptos de calidad y testing por si querés repasarlo, nunca está de más.</p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-federico-toledo wp-block-embed-federico-toledo"><div class="wp-block-embed__wrapper"><blockquote class="wp-embedded-content" data-secret="oiydF5HyqE"><a href="/en/libro-de-testing-introduccion-a-las-pruebas-de-sistemas-de-informacion/">Libro de testing: Introducción a las Pruebas de Sistemas de Información</a></blockquote></div></figure>
+<blockquote>
+<p>I don’t break the software, I break the illusions about the software. The software was already broken when I got it.</p>
+</blockquote>
+<p>Yo no “rompo” el software, yo rompo las ilusiones que hay sobre ese software. El software ya estaba roto cuando me lo dieron.</p>
+<h2 id="resultados-esperados">Resultados esperados</h2>
+<p>Nos dio un ejercicio para hacer, donde básicamente teníamos que probar un sistema que nos proporcionó con el material del curso. Era un programa simple que dibuja un triángulo en base a ingresar las medidas de sus lados.</p>
+<p>Nos dijo que la misión era buscar errores y cosas que puedan ser molestas para el usuario.</p>
+<p>Al finalizar el ejercicio, alguna de las discusiones que planteó es el tema de la consistencia con expectativas. Esta suele ser una definición de calidad (“que sea consistente con las especificaciones” o “consistente con las expectativas”). Algo que siempre busca Micheal (y es en parte por lo que lo admiro más) es que no acepta las definiciones o estándares o las cosas que todos tomamos como sentadas, sino que las cuestiona y va un paso más allá. Para marcar su punto contó un par de ejemplos:</p>
+<ul>
+<li>
+<p>Su mujer compró un iPhone, no esperaba lo que compró, pero estaba genial. La percepción de la calidad fue muy alta por más que no estaba acorde a las expectativas.</p>
+</li>
+<li>
+<p>Windows Vista: lo que obtuvo fue consistente con sus expectativas, y eso no significa que el producto sea de calidad (sarcasmo a full).</p>
+</li>
+</ul>
+<p>Entonces la pregunta es si tenemos que pensar en el resultado esperado o en el resultado deseado.</p>
+<p>Cuando reportamos un bug no se necesita un resultado esperado. Lo que él plantea que deberíamos hacer es documentar la observación y a eso agregarle el criterio o el oráculo que nos hace pensar que hay un problema.</p>
+<p>Otra cosa es que mientras estamos testeando, muchas veces no pensamos en cuál es el resultado que estamos esperando. Sin embargo, al ver el resultado, podemos determinar si hay un problema o no. Algunos elementos que nos pueden llevar a determinar que hay un problema:</p>
+<ul>
+<li>Inconsistencia con la forma que sabemos que el mundo funciona (si probamos un sistema de e-banking podemos compararlo con nuestra experiencia usando otros sistemas del estilo)</li>
+<li>Inconsistencia con la forma que el programa fue diseñado.</li>
+<li>Inconsistencia con lo que se anuncia (acá es importante mirar las campañas de marketing y las promesas que se les da a los usuarios).</li>
+</ul>
+<p>Entonces, pensando en estos ejemplos, podríamos reportar un bug indicando que hay una inconsistencia en lugar de indicar algo en comparación a un resultado esperado.</p>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-3216 lazyload" width="788" height="591" src="/wp-content/uploads/2022/01/rapid-software-testing-1024x768.jpg"></figure>
+<h2 id="qué-es-un-bug">¿Qué es un bug?</h2>
+<blockquote>
+<p>A bug is something that bugs someone who matters.</p>
+</blockquote>
+<p>Un bug es algo que molesta a alguien que importa.</p>
+<blockquote>
+<p>It’s not a thing, it’s a relationship, between the user and the product.</p>
+</blockquote>
+<p>No es una cosa, es una relación entre el usuario y el producto.</p>
+<h2 id="qué-es-un-tester">¿Qué es un tester?</h2>
+<blockquote>
+<p>A role is a hat, not a tatoo, not a prision</p>
+</blockquote>
+<p>Un rol es un sombrero, no es un tatoo ni una prisión.</p>
+<p>El tester debería ser alguien que entiende que las cosas pueden ser diferentes.</p>
+<p>En la ciencia y las matemáticas, hay demostraciones que se hacen diciendo “no pude refutar la hipótesis”. Ese es el mindset que es necesario que adopte el tester, ya que así es el testing.</p>
+<h2 id="testability">Testability</h2>
+<p>Cuando hay un problema de usabilidad, puede ser un problema de testability. El usuario afectado soy yo, el tester. O sea, si yo al momento de probar algo (además, muchas veces) veo que hay ciertas cosas que me llevan muchos clics para resolver, o que es difícil de recordar los pasos, etc., al final el problema de facilidad de uso se convierte también en un problema de facilidad de prueba.</p>
+<p>Incluso en algunos casos sería interesante desarrollar ciertos atajos o acciones específicas para facilitar la usabilidad para el tester. ¿Por qué es interesante esto? ¿Por qué invertir tiempo del equipo en algo que no está destinado al negocio o al usuario? Para convencernos de esto tenemos que pensar en el riesgo, si es más usable para el tester entonces es más testeable. Si no es testeable los bugs vivirán más tiempo.</p>
+<p>Para analizar cómo mejorar la testabilidad podemos centrarnos en buscar confusiones:</p>
+<ul>
+<li>en la documentación</li>
+<li>en la comunicación del equipo</li>
+<li>en las reuniones (quiénes participan, las decisiones que se toman y si se les da seguimiento, etc)</li>
+</ul>
+<p>Siempre sirve hacer más preguntas. Pedir que se hagan sistemas más fáciles de probar (porque si no lo pedimos nosotros, nadie más va a pedirlo).</p>
+<h2 id="testing-automatizado">Testing automatizado</h2>
+<p>Michael Bolton es famoso también por su insistencia en que el testing no puede ser automatizado. Tiene muchos artículos y publicaciones en sus redes sociales al respecto. Si bien yo apuesto a la automatización como algo esencial en el desarrollo de software para poder realizar el testing en forma más eficiente, también me gusta leer su punto de vista como para tener otra mirada, y para analizar la automatización de forma crítica (y así estar con foco en hacerla bien, útil, efectiva para el objetivo del testing).</p>
+<p>Cuando estuvo en la mesa redonda en TestingUy hasta incluso cantó un rap que compuso donde cuenta por qué el testing no puede ser automatizado. Por favor, dedicale unos minutos a leerlo porque está muy bueno. <a href="/en/el-rap-de-michael-bolton/">Lo compartí acá</a>.</p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-federico-toledo wp-block-embed-federico-toledo"><div class="wp-block-embed__wrapper"><blockquote class="wp-embedded-content" data-secret="UbshQYdghz"><a href="/en/el-rap-de-michael-bolton/">El Rap de Michael Bolton</a></blockquote></div></figure>
+<p>Un comentario gracioso que hizo sobre esto, es que es curioso el nombre del robot que enviaron a Marte. El “explorer” no explora, ni siquiera sabe que está en Marte.</p>
+<h2 id="bug-report">Bug report</h2>
+<p>Michael también es conocido por usar muchos acrónimos para nombrar heurísticas y así hacerlas más fáciles de recordar. Por ejemplo, una muy útil es la <a href="/en/modelos-y-heuristicas-para-estrategia-de-pruebas/">San Francisco DIPOT (que la compartí en este post junto a otras heurísticas útiles).</a></p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-federico-toledo wp-block-embed-federico-toledo"><div class="wp-block-embed__wrapper"><blockquote class="wp-embedded-content" data-secret="P3D2m88bxE"><a href="/en/modelos-y-heuristicas-para-estrategia-de-pruebas/">Modelos y heurísticas para estrategia de pruebas</a></blockquote></div></figure>
+<p>En este caso nos trajo otra llamada PEOPLE WORK que es útil para considerar al reportar bugs:</p>
+<ul>
+<li>Problem: describir el problema, la observación.</li>
+<li>Example: dar un ejemplo (él sugiere no gastar tiempo en el paso a paso a menos que sea necesario).</li>
+<li>Oracle: ¿cuál es la inconsistencia, cuál es el criterio que tomamos para determinar que hay un problema?</li>
+<li>Polite: ser cuidadoso en cómo se comunica, ni condescendiente, ni con mucho detalle.</li>
+<li>Literate</li>
+<li>Extrapolation</li>
+<li>Work around</li>
+</ul>
+<p>Algunas cosas que se suelen hacer al investigar un bug:</p>
+<ul>
+<li>Extrapolation: solo pasa con el ejemplo que encontramos, o pasa en otra cantidad de situaciones.</li>
+<li>Replicate: es importante poder reproducirlo.</li>
+<li>Isolate: intentar aislarlo, identificar cuándo algo sucede y cuándo no.</li>
+<li>Maximize: pensar en lo peor que el bug podría causar.</li>
+<li>Generalize (no recuerdo cuál era la diferencia con la extrapolación).</li>
+<li>Externalize: qué pasaría fuera del test environment.</li>
+</ul>
+<h2 id="reporte-de-testing">Reporte de testing</h2>
+<p>Esta fue de las partes que más me gustó. Al momento de reportar cómo fue nuestro testing, él plantea “trenzar” tres partes de la misma historia (no es necesario que sea en orden):</p>
+<ul>
+<li>Sobre el producto (incluyendo bugs y findings).</li>
+<li>Sobre cómo lo probamos (acá es importante aclarar lo que sí probamos y lo que no, o sea, el coverage)</li>
+<li>Qué tan bueno fue el testing (esto es clave, ya que si alguna parte no la pudimos probar bien, por alguna restricción de tiempo, información o lo que sea, es un riesgo latente que hay que gestionar).</li>
+</ul>
+<h2 id="ejercicio-del-calendario-testing-informal">Ejercicio del calendario: testing informal</h2>
+<p>Probamos un software que imprime un calendario a partir de poner dos fechas límite. Hicimos el ejercicio pensando en valores límite, pero los límites estaban en otro lugar nada que ver a lo que uno podía pensar en base al análisis del problema.</p>
+<p>Esto era por la implementación en javascript que la lista comparaba valores no numéricos como si fueran numéricos.</p>
+<blockquote>
+<p>Para hacer testing formal con excelencia primero necesitamos hacer testing informal con excelencia.</p>
+</blockquote>
+<p>Incluso luego agregó que muchas veces no necesitamos testing formal para nada.</p>
+<p>Si bien lo vimos en otro ejercicio, algunas otras cosas que vimos relacionado al testing formal e informal:</p>
+<ul>
+<li>Positive testing: cualquier testing que honra todos los requerimientos explícitos.</li>
+<li>Negative testing: se viola al menos un requerimiento explícito.</li>
+</ul>
+<h2 id="testing-exploratorio">Testing exploratorio</h2>
+<p>Otra de las afirmaciones por las cuales Michael Bolton se le conoce, es que todo el testing es exploratorio. Incluso llegó a decir que llamarle “testing exploratorio” es como ir al a verdulería y pedir una “coliflor vegetariana”.</p>
+<p>A mí me resulta útil distinguir entre testing exploratorio y testing guionado, para poder saber cuándo estamos basando nuestras pruebas en “test cases” y cuándo lo hacemos con un enfoque exploratorio.</p>
+<p>Algo que también mencionó para justificar nuevamente por qué no necesitamos casos de prueba, es que si nosotros dejamos claro cuál es el “por qué” de nuestra prueba y el “qué”, entonces no tenemos necesidad de indicar el “cómo”. O sea, deberíamos concentrarnos en dar la misión de la prueba, qué producto o feature estamos probando, y dejar que el tester decida cómo la va a probar.</p>
+<h2 id="if-you-see-something-say-something">If you see something, say something</h2>
+<p>En alguno de los ejercicios que nos puso, mientras lo explicaba, intencionalmente dio una descripción de manera equivocada. No recuerdo exactamente, pero era algo así como que mientras estaba señalando un grafo que claramente en la pantalla podíamos ver que de “A” se pasaba a “B”, él decía <em>de “B” se pasa a “A”</em>. Creo que muchos nos dimos cuenta del error pero nadie dijo nada.</p>
+<p>A la tercera vez de decir lo mismo de manera errada, nos preguntó si nos estábamos dando cuenta que algo estaba mal en lo que él describía. Marcó que a veces la gente que se da cuenta no dice nada “por las dudas”, y cuánto daño puede hacer eso.</p>
+<h2 id="ejercicio-de-descubrir-el-patrón">Ejercicio de descubrir el patrón</h2>
+<p>Este ejercicio me gustó tanto que le pedí permiso para usarlo en algunos de mis cursos y talleres (siempre mencionando que él fue el autor y que es un ejercicio del curso de Rapid Software Testing).</p>
+<p>El objetivo detrás del ejercicio era mostrar que al hacer una teoría sobre un patrón que estamos buscando, luego el objetivo pasa a ser derribar esa teoría, refutarla. Nunca vamos a poder “garantizar” que encontramos el patrón, porque lo único que podemos hacer es mostrar ejemplos en los cuales se cumple o no se cumple. <a href="/en/talleres-de-testing-en-anima/">En este post podrás ver más sobre este ejercicio y cómo lo apliqué en algún taller</a>, y <a href="/en/tecnicas-para-desarrollar-el-pensamiento-critico-jugando/">acá está con una explicación más completa</a>.</p>
+<figure class="wp-block-embed is-type-wp-embed is-provider-federico-toledo wp-block-embed-federico-toledo"><div class="wp-block-embed__wrapper"><blockquote class="wp-embedded-content" data-secret="KyUIM6bDfv"><a href="/en/tecnicas-para-desarrollar-el-pensamiento-critico-jugando/">Técnicas para desarrollar el pensamiento crítico jugando</a></blockquote></div></figure>
+<p>Luego de ver este ejercicio nos hizo pensar en si es posible seguir los pasos del “testing formal” para resolverlo. O sea, reducir testing a test cases, después buscar la menor cantidad de test cases…</p>
+<blockquote>
+<p>No estamos para hacer testing predecible, sino para descubrir las cosas que no pudimos predecir.</p>
+</blockquote>
+<h2 id="uso-de-lenguaje-seguro">Uso de lenguaje seguro</h2>
+<p>Una de las cosas que aprendí en mis comienzos como tester, fue el de usar lenguaje seguro. Esto lo aprendí con quién me lideró en mis primeros proyectos, pero claramente todos estábamos influenciados por los mismos referentes. Michael le dedicó un rato a hablar sobre cómo ser cuidadosos con nuestras afirmaciones.</p>
+<p>No es lo mismo decir “no hay ninguna interfaz automatizable” que decir “no estoy al tanto de alguna interfaz automatizable”.</p>
+<p>También planteó que prestemos atención a palabras como “siempre”, “nunca”, ya que pueden ser generalizaciones que no sean correctas. Es más seguro decir cosas como “no pude encontrar”.</p>
+<p>Me interesa tanto el tema que hace unas semanas di una charla interna en Abstracta sobre esto, quizá más adelante la comparta en algún meetup o webinar, o al menos en un post acá.</p>
+<h2 id="cuándo-terminar-las-pruebas">¿Cuándo terminar las pruebas?</h2>
+<p>Esta es una de las preguntas difíciles de responder en todo proyecto, pero más que nada si es parte de una decisión mayor que es cuándo estamos listos para liberar la versión del producto a los usuarios.</p>
+<blockquote>
+<p>Testing is never done, it just stops!</p>
+</blockquote>
+<p>El testing nunca está terminado, tan solo se detiene.</p>
+<p>Entonces, es importante dejar claro que podríamos seguir haciendo pruebas. También deberíamos marcar qué cosas no se pudieron probar, como para que el stakeholder decida si pausar la salida a producción o si tomar el riesgo de salir sin probarlo.</p>
+<h2 id="modelos-para-testing">Modelos para testing</h2>
+<p>Un model es una representación, una simplificación de la realidad. En el testing todo está basado en modelos. El testing comienza y termina con modelos (desde modelar lo que entendemos del producto, hasta modelos para mostrar los resultados).</p>
+<blockquote>
+<p>The product is not the only thing that is being build, also our idea about the product.</p>
+</blockquote>
+<p>El producto no es la única cosa que está siendo construida, también nuestra idea acerca del producto.</p>
+<p>Estuvimos trabajando mucho con mindmaps (para profundizar este tema tan útil, te recomiendo <a href="/en/mindmaps-para-testing/">este post sobre mindmaps para testing</a>) e incluso con modelos de datos, formas de representar el conocimiento que nos permitían descubrir información nueva.</p>
+<p>Mostró un ejemplo muy interesante con una tabla de datos, a la cual le aplicó un formato condicional y analizó gráfica generada por esos colores. O sea, haciendo un zoom out viendo los datos con el código de colores, se podían observar patrones o características de ese juego de datos, que despertaba la curiosidad en determinadas zonas.</p>
+<p>Creo que este tipo de técnicas nos pueden brindar muchas herramientas para probar mejor, justo hace unos días compartí un tweet al respecto, ya que hicimos un curso interno en <a href="http://abstracta.us">Abstracta</a> sobre data visualization.</p>
+<blockquote>
+<p>Now I see data visualization design as a very useful skill for testers, not only for generating better reports, but also to try to detect and report anything that can cause misunderstandings in the applications we test</p>
+<p>— Federico Toledo (@fltoledo) <a href="https://twitter.com/fltoledo/status/1471271348206858243?ref_src=twsrc%5Etfw">December 16, 2021</a></p>
+</blockquote>
+<p>Y otra quote para cerrar esta sección:</p>
+<blockquote>
+<p>Recognize complexity underlying the simplicity of a model.</p>
+</blockquote>
+<p>Reconocer la complejidad debajo de la simplicidad de un modelo.</p>
+<h2 id="estimación">Estimación</h2>
+<p>Estuvimos hablando de algo que es muy común en el testing, que es tener que hacer una estimación, responder a la pregunta ¿cuánto tiempo nos va a llevar probar esto? Él dice que su respuesta es que puede probar durante cada minuto que estén dispuesto a darle. Si respondo 3 días y le dicen “eso es mucho”, ok, entonces decime vos cuánto querés que me lleve.</p>
+<p>La pregunta debería ser reformulada: ¿Cuándo voy a tener suficiente información para decidir cuándo estamos listos para liberar el producto?</p>
+<p>Hay que tener en cuenta que hay distintos niveles de estimaciones, están los obsesivos en un extremo, los razonables en el medio, y los riesgosos en el otro extremo.</p>
+<h2 id="dice-game">Dice game</h2>
+<p>Uno de los últimos ejercicios del curso fue el <a href="/en/tecnicas-para-desarrollar-el-pensamiento-critico-jugando/">“dice game” (en este post podés ver más sobre el juego que lo puse en práctica en algún taller y meetup)</a>. Es un juego muy divertido y desafiante, en el post explico el paso a paso para jugarlo.</p>
+<figure class="aligncenter size-full is-resized"><img alt="" class="wp-image-3215 lazyload" width="616" height="462" src="/wp-content/uploads/2022/01/dice-game.jpeg"><figcaption>Michael trajo un set de dados parecidos a este</figcaption></figure>
+<h2 id="set-game">Set Game</h2>
+<p>Si bien no fue parte del curso, sé que este juego de cartas es uno de los tantos juegos que a Michael le gustan. De hecho, un día estábamos en un bar y él propuso jugar, ¡y sacó un mazo de cartas del bolsillo!</p>
+<blockquote>
+<p>Playing set game with <a href="https://twitter.com/michaelbolton?ref_src=twsrc%5Etfw">@michaelbolton</a> in his last dinner with him and the <a href="https://twitter.com/testingUY?ref_src=twsrc%5Etfw">@testingUY</a> team. Result: I won every match 😛 😉<br>
+Have a safe trip! <a href="https://t.co/pwgfJIMpM2">pic.twitter.com/pwgfJIMpM2</a></p>
+<p>— Federico Toledo (@fltoledo) <a href="https://twitter.com/fltoledo/status/866127809881800706?ref_src=twsrc%5Etfw">May 21, 2017</a></p>
+</blockquote>
+<p>Es un excelente juego para practicar a aprender patrones (algo tan importan<a href="/en/desafio-de-automatizacion-setgame/">te en el testing). Hay un sitio donde se puede jugar online, e incluso hace un tiempo</a> publiqué un desafío de automatización que implicaba automatizar el juego.</p>
+<h2 id="is-this-a-pen-riddle--acertijo-es-una-lapicera">Is this a pen riddle – Acertijo ¿es una lapicera?</h2>
+<p>Otro de los juegos que nos planteó en un bar, fue el acertijo de “¿esto es una lapicera?”. Básicamente es un juego también para desarrollar la atención y la búsqueda de patrones. Hay que descubrir cuál es la situación en la que la pregunta tiene como resultado “sí, es una lapicera” o “no, no lo es”.</p>
+<p>Encontré este video de un niño que explica el juego muy claro:</p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper"><iframe title="Is This A Pen Riddle" width="750" height="422" data-src="https://www.youtube.com/embed/fjtfXfk54lM?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen src="https://www.youtube.com/embed/fjtfXfk54lM?feature=oembed" class="lazyload" data-load-mode="0"></iframe></div></figure>
+<h2 id="cerrando">Cerrando</h2>
+<p>Estoy bastante convencido que se cumplió lo que mencioné en el post <a href="/en/michael-bolton-en-el-testinguy/">Michael Bolton en TestingUy</a>: <em>En lo personal, a mí me encantaría que él se lleve una buena imagen de Uruguay y que se entere de todas las cosas asombrosas que se hacen acá en la industria del software, realmente creo que eso puede generar un impacto en nuestro país y en cómo nos ven o consideran desde afuera.</em></p>
+<p>¿Por qué digo esto? Por lo siguiente:</p>
+<ul>
+<li>Lo sacamos mucho a pasear, comer, recorrer lugares, realmente disfrutamos mucho, nos reímos un montón, creo que logró sumergirse mucho en nuestra cultura.</li>
+<li>Interactuó mucho con la comunidad de testing, no solo en el evento, en el curso, cenas, etc.</li>
+<li>Por último, porque hablando de Uruguay, halagándonos dijo algo así: <em>This is like arriving to the land of the lost testers, iIt’s like “el dorado”</em>.</li>
+</ul>
+<p>Si te quedaste con ganas de más Michael Bolton, podés escuchar la entrevista que le hice (en inglés) para mi podcast:</p>
+<p><a href="https://abstracta.us/blog/podcast/quality-sense-podcast-michael-bolton/">https://abstracta.us/blog/podcast/quality-sense-podcast-michael-bolton/</a></p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categories and tags"> <li> <a href="/en/category/blog/">  Blog </a> </li><li> <a href="/en/category/eventos/">  Eventos </a> </li><li> <a href="/en/category/softskills/">  Softskills </a> </li><li> <a href="/en/category/testing/">  Testing </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Subscribe to updates</h2><p class="muted">One email when there is something new: peer workshop calls, talks and what I publish. Unsubscribe anytime.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Subscribing…" data-ok="Done! If you get a confirmation email, open it to complete your subscription." data-error="We could not subscribe you. Please try again in a few minutes."><label for="subscribe-email-box" class="visually-hidden">Your email</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Your email"><button class="btn btn-cta" type="submit">Subscribe</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Co-founder and Chief Quality Officer at <a href="https://abstracta.us/">Abstracta</a>. Personal website. </p> <ul> <li><a href="/en/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">My book</a></li> <li><a href="/en/legal-notice/">Legal notice</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/en/contact/">Contact</a></li> <li><a href="#newsletter">Subscribe</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

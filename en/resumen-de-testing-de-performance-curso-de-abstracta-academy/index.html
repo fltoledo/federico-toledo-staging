@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Resumen de Testing de Performance (curso de Abstracta Academy) - Federico Toledo</title><meta name="description" content="En este post te comparto un resumen que preparó Valeria Sarro, de Abstracta, luego de haber realizado el curso de Abstracta Academy sobre pruebas de performance. Creo que es un resumen bien útil para todo aquel que quiera tomar el curso, así como para el que quiera repasar conceptos. Poco tiempo después de entrar a […]"><link rel="canonical" href="https://federico-toledo.com/resumen-de-testing-de-performance-curso-de-abstracta-academy/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="en_US"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/resumen-de-testing-de-performance-curso-de-abstracta-academy/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/resumen-de-testing-de-performance-curso-de-abstracta-academy/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/resumen-de-testing-de-performance-curso-de-abstracta-academy/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/resumen-de-testing-de-performance-curso-de-abstracta-academy/"><meta property="og:type" content="article"><meta property="og:title" content="Resumen de Testing de Performance (curso de Abstracta Academy) - Federico Toledo"><meta property="og:description" content="En este post te comparto un resumen que preparó Valeria Sarro, de Abstracta, luego de haber realizado el curso de Abstracta Academy sobre pruebas de performance. Creo que es un resumen bien útil para todo aquel que quiera tomar el curso, así como para el que quiera repasar conceptos. Poco tiempo después de entrar a […]"><meta property="og:url" content="https://federico-toledo.com/resumen-de-testing-de-performance-curso-de-abstracta-academy/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://federico-toledo.com/wp-content/uploads/2017/01/academy-performance.png"><meta property="article:published_time" content="2020-02-20T22:47:00.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Skip to content</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/en/" aria-label="Federico Toledo, home">FT</a> <a class="header-title" href="/en/">fltoledo</a> <form class="header-search" role="search" action="/en/search/" method="get"> <label class="visually-hidden" for="header-q">Search the site</label> <input id="header-q" type="search" name="q" placeholder="Search…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Language: English"> EN <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/resumen-de-testing-de-performance-curso-de-abstracta-academy/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/resumen-de-testing-de-performance-curso-de-abstracta-academy/" lang="en" hreflang="en" aria-current="true"> English </a> </li><li> <a href="/pt/resumen-de-testing-de-performance-curso-de-abstracta-academy/" lang="pt-BR" hreflang="pt-BR"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/en/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/en/talks/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Talks <span class="counter">247</span> </a><a href="/en/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Archive <span class="counter">423</span> </a><a href="/en/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/en/publications/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publications  </a><a href="/en/about-me/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> About me  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Location"> <a href="/en/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/en/category/blog/">archive</a> <span aria-hidden="true">/</span>  <span aria-current="page">resumen-de-testing-de-performance-curso-de-abstracta-academy</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2020-02-20" data-pagefind-sort="fecha:2020-02-20"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> published on <time datetime="2020-02-20T22:47:00.000Z">February 20, 2020</time> </span> </p>  </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>This post is part of the archive.</strong> I published it in 2020, in Spanish, and I no longer keep this blog: it may be out of date.  <a href="/en/category/blog/">See the archive</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Resumen de Testing de Performance (curso de Abstracta Academy)</h1> <p>En este post te comparto un resumen que preparó <a href="https://www.linkedin.com/in/valeria-sarro/">Valeria Sarro</a>, de <a href="http://abstracta.us">Abstracta</a>, luego de haber realizado el curso de <a href="http://abstracta.academy">Abstracta Academy</a> sobre <a href="/en/como-funciona-una-herramienta-de-simulacion-de-carga-para-pruebas-de-performance/">pruebas de performance</a>. Creo que es un resumen bien útil para todo aquel que quiera tomar el curso, así como para el que quiera repasar conceptos.</p>
+<hr>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2396 lazyload" width="216" height="185" src="/wp-content/uploads/2020/02/valeria-sarro.png"></figure>
+<hr>
+<p>Poco tiempo después de entrar a Abstracta realicé el curso de performance en <a href="https://abstracta.academy/jmeter-performance-testing-certification">JMeter y Blazemeter por Abstracta Academy</a>. Les dejo a continuación un resumen de pruebas de performance que hice, incluyendo definiciones y conceptos traducidos al español.</p>
+<figure class="aligncenter size-large is-resized"><img src="/wp-content/uploads/2017/01/academy-performance.png" alt="" class="wp-image-297" width="437" height="437"></figure>
+<h2 id="qué-son-las-pruebas-de-performance">¿Qué son las pruebas de performance?</h2>
+<ul>
+<li><strong>Performance de una computadora</strong>: Es la relación entre el desempeño de una aplicación (velocidad, cantidad de trabajo realizado) y la cantidad de recursos que se utilizan.</li>
+<li><strong>Performance testing</strong>: Consiste en simular determinada cantidad de conexiones al sistema y evaluar el comportamiento de los componentes. Se utilizan herramientas como:
+<ul>
+<li><strong>JMeter</strong>: Para automatizar los tests y simular escenarios reales.</li>
+<li><strong>BlazeMeter</strong>: Para incrementar el potencial de JMeter en el Cloud, brindar reportes en tiempo real, <a href="/en/como-usar-taurus-y-jenkins-para-pruebas-de-performance-en-integracion-continua/">realizar integraciones de herramientas de CI/CD (como Jenkins)</a>, correr los tests desde diferentes ubicaciones geográficas, etc.</li>
+</ul>
+</li>
+</ul>
+<h2 id="cómo-nos-ayuda-jmeter-con-el-testing-de-performance">¿Cómo nos ayuda JMeter con el Testing de Performance?</h2>
+<ul>
+<li>Es una herramienta que nos permite simular carga de varios usuarios a un mismo sistema, para poder asegurarnos que en el uso no se vuelva lento, evitando que los usuarios no pierdan el interés en la aplicación.</li>
+<li>¿Por qué JMeter?
+<ul>
+<li>Es la herramienta de performance más popular.</li>
+<li>Es OpenSource.</li>
+<li>Tiene una gran comunidad que brinda soporte.</li>
+<li>Es compatible con varios protocolos, no solo HTTPS.</li>
+<li>Está bien documentada.</li>
+</ul>
+</li>
+<li>¿Qué nos permite hacer?
+<ul>
+<li>Grabar y reproducir acciones de usuarios.</li>
+<li>Simular acciones reales de usuarios.</li>
+<li>Configurar fácilmente distintos escenarios.</li>
+<li>Generar cargas pesadas en un servidor.</li>
+</ul>
+</li>
+</ul>
+<h2 id="conceptos-básicos-de-automatización-y-simulación-de-carga">Conceptos básicos de automatización y simulación de carga</h2>
+<ul>
+<li><strong>Test Case</strong>: Hace referencia a una secuencia de acciones que realiza un usuario en un sistema, siguiendo una meta específica. En un Test Case, se definen los datos utilizados, los resultados esperados, y las pre/post condiciones.</li>
+<li><strong>Simulación de Usuarios</strong>: Cuando automatizamos un Test Case típicamente buscamos simular un usuario real. Para lograrlo, necesitamos capturar la interacción entre el usuario y la aplicación. Por ejemplo, si se trata de una aplicación Web la interacción se da por medio de un navegador. Por lo tanto, para simular ser un usuario real, necesitamos simular la interacción entre el navegador y el sistema a probar.</li>
+<li><strong>Usuario Virtual</strong>: Se genera en la ejecución de un script, que simula los pasos de un usuario real por medio de pedidos HTTP (o el protocolo que utiliza la aplicación al nivel que la estamos simulando).</li>
+<li><strong>Assertion</strong>: Se usa para validar que los resultados obtenidos sean los esperados.</li>
+<li><strong>Proceso de grabación de script</strong>:
+<ul>
+<li>Empezar a grabar.</li>
+<li>JMeter inicia un proxy y captura el tráfico entre el navegador y el servidor de la aplicación.</li>
+<li>Abrir el navegador y ejecutar el Test Case.</li>
+<li>Crear el script basado en la grabación.</li>
+</ul>
+</li>
+<li><strong>Ejecución del script</strong>:
+<ul>
+<li>Los pedidos web son generados en el script y enviados al servidor sin utilizar el navegador.</li>
+<li>Los resultados se almacenan en la herramienta, capturando tiempos de respuesta y otras métricas útiles para el análisis.</li>
+</ul>
+</li>
+</ul>
+<h2 id="introducción-a-http">Introducción a HTTP</h2>
+<ul>
+<li>
+<p><a href="/en/como-funciona-una-herramienta-de-simulacion-de-carga-para-pruebas-de-performance/">¿Por qué automatizamos a nivel de protocolo?</a></p>
+<ul>
+<li>Al tener que simular cientos o miles de usuarios cada vez que queremos realizar pruebas, se consumirían muchísimos recursos si fuera necesario tener que “abrir” un navegador por cada usuario para cada ejecución, como sucede en la automatización de pruebas funcionales a nivel de UI.</li>
+</ul>
+</li>
+<li>
+<p><a href="/en/http-debugger-charles-vs-fiddler/">HTTP</a>: </p>
+<ul>
+<li>
+<p>Hypertext Transfer Protocol. Es un protocolo de transferencia de texto y recursos en determinado formato.</p>
+</li>
+<li>
+<p>El cliente (browser) envía HTTP Request y luego el servidor responde con un HTTP Response. La comunicación se da por una serie de pedidos y respuestas entre el usuario y el servidor.</p>
+</li>
+<li>
+<p>Stateless Protocol: No permite identificar de qué usuario pertenece cada pedido. Para esto se utilizan cookies.</p>
+</li>
+<li>
+<p>Cookies: Piezas de información que se alojan del lado del cliente, enviadas al servidor junto con cada pedido. Una de las cookies que todo sistema suele tener es el “Session identifier”, utilizada para identificar el usuario y su sesión.</p>
+</li>
+<li>
+<p>Trabaja sobre TCP/IP y normalmente utiliza el puerto 80, a menos que se especifique otra cosa.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Proceso de comunicación:</p>
+<ul>
+<li>Usuario ingresa a una URL en el browser.</li>
+<li>El navegador decodifica la URL separando las diferentes partes. De esa forma, identifica el protocolo, el nombre del servidor o IP, el número de puerto y a qué recurso de ese servidor quiere acceder el usuario.</li>
+<li>El navegador abre una conexión TCP al servidor por medio del puerto correspondiente.</li>
+<li>El pedido HTTP es enviado en esa conexión.</li>
+<li>El servidor envía una respuesta HTTP en la misma conexión. Esta respuesta incluye un código indicando si hubo algún error, o si todo salió bien.</li>
+<li>El navegador cierra la conexión. </li>
+</ul>
+</li>
+<li>
+<p>URL:</p>
+<ul>
+<li>Uniform Resource Locators.</li>
+<li>Nos ayuda a identificar los diferentes pedidos.</li>
+<li>En una misma URL se puede especificar:
+<ul>
+<li>El protocolo.</li>
+<li>El dominio o IP.</li>
+<li>El puerto, como parte de la comunicación TCP.</li>
+<li>El recurso y cómo llegar a él.</li>
+<li>Utilizando “?”, se pueden definir parámetros como parte del pedido.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Tipos de pedidos más usados:</p>
+<ul>
+<li>GET: Obtiene un recurso. </li>
+<li>POST: Crea un recurso.</li>
+</ul>
+</li>
+<li>
+<p>Códigos de response status:</p>
+<ul>
+<li>1xx: Respuestas Informativas.</li>
+<li>2xx: Peticiones Correctas.</li>
+<li>3xx: Redirecciones.</li>
+<li>4xx: Errores del Cliente.</li>
+<li>5xx: Errores del Servidor.</li>
+</ul>
+</li>
+<li>
+<p>Encoding: Cuando un usuario utiliza caracteres especiales, como por ejemplo un espacio, el navegador tiene que codificarlo para respetar el protocolo.</p>
+</li>
+</ul>
+<h2 id="elementos-de-jmeter">Elementos de JMeter</h2>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2397 lazyload" width="328" height="164" src="/wp-content/uploads/2020/02/jmeter-logo.png"></figure>
+<ul>
+<li>
+<p>Thread Group:</p>
+<ul>
+<li>
+<p>Permite definir un grupo de Threads (hilos, usuarios virtuales).</p>
+</li>
+<li>
+<p>Click derecho en “Test Plan”. Add > Threads > Thread Group.</p>
+</li>
+<li>
+<p>Number of Threads: permite elegir la cantidad de usuarios que queremos simular en nuestro test.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Simple controllers:</p>
+<ul>
+<li>
+<p>Permiten agrupar por acciones.</p>
+</li>
+<li>
+<p>Click derecho en “Thread group”. Add > Logic Controller > Simple Controller.</p>
+</li>
+<li>
+<p>Se puede ingresar un comentario para identificarlo.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>HTTP Request:</p>
+<ul>
+<li>Se especifica la URL, número de puerto, ubicación del contenido (path), el protocolo a utilizar, método, etc.</li>
+<li>Click derecho en nuestro Controller. Add > Sampler> HTTP Request.</li>
+</ul>
+</li>
+<li>
+<p>Pre Processors:</p>
+<ul>
+<li>Elementos que se procesan antes del pedido.</li>
+<li>Add > Pre Processors.</li>
+</ul>
+</li>
+<li>
+<p>Post Processors:</p>
+<ul>
+<li>Elementos que se procesan después del pedido.</li>
+<li>Add > Post Processors.</li>
+</ul>
+</li>
+<li>
+<p>Timer:</p>
+<ul>
+<li>Ayuda a representar mejor la realidad agregando pausas que simulan el comportamiento del usuario.</li>
+<li>Add > Timer.</li>
+</ul>
+</li>
+<li>
+<p>Response assertion:</p>
+<ul>
+<li>Permite validar las respuestas respuestas obtenidas.</li>
+<li>Add > Assertions > Response Assertion.</li>
+</ul>
+</li>
+<li>
+<p>Results Tree:</p>
+<ul>
+<li>Nos permite ver todos los pedidos enviados al servidor y todas las respuestas obtenidas.</li>
+<li>Add > Listeners > View Results Tree.</li>
+</ul>
+</li>
+</ul>
+<h2 id="grabar-un-script-en-jmeter">Grabar un script en JMeter</h2>
+<ul>
+<li>Agregar Thread Group.</li>
+<li>Agregar Recording Controller:
+<ul>
+<li>Add > Logic Controller > Recording Controller.</li>
+</ul>
+</li>
+<li>Agregar HTTP(S) Test Script Recorder:
+<ul>
+<li>Configurar Puerto con un valor de un puerto disponible (por ejemplo, 8080).</li>
+<li>Ingresar nuestro dominio.</li>
+</ul>
+</li>
+<li>Configurar Proxy en nuestro navegador:
+<ul>
+<li>Cambiar la configuración a manual proxy > Local Host.</li>
+<li>En puerto debemos ingresar el mismo que utilizaremos en JMeter (8080 en el ejemplo).</li>
+</ul>
+</li>
+<li>Click en “Start” en JMeter.</li>
+<li>Ir a la página inicial del sistema y comenzar a ejecutar manualmente el caso de prueba.</li>
+<li>Una vez se completa el caso de prueba a grabar, volver a JMeter y presionar Stop.</li>
+</ul>
+<h2 id="analizar-un-script-en-jmeter">Analizar un script en JMeter</h2>
+<ul>
+<li>Las acciones capturadas quedan almacenadas en el Recording Controller (a menos que se haya indicado otra cosa).</li>
+<li>Los pedidos secundarios, de los elementos embebidos en nuestra página (archivos CSS, JavaScript, imágenes, etc.) se ejecutan automáticamente luego del pedido principal. Por lo tanto, con JMeter podemos eliminarlos de nuestro script y luego activar la opción “Retrieve All Embedded resources” y así poder tener tests más simples y flexibles.</li>
+</ul>
+<h2 id="cookies">Cookies</h2>
+<ul>
+<li>Strings que nos permiten agregar información importante a nuestros pedidos HTTP, por ejemplo “Session Identifier”, nos permite que el usuario pueda mantener la misma sesión y no tenga que ingresar constantemente usuario y contraseña, ya que los pedidos HTTP no nos permiten reconocer a qué usuario pertenece.</li>
+<li>Cuando un usuario accede a un sitio, el servidor devuelve un header llamado “Set-cookie” que provee el nombre de la cookie, fecha de expiración, y el contenido. </li>
+<li>Importancia:
+<ul>
+<li>Se necesita saber manejar cookies para que la simulación sea lo más parecido posible a la realidad.</li>
+<li>JMeter tiene un elemento que nos soluciona automáticamente la gestión de las cookies.</li>
+</ul>
+</li>
+</ul>
+<h3 id="jmeter-cookie-manager">JMeter Cookie Manager</h3>
+<ul>
+<li>Almacena las cookies enviadas del servidor.</li>
+<li>Add > Config Element > HTTP Cookie Manager.</li>
+<li>Clear cookies each iteration? : Al activarla, todas las cookies definidas por el servidor se limpiarán cada vez que se ejecuta el thread group.</li>
+</ul>
+<h2 id="assertions">Assertions</h2>
+<ul>
+<li>Nos ayuda a determinar cuándo la respuesta es correcta o no y dejar un registro PASS/FAIL en el reporte.</li>
+<li>Ayuda a verificar que nuestro script está funcionando correctamente.</li>
+</ul>
+<h3 id="assertions-en-jmeter">Assertions en JMeter</h3>
+<ul>
+<li><strong>Response Assertion</strong>: De las más utilizadas y nos permite buscar por texto en una respuesta.</li>
+<li><strong>Size Assertion</strong>: Nos permite validar que la respuesta contenga tantos bytes, ya sea mayor, igual, distinto o menor a un valor dado. </li>
+<li><strong>Duration Assertion</strong>: Validar que una respuesta se recibió en una determinada cantidad de tiempo.</li>
+</ul>
+<h3 id="cómo-hacer-buenas-validaciones-buenos-assertions">Cómo hacer buenas validaciones (buenos assertions)</h3>
+<ul>
+<li>Validaciones luego de iniciar la sesión: Por ejemplo, validar que aparezca nuestro nombre.</li>
+<li>Validar contenido de la ventana: Validar que el texto o títulos que contiene una página, sean los esperados.</li>
+<li>Validar que determinados elementos se encuentren en la página, antes de tener que utilizarlos.</li>
+<li>Prestar atención a caracteres especiales: Algunos caracteres se reciben de forma distinta a la que nosotros vemos en la página.</li>
+<li>No abusar de las validaciones: Si bien JMeter nos permite agregar tantas validaciones como queramos, si utilizamos muchas nuestro script puede quedar “muy pesado” y eso tampoco es bueno, ya que consumirá más recursos y nos permitirá simular menos usuarios virtuales por máquina.</li>
+</ul>
+<h2 id="variables-y-parametrización">Variables y parametrización</h2>
+<ul>
+<li>Podemos definir una variable para almacenar cierta información con el propósito de utilizarla después.</li>
+</ul>
+<h3 id="expresiones-regulares">Expresiones regulares</h3>
+<ul>
+<li>Nos sirve para encontrar texto basándonos en patrones. </li>
+<li>( and ) : Selecciona el string que coincide y lo devuelve.</li>
+<li>. : Selecciona cualquier carácter.</li>
+<li>+ : Uno o más ítems.</li>
+<li>? : Para a la primer coincidencia</li>
+</ul>
+<h3 id="correlación-de-variables">Correlación de variables</h3>
+<ul>
+<li>Para simular correctamente el flujo HTTP es necesario realizar lo que se conoce como correlación de variables, donde básicamente es necesario enviar en un request ciertos valores enviados en una respuesta previa del servidor.</li>
+<li>Para realizar esto es que se necesita usar una expresión regular para obtener el valor de una respuesta y cargarlo en una variable. Luego se usa esa variable en el HTTP Request para que se envíe el valor obtenido.</li>
+</ul>
+<h3 id="parametrización">Parametrización</h3>
+<ul>
+<li>Consiste en variar cierta información en los scripts, tomando los valores de una fuente externa (CSV, XML, etc.). Para esto también se usan las variables.</li>
+<li>Se suelen cargar en estos archivos los valores de usuario y password, cuentas o productos a utilizar, entradas que típicamente proporcionaría el usuario, etc.</li>
+</ul>
+<h2 id="controllers">Controllers</h2>
+<ul>
+<li>Nos ayudan a darle estructura a nuestros scripts, para que sea fácil armarlos, leerlos, entenderlos y mantenerlos.</li>
+<li>Determinan en qué orden son ejecutados los pedidos.</li>
+<li><strong>Transaction Controller</strong>: Agrupa un conjunto de pedidos para que aparte de tener el tiempo de respuesta de cada pedido HTTP individualmente, podamos saber el tiempo de respuesta del total.</li>
+<li><strong>Once-Only-Controller</strong>: Sirve para cuando queremos ejecutar un pedido una vez sola.</li>
+<li><strong>Loop Controller</strong>: Permite controlar el flujo de ejecución realizando iteraciones sobre los elementos contenidos en el controlador.</li>
+</ul>
+<h2 id="test-scenario">Test Scenario</h2>
+<ul>
+<li>Se define el comportamiento de los usuarios en nuestra prueba, cuántos de ellos se ejecutarán en el test, cuántas veces y por cuánto tiempo.</li>
+</ul>
+<h3 id="ramp-up">Ramp-Up</h3>
+<ul>
+<li>Momento al comienzo del test en el cual los usuarios utilizando el sistema aumentan progresivamente. </li>
+</ul>
+<h3 id="duración-del-test">Duración del test</h3>
+<ul>
+<li>Definir cuánto tiempo va a durar nuestro test, desde que lo iniciamos hasta que terminan de ejecutarse las acciones planificadas, para medir cuánto tiempo toma procesar toda la información.</li>
+<li>Normalmente se definen tests de una hora.</li>
+</ul>
+<h2 id="cierre">Cierre</h2>
+<p>Si bien estos conceptos básicos están bien explicados, no te pierdas la oportunidad de hacer el curso de Abstracta Academy, Pruebas de performance con Blazemeter y JMeter. Es un curso súper completo, con varias prácticas que ayudan a fijar todos estos conocimientos.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categories and tags"> <li> <a href="/en/category/blog/">  Blog </a> </li><li> <a href="/en/category/escritor-invitado/">  Escritor invitado </a> </li><li> <a href="/en/category/jmeter/">  JMeter </a> </li><li> <a href="/en/category/performance/">  Performance </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Subscribe to updates</h2><p class="muted">One email when there is something new: peer workshop calls, talks and what I publish. Unsubscribe anytime.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Subscribing…" data-ok="Done! If you get a confirmation email, open it to complete your subscription." data-error="We could not subscribe you. Please try again in a few minutes."><label for="subscribe-email-box" class="visually-hidden">Your email</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Your email"><button class="btn btn-cta" type="submit">Subscribe</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Co-founder and Chief Quality Officer at <a href="https://abstracta.us/">Abstracta</a>. Personal website. </p> <ul> <li><a href="/en/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">My book</a></li> <li><a href="/en/legal-notice/">Legal notice</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/en/contact/">Contact</a></li> <li><a href="#newsletter">Subscribe</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

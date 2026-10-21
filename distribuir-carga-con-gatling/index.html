@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Distribuir Carga con Gatling - Federico Toledo</title><meta name="description" content="En este post Juan Pablo Sobral de Abstracta nos muestra cómo distribuir carga con Gatling al ejecutar pruebas de performance"><link rel="canonical" href="https://federico-toledo.com/distribuir-carga-con-gatling/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="es_ES"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/distribuir-carga-con-gatling/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/distribuir-carga-con-gatling/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/distribuir-carga-con-gatling/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/distribuir-carga-con-gatling/"><meta property="og:type" content="article"><meta property="og:title" content="Distribuir Carga con Gatling - Federico Toledo"><meta property="og:description" content="En este post Juan Pablo Sobral de Abstracta nos muestra cómo distribuir carga con Gatling al ejecutar pruebas de performance"><meta property="og:url" content="https://federico-toledo.com/distribuir-carga-con-gatling/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://ec2-54-193-104-198.us-west-1.compute.amazonaws.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-16-at-5.53.36-PM.png"><meta property="article:published_time" content="2020-04-17T01:36:21.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Saltar al contenido</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/" aria-label="Federico Toledo, inicio">FT</a> <a class="header-title" href="/">fltoledo</a> <form class="header-search" role="search" action="/buscar/" method="get"> <label class="visually-hidden" for="header-q">Buscar en el sitio</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Español"> ES <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/distribuir-carga-con-gatling/" lang="es" hreflang="es" aria-current="true"> Español </a> </li><li> <a href="/en/distribuir-carga-con-gatling/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/distribuir-carga-con-gatling/" lang="pt-BR" hreflang="pt-BR"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/charlas-talleres-y-webinars/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Charlas <span class="counter">247</span> </a><a href="/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Archivo <span class="counter">423</span> </a><a href="/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/publicaciones/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicaciones  </a><a href="/about-me/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> About me  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Ubicación"> <a href="/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/category/blog/">archivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">distribuir-carga-con-gatling</span> </nav>  <article class="box" data-pagefind-body="true" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2020-04-16" data-pagefind-sort="fecha:2020-04-16"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado el <time datetime="2020-04-17T01:36:21.000Z">16 de abril de 2020</time> </span> </p>  </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este escrito es parte del archivo.</strong> Lo publiqué en 2020 y ya no sigo este blog: puede tener información desactualizada.  <a href="/category/blog/">Ver el archivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Distribuir Carga con Gatling</h1> <p>En este post vamos a ver cómo distribuir carga con Gatling al ejecutar pruebas de performance (<a href="/tutorial-de-gatling-en-espanol/">si no conocés Gatling, acá te dejo una guía completa y en español</a>). Esto es algo que teníamos pendiente investigar en <a href="http://abstracta.us">Abstracta</a> hace tiempo, y finalmente <a href="https://www.linkedin.com/in/juan-pablo-sobral-089439bb/">Juan Pablo Sobral</a> pudo terminar esta investigación y bajarlo a este post para compartirlo con todos.</p>
+<p>Vale aclarar que en el post te contamos el paso a paso y cada una de las cosas que fuimos encontrando y ajustando en el camino. Al final en la última sección hay un resumen por si querés ir derecho al grano 🙂</p>
+<hr>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2197 lazyload" width="177" height="136" src="/wp-content/uploads/2019/12/juan-pablo-sobral.png"></figure>
+<hr>
+<p>Un escenario que nos vamos a encontrar bastante haciendo este tipo de pruebas, es que una sola generadora de carga no es capaz de generar la cantidad de tráfico que deseamos. Otro caso en el que es común distribuir la carga de una ejecución en distintas generadoras es cuando necesitamos simular usuarios desde distintas localizaciones geográficas para mayor realismo del escenario.</p>
+<p>En estos casos lo ideal es que la herramienta que estemos utilizando nos provea alguna forma nativa de llevar a cabo esta distribución (como lo hace <a href="/experimentando-con-gatling-y-jmeter-resultados/">JMeter</a> por ejemplo).</p>
+<p>El objetivo de este post es ayudar a quien esté usando Gatling y necesite realizar ejecuciones distribuidas.</p>
+<p>Una de las limitantes de Gatling es que no provee ninguna funcionalidad nativa a la hora de distribuir la carga en distintas generadoras, aunque sí nos provee el script del cual vamos a partir para alcanzar ese objetivo.</p>
+<p>Al habernos encontrado con ciertos problemas a la hora de utilizar el script, decidimos armar este post de manera de allanar el camino al que lo vaya a intentar usar.</p>
+<h2 id="pasos-a-seguir-para-distribuir-carga-con-gatling">Pasos a seguir para distribuir carga con Gatling</h2>
+<p>Esta guía se llevó a cabo utilizando <strong>un maestro</strong> Ubuntu 19.04 y <strong>un esclavo</strong> Ubuntu 18.04. O sea, <strong>vamos a distribuir la carga entre dos máquinas.</strong></p>
+<p>El script que utilizamos para realizar la distribución es el que podemos encontrar en <a href="https://gatling.io/docs/current/cookbook/scaling_out/">este link (scaling out)</a>.</p>
+<h3 id="pre-requisitos">Pre-requisitos</h3>
+<ul>
+<li>JDK8+ (esclavos y maestro)</li>
+<li>Instalación portable Gatling (esclavos y maestro)</li>
+<li>Acceso vía clave a los esclavos por ssh</li>
+<li>Cambio de permisos para la carpeta de Gatling en los esclavos y el maestro (nosotros nos decantamos por un chmod 777 para evitar mayor complejidad)</li>
+</ul>
+<h3 id="simulación">Simulación</h3>
+<p>Aquí copio la simulación que utilizamos para llevar a cabo este proceso. Te recomiendo usarla en caso de que te cruces un problema no contemplado en este post, para descartar que el problema se encuentre en la simulación que estés usando.</p>
+<p>package test
+import scala.concurrent.duration._
+import io.gatling.core.Predef._
+import io.gatling.http.Predef._
+import io.gatling.jdbc.Predef._</p>
+<p>class LibraryAPI extends Simulation {</p>
+<p>    val httpProtocol = http
+        .baseUrl(“<a href="http://openlibrary.org">http://openlibrary.org</a>”)
+        .inferHtmlResources()
+        .acceptHeader(”*/*”)
+        .acceptEncodingHeader(“gzip, deflate”)
+        .userAgentHeader(“PostmanRuntime/7.24.0”)</p>
+<p>    val feeder = Array(
+        Map(“bookName”->“the lord of the rings”),
+        Map(“bookName”->“fear and loathing in las vegas”),
+        Map(“bookName”->“the catcher in the rye”),
+        Map(“bookName”->“the shining”)
+    ).random</p>
+<p>    object BookSearch {
+        val getBook = exec (http(“Paso 1 - Buscar libro”)
+            .get(“/search.json”)
+            .queryParam(“title”, ”${bookName}”)
+            .check(jsonPath(”$..author_name[0]“).ofType[String].saveAs(“authorName”))
+        )
+        .pause(1)
+    }</p>
+<p>    object AuthorSearch {
+        val getAuthor = exec(http(“Paso 2 - Buscar autor”)
+            .get(“/search.json?author=${authorName}”)
+            .check(jsonPath(”$..cover_i”).find(0).saveAs(“coverID”))
+        )
+        .pause(1)
+    }</p>
+<p>    object CoverSearch {
+        val getCover = exec(http(“Paso 3 - Buscar Tapa del libro”)
+            .get(“<a href="http://covers.openlibrary.org/b/ID/$%7BcoverID%7D-L.jpg">http://covers.openlibrary.org/b/ID/${coverID}-L.jpg</a>”)
+            .headers(headers_2)
+        )
+    }</p>
+<p>    val scn = scenario(“LibraryAPI”)
+        .feed(feeder)
+        .exec(BookSearch.getBook,
+AuthorSearch.getAuthor,
+CoverSearch.getCover)
+    setUp(scn.inject(atOnceUsers(4))).protocols(httpProtocol)
+}</p>
+<h3 id="ajustes-pre-ejecución-al-script">Ajustes pre ejecución al script</h3>
+<p>Antes de lanzar nuestra primera ejecución vamos a ajustar algunos aspectos del script. </p>
+<p>Lo primero que tenemos que configurar el <strong>nombre de usuario</strong> bajo el cual vamos a ejecutar en nuestros esclavos y las <strong>IPs</strong> de los mismos.</p>
+<p>A nosotros nos quedó de la siguiente manera:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/p93hUa2QzNfFGqo2eyOQRciyuBQmXMKWRk8UPlFm1DoxtttdAet1E1MxxW8gOIbgNl6OzeVEXMheBt1nHR_OskDcAGcN8w36BNj7PqaXvHlc2xQHKNzsi1FangnwAlyVa_P3_LJP" class="lazyload"></figure>
+<p>Luego vamos a <strong>ajustar los valores</strong> de GATLING_HOME, GATLING_SIMULATIONS_DIR, SIMULATION_NAME y (aunque diga que no es necesario cambiarlo) GATHER_REPORTS_DIR.</p>
+<p>A nosotros nos quedó de la siguiente manera:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh4.googleusercontent.com/ytNz4WAGyNtknBT32teRwARAAtjvv0ESys2pcgXW9bRqAkOnX13G2FmPLTDfG5UJwHcu2enEQe78XqcuWm9Dj1qXHJqocWLpOGJ5yOPgEXSrn4zi6hxuzlOLJqUAwQSJAVCsIKFs" class="lazyload"></figure>
+<h3 id="ajustes-necesarios-para-la-ejecución">Ajustes necesarios para la ejecución</h3>
+<p>Luego de estos ajustes, intentamos ejecutar el script pero daba un error al intentar de crear un log para la ejecución en el esclavo, dado que un directorio que el script pretendía usar no existía:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/KWZnaEcOLcb9rzmPiA_zTGBV23FDv9PfCgV8cZ6opf0YsclGjLqBURr-kdvnF5u-QCktD_WAAH_Qp986HXUaDiHVe6ndCTsAWMG-qftwvL5JT3XADdoWpROKuBFDy13C-7p8Ndnk" class="lazyload"></figure>
+<p>El snippet responsable de esta funcionalidad en el script es el siguiente:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh5.googleusercontent.com/0GtaYJK7ZcrPzHzWanJleuINNmonKn4psmHIszcQGSxpa-8neEPeLkjDZpYV2AUKwQex4FJe50kC_6uCNXbpMsXFbMvSiuNlxzmqqxUZpkE1OgkwVngMfqgfxrbJsnBPum9dudFk" class="lazyload"></figure>
+<p>Como podemos ver, el problema ocurre porque intenta crear el log en un directorio que no existe en el esclavo. Para resolverlo, nosotros decidimos almacenar este log dentro del directorio <em>results</em>, dejando el script de la siguiente manera:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh3.googleusercontent.com/2tsScOL2JztgbNrRS-n3oo04dW7tUE6LLrN-1sDeV1jKDODnS_WwtZrjasDI4tbuBrvVfZ_JNENDLKoBUG4xOKRiiHtPGzA17IIkJ3EQUC04lE0EpxZ_EnEdLT_vOzrzmNh6o5IE" class="lazyload"></figure>
+<p>También hubo un error al listar los contenidos del directorio results, y al recuperar el archivo que almacenaba los resultados de la ejecución en el esclavo:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/L0DnYkbZXjXbd0uxoUFhZMa2VfPzG1qMT6RINHAFgVmpCU7VuU64uUmjgT8DFwqqlz8-bzQKnUTf2JiazduJNgeAz9d_X3QmjmLfWuNt0bHzfftemHbyEyvMw4XCptlBBoVjROvc" class="lazyload"></figure>
+<p>Al revisar al esclavo, es evidente que luego del borrado a la carpeta results que se lleva a cabo aquí:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh5.googleusercontent.com/fFltLDg79PGbgK-_zJwF4djJ_3_cGwhz-_C0OSJmSrbrGqtSfgfix0W6nGH1YpnVeUeudWoJyBMdx5Uo55rmcc3vIHYlZk8MJD8o9wmYlRGogcBneLgNbCOSwP7jiAgsUQCubH4f" class="lazyload"></figure>
+<p>No se vuelve a crear, por lo cual vamos a crear la carpeta a mano y cambiar ese paso para que solo borre los contenidos de la misma, quedando de la siguiente manera:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/VXkuNZWFUvjT_hATiubPTdIByli3drYgkYpVxE-OnIhnABUTAzBCbzmYT1IXYkD1SwrL_yPZe07AIwOmOj8HCymYqtg5vP3uJlnv1WzQnBiFNibU_djN_mdHcnZQf7-Z4VEVzp9s" class="lazyload"></figure>
+<p>Volvimos a ejecutar el script, y el resultado fue el siguiente:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/txSCGwjDzJo13ltUp2yc97XDwNu_SFt2uZXqU-CFwT5xuhXFpLarfL-Ja-1b55qbrvzmRFjrFufjvYbasUchVs2EoEO9CaDdvk2FT_JBTW7K5pHtcYd8M1HgNmMmepJoX3tybQ0w" class="lazyload"></figure>
+<p>Esta vez no hubo problemas al generar el log de la ejecución, pero sí los hubo al unir los resultados de las ejecuciones:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/Dsr3szZ9gQ--NaBoTZTkKL74E2CvU7aHru5an6AhYskzIWptOJGDjEOK7PA4DFZ8tBJnYKNXtqhHRi9fj2vyjE7L0Ye0qQSQOsVk63D5JuSNmq_MiRHZm0E0wrE0BSjsmyrqosCR" class="lazyload"></figure>
+<p>Al revisar el esclavo, lo que descubrimos es lo siguiente:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh4.googleusercontent.com/2gOFEgeA6swhzG29MOaOOM2bbFVzJ3rckbAaN2N1yxwO78mcJKOti12WJDZXYgYZlBiQh8G5dQZ0MISxdSFw_RoVbXKYzkYnGHfWkP8W4v6wC3kPs7rTEHC1bYxXesMV4bnMiv1u" class="lazyload"></figure>
+<p>El log de ejecución al estilo salida por consola al que estamos acostumbrados usando Gatling es el archivo <em>report</em> que aparece dentro de la carpeta results, y el reporte que busca el script para unificarlo con el del maestro y elaborar el reporte final, es el <em>simulation.log</em> que se encuentra dentro de la carpeta con el nombre de la simulación y la fecha de ejecución.</p>
+<p>Para arreglar el último problema que encontramos, lo que hicimos fue cambiar en esta sección:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh4.googleusercontent.com/vviWm_1BYmULuz8uk63ySBHvWlpXVP_5djvMwhTgQC6vTQ25xv8mdgcDW-2YgUZv99Djd90RJiWBAeyc1xcje2QOEJDUdXRLwjZ6RmOmgXXumVkjPC2loZMPNI4-FodXGTbY_Yru" class="lazyload"></figure>
+<p>La ruta de la cual buscar el resultado de la simulación, de  manera que refleje la realidad. Nos quedó así:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh6.googleusercontent.com/i0pkk4ogJH3-_NfCv0dkMuy4CDihZFQMvrD9S-3w-RhmRZv6ErTuWSu67jip_YwF5FL7CWGmGEqQ3FglPfJwwyE20GxEofCqEfqtcdgMlzKsIEeinyJLHsGSw46EgAG3zGpL09BA" class="lazyload"></figure>
+<p>Y cuando lo ejecutamos el resultado es el siguiente:</p>
+<figure class="wp-block-image"><img alt="" src="https://lh4.googleusercontent.com/acy4UPcV7OidBDmAyJ_m_qIfDEpyhB80fBb-0MMPPTHrzp7i311E0jUBZMF2mpuv9NIff8DjyBFAqtskCAhaNpO2038ZtlsqGmcf7I3IGGRFyDJqV5EGK8p_5iBkKqQy2lWYnwL4" class="lazyload"></figure>
+<p>¡Quedó andando!</p>
+<p>Pero aún hay un problema…</p>
+<p>Por cómo está armado nuestro escenario, se deberían generar aproximadamente 120 requests en cada nodo, pero <strong>el reporte final en lugar de 240 que esperábamos (120 por cada nodo) reporta menos de 200.</strong></p>
+<p>Si chequeamos la salida de consola de la ejecución en ambos nodos podemos ver que se ejecutan 120 request en cada uno, por lo cual el reporte final debería reflejarlo. Pero hay un detalle, el reporte final no se realiza en base a la salida de consola, si no a un archivo que genera Gatling (<em>simulation.log</em>). Si revisamos ese archivo en nuestro esclavo veremos que no contiene todas las request.</p>
+<p>Esto ocurre porque <strong>toda la ejecución está controlada en base a los tiempos del maestro</strong>. Es decir, si cuando el maestro termina el esclavo no llegó aún a generar la totalidad de ese archivo, el maestro no tiene forma de enterarse, e igual se trae los resultados que consigue y los procesa.</p>
+<p><strong>Probamos agregar un paso que frene durante treinta segundos el script luego de que finalice la ejecución del escenario en el maestro y parece haber solucionado el problema</strong>. Obviamente, este tiempo puede variar según la cantidad de esclavos, los recursos de los cuales disponen y la prueba ejecutada, por lo cual sugiero que primero pruebes sin frenar el script, ver si el reporte final refleja los resultados reales y en caso que falten requests, agregues la pausa en intervalos de 30 segundos hasta alcanzar el tiempo que funcione en tu caso.</p>
+<p>Los problemas que tiene el script son principalmente de rutas, que espera que tengan cierta estructura en nuestros entornos y cuando utilizamos una distinta (en este caso puntual, no tengo un directorio <em>gatling</em> incluyendo las distintas versiones portables, en el cual almacenar luego los reportes) puede llegar a generar problemas, pero ninguno demasiado difícil de solucionar como se pudo ver.</p>
+<p>A continuación dejamos la versión final del script (la utilizada para realizar este post, reflejando los cambios que se le fueron realizando).</p>
+<p>#!/bin/bash
+##################################################################################################################
+#Gatling scale out/cluster run script:
+#Before running this script some assumptions are made:
+#1) Public keys were exchange in order to ssh with no password promote (ssh-copy-id on all remotes)
+#2) Check  read/write permissions on all folders declared in this script.
+#3) Gatling installation (GATLING_HOME variable) is the same on all hosts
+#4) Assuming all hosts has the same user name (if not change in script)
+##################################################################################################################
+#Assuming same user name for all hosts
+USER_NAME=‘juanpa’
+#Remote hosts list
+HOSTS=(192.168.0.113)
+#Assuming all Gatling installation in same path (with write permissions)
+GATLING_HOME=/home/juanpa/Desktop/gatling-charts-highcharts-bundle-3.3.1
+GATLING_SIMULATIONS_DIR=$GATLING_HOME/user-files/simulations/computerdatabase
+GATLING_RUNNER=$GATLING_HOME/bin/gatling.sh
+#Change to your simulation class name
+SIMULATION_NAME=‘test.LibraryAPI’
+#No need to change this
+GATLING_REPORT_DIR=$GATLING_HOME/results/
+GATHER_REPORTS_DIR=$GATLING_HOME/reports/
+echo “Starting Gatling cluster run for simulation: $SIMULATION_NAME”
+echo “Cleaning previous runs from localhost”
+rm -rf $GATHER_REPORTS_DIR
+mkdir $GATHER_REPORTS_DIR
+rm -rf $GATLING_REPORT_DIR
+for HOST in ”${HOSTS[@]}”
+do
+  echo “Cleaning previous runs from host: $HOST”
+  ssh -n -f $USER_NAME@$HOST “sh -c ‘rm -rf $GATLING_REPORT_DIR/*’”
+done
+for HOST in ”${HOSTS[@]}”
+do
+  echo “Copying simulations to host: $HOST”
+  scp -r $GATLING_SIMULATIONS_DIR/* $USER_NAME@$HOST:$GATLING_SIMULATIONS_DIR
+done
+for HOST in ”${HOSTS[@]}”
+do
+  echo “Running simulation on host: $HOST”
+  ssh -n -f $USER_NAME@$HOST “sh -c ‘nohup $GATLING_RUNNER -nr -s $SIMULATION_NAME > $GATLING_REPORT_DIR/run.log 2>&#x26;1 &#x26;’”
+done
+echo “Running simulation on localhost”
+$GATLING_RUNNER -nr -s $SIMULATION_NAME
+echo “Gathering result file from localhost”
+ls -t $GATLING_REPORT_DIR | head -n 1 | xargs -I {} mv ${GATLING_REPORT_DIR}{} ${GATLING_REPORT_DIR}report
+cp ${GATLING_REPORT_DIR}report/simulation.log $GATHER_REPORTS_DIR
+echo “Waiting for results to be processed in slaves”
+sleep 30
+for HOST in ”${HOSTS[@]}”
+do
+  echo “Gathering result file from host: $HOST”
+  ssh -n -f $USER_NAME@$HOST “sh -c ‘ls -t $GATLING_REPORT_DIR | head -n 1 | xargs -I {} mv ${GATLING_REPORT_DIR}{} ${GATLING_REPORT_DIR}report’”
+  scp $USER_NAME@$HOST:${GATLING_REPORT_DIR}/*/simulation.log ${GATHER_REPORTS_DIR}simulation-$HOST.log
+done
+mv $GATHER_REPORTS_DIR $GATLING_REPORT_DIR
+echo “Aggregating simulations”
+$GATLING_RUNNER -ro reports</p>
+<h2 id="casos-borde">Casos borde</h2>
+<p>Luego de mirar el script, nos pareció que había un par de fallas potenciales. La principal duda que nos surgió era <strong>qué pasa si se corta la ejecución por algún motivo en alguno de los esclavos o el maestro</strong>.</p>
+<p>Obviamente, esto invalida los resultados de la prueba que estamos realizando, pero además puede tener un costo importante de tiempo. <strong>Nuestra teoría es que el script no se daría cuenta, y efectivamente así lo comprobamos.</strong></p>
+<p>Para sacarnos esta duda, llevamos a cabo varias pruebas para ver cómo se comportaba el script en los distintos escenarios posibles y en base a eso ser conscientes de los potenciales problemas que nos podemos llegar a encontrar al llevar a cabo ejecuciones distribuidas utilizando este script. Dejamos los resultados a continuación.</p>
+<p><strong>Matando el proceso en el esclavo</strong>:</p>
+<p>Dentro de esta prueba, tuvimos en cuenta dos escenarios.</p>
+<p>El primero es que la prueba se caiga apenas comienza a ejecutar en el esclavo. En ese caso, lo que ocurrió fue que el script no encontró el archivo de resultados en el mismo y levantó un error. En el caso de nuestra prueba no tiene un gran costo asociado dado que corre en menos de cinco minutos, pero en el caso de que la prueba estuviera ejecutando durante varias horas, habría que conseguir ventanas de tiempo en las que realizar la prueba nuevamente, causando retrasos en los tiempos de entrega.</p>
+<p>El segundo es que la prueba se caiga una vez iniciada la ejecución y realizadas algunas request. En este caso, el script no tuvo problema para poder realizar el reporte final, lo cual puede ser considerado aún más peligroso. Si no prestamos demasiada atención, o el número de requests totales del reporte es muy grande, podemos llegar a pasar por alto el hecho de que en alguno de los esclavos se haya cortado el proceso en algún momento, habiendo generado menos carga. En nuestro caso es evidente, dado que esperamos 120 requests por cada uno de los nodos, si en el reporte final aparecen 150 se ve que faltaron algunos. En cambio, si se tratara de una prueba en la que estemos esperando 151.000 y llegan 149.700, la diferencia es menos significativa quizá y la podemos llegar a atribuir erróneamente a algún otro factor.</p>
+<p><strong>Matando el proceso en el maestro</strong>:</p>
+<p>Lo que ocurre al matar el proceso en el maestro es similar a lo que ocurre si matamos el proceso en un esclavo a la mitad de la ejecución. No se levanta ningún error, el script no nos indica en ningún momento que esté ocurriendo nada raro, se traen los resultados parciales de los esclavos y se arma el reporte. Esto también podría ocasionar problemas y además invalida completamente la prueba realizada.</p>
+<h3 id="otros-recursos">Otros recursos</h3>
+<p>En nuestra investigación nos cruzamos con <a href="https://www.james-willett.com/gatling-load-testing-complete-guide/">esta guía</a> que está muy completa y centraliza gran cantidad de conceptos útiles, por lo cual la recomendamos como complemento para cualquiera que esté iniciándose en el mundo de Gatling.</p>
+<h3 id="tldr">TL;DR</h3>
+<p>Para ejecutar Gatling de manera distribuida vamos a tener que realizar algunas modificaciones en el script provisto por la herramienta según explican en <a href="https://gatling.io/docs/current/cookbook/scaling_out/">la guía Scaling out</a>.</p>
+<ul>
+<li>Primero que nada vamos a tener que modificar las rutas a nuestra instalación de Gatling, el directorio de reportes y resultados.</li>
+<li>También vamos a tener que ajustar el nombre de usuario y las IP para que se correspondan con las que vamos a usar. </li>
+<li>Además, nuestros esclavos y maestro van a tener que cumplir con los prerequisitos (acceso maestro -> esclavo via ssh usando clave, jdk8+ en todos los nodos, cambio de permisos en el directorio de Gatling en todos los nodos).</li>
+<li>Una vez hecho esto, vamos a tener que realizar ajustes sobre el directorio de borrado de resultados previos (borrar los contenidos de la carpeta results, no la carpeta results en si), el archivo al cual se escribe la salida de la ejecución y la ruta de la cual se van a levantar los resultados para armar el reporte.</li>
+</ul>
+<p>Todos estos ajustes se pueden encontrar en mayor detalle en la sección <em>Pasos a seguir</em>, incluyendo una simulación de ejemplo que usamos para probar y el script que finalmente nos funcionó.</p>
+<p>Gatling es una de las herramientas open source para pruebas de performance que más nos gusta y el haber podido desbloquear esta limitante nos abre otro abanico de posibilidades para su uso. Si necesitás ayuda para distribuir carga con Gatling contactate.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorías y etiquetas"> <li> <a href="/category/blog/">  Blog </a> </li><li> <a href="/category/escritor-invitado/">  Escritor invitado </a> </li><li> <a href="/category/gatling/">  Gatling </a> </li><li> <a href="/category/performance/">  Performance </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Suscribite a las novedades</h2><p class="muted">Un mail cuando hay algo nuevo: convocatorias de peer workshops, charlas y lo que vaya publicando. Te das de baja cuando quieras.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Suscribiendo…" data-ok="¡Listo! Si te llega un mail de confirmación, abrilo para completar la suscripción." data-error="No pudimos suscribirte. Probá de nuevo en unos minutos."><label for="subscribe-email-box" class="visually-hidden">Tu email</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Tu email"><button class="btn btn-cta" type="submit">Suscribirme</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador y Chief Quality Officer de <a href="https://abstracta.us/">Abstracta</a>. Sitio personal. </p> <ul> <li><a href="/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Mi libro</a></li> <li><a href="/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/contacto/">Contacto</a></li> <li><a href="#newsletter">Suscribirme</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

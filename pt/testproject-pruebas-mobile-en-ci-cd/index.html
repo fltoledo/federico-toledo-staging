@@ -1,0 +1,134 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>TestProject: Pruebas mobile en CI/CD - Federico Toledo</title><meta name="description" content="TestProject es una plataforma de automatización de pruebas end-to-end gratuita para web, mobile y API. Como mencionamos en este post, en Abstracta nos quedamos con ganas de darle más oportunidades a esta herramienta. Por eso, hoy te comparto este post escrito por Mikaella Mateos, de Abstracta, donde cuenta su experiencia probando la herramienta en otro […]"><link rel="canonical" href="https://federico-toledo.com/testproject-pruebas-mobile-en-ci-cd/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="pt_BR"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/testproject-pruebas-mobile-en-ci-cd/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/testproject-pruebas-mobile-en-ci-cd/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/testproject-pruebas-mobile-en-ci-cd/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/testproject-pruebas-mobile-en-ci-cd/"><meta property="og:type" content="article"><meta property="og:title" content="TestProject: Pruebas mobile en CI/CD - Federico Toledo"><meta property="og:description" content="TestProject es una plataforma de automatización de pruebas end-to-end gratuita para web, mobile y API. Como mencionamos en este post, en Abstracta nos quedamos con ganas de darle más oportunidades a esta herramienta. Por eso, hoy te comparto este post escrito por Mikaella Mateos, de Abstracta, donde cuenta su experiencia probando la herramienta en otro […]"><meta property="og:url" content="https://federico-toledo.com/testproject-pruebas-mobile-en-ci-cd/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://federico-toledo.com/wp-content/uploads/2021/01/image5.png"><meta property="article:published_time" content="2021-01-11T19:52:40.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Pular para o conteúdo</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/pt/" aria-label="Federico Toledo, início">FT</a> <a class="header-title" href="/pt/">fltoledo</a> <form class="header-search" role="search" action="/pt/busca/" method="get"> <label class="visually-hidden" for="header-q">Buscar no site</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Português"> PT <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/testproject-pruebas-mobile-en-ci-cd/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/testproject-pruebas-mobile-en-ci-cd/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/testproject-pruebas-mobile-en-ci-cd/" lang="pt-BR" hreflang="pt-BR" aria-current="true"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/pt/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/pt/palestras/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Palestras <span class="counter">247</span> </a><a href="/pt/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Arquivo <span class="counter">423</span> </a><a href="/pt/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/pt/publicacoes/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicações  </a><a href="/pt/sobre-mim/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> Sobre mim  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Localização"> <a href="/pt/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/pt/category/blog/">arquivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">testproject-pruebas-mobile-en-ci-cd</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2021-01-11" data-pagefind-sort="fecha:2021-01-11"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado em <time datetime="2021-01-11T19:52:40.000Z">11 de janeiro de 2021</time> </span> </p>  </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este post faz parte do arquivo.</strong> Publiquei em 2021, em espanhol, e não mantenho mais este blog: pode estar desatualizado.  <a href="/pt/category/blog/">Ver o arquivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">TestProject: Pruebas mobile en CI/CD</h1> <p>TestProject es una plataforma de automatización de pruebas end-to-end gratuita para web, mobile y API. Como mencionamos en <a href="/pt/review-de-testproject-plataforma-gratuita-de-test-automatizado/">este</a> post, en <a href="http://abstracta.us">Abstracta</a> nos quedamos con ganas de darle más oportunidades a esta herramienta. Por eso, hoy te comparto este post escrito por <a href="https://www.linkedin.com/in/mikaellamateos/">Mikaella Mateos</a>, de <a href="http://abstracta.us">Abstracta</a>, donde cuenta su experiencia probando la herramienta en otro contexto. Acá podras ver <strong>cómo realizar pruebas automáticas en una app mobile sobre Android integradas con Jenkins</strong>.</p>
+<hr>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2653 lazyload" width="161" height="176" src="/wp-content/uploads/2020/07/image.png"></figure>
+<hr>
+<p>Si bien TestProject nos permite <strong>automatizar pruebas de aplicaciones tanto Android como iOS desde Windows</strong>, nos centraremos en las aplicaciones Android. Vale aclarar que típicamente para automatizar pruebas en iOS se necesita una Mac, con lo cual esto es una feature muy interesante. Utilizando esta herramienta sólo debemos contar con un agente de TestProject y una cuenta de desarrollador de Apple activa. En este <a href="https://docs.testproject.io/getting-started/getting-started-with-ios-testing/ios-devices#record-or-develop-ios-test-automation-using-testproject">link</a> te dejamos un paso a paso para configurarlo.</p>
+<h2 id="qué-necesito">¿Qué necesito?</h2>
+<p>Para realizar una prueba mobile con esta herramienta necesitarás crear un usuario (gratuito) en el sitio de TestProject y posteriormente instalar un agente de TestProject en tu computadora. Luego, deberás conectar tu dispositivo a la misma mediante un cable USB y estarás listo para grabar los pasos de tu prueba con el recording de la herramienta. Al finalizar la grabación, contarás con un script que podrás editar y ejecutar. </p>
+<p>Podemos trabajar tanto con <strong>emulador</strong> como con <strong>dispositivos reales</strong>. Si se desea trabajar con un emulador, no es necesario realizar los siguientes pasos, bastará con tener el emulador abierto y TestProject lo reconocerá como agente. Si queremos trabajar con un dispositivo Android real, primero debemos prepararlo de la siguiente forma:</p>
+<ol>
+<li>
+<p>Asegurate de tener tu dispositivo móvil en modo desarrollador. Para esto, deberás ir a <em>Configuración/Ajustes</em> (para Android 8.0 o superior) y luego seleccionar <em>Sobre el teléfono.</em> Pulsa 7 veces sobre el número de compilación (build number) para habilitar el modo desarrollador.</p>
+</li>
+<li>
+<p>Podrás encontrar una opción en la configuración llamada <em>opciones de desarrollador</em>.  Aquí deberás habilitar la opción <em>depuración USB</em>.  </p>
+<ol>
+<li>Si tu dispositivo es Xiaomi, es necesario que habilites las opciones <em>Depuración USB (opción de seguridad)</em> e _Instalar via USB.<br>
+_</li>
+</ol>
+</li>
+<li>
+<p>Tu dispositivo debería estar listo; con un cable USB adecuado, conectalo a donde instalaste el agente TestProject. Al conectarlo, aparecerá una ventana emergente que pedirá autorización para el uso del dispositivo con TestProject. Al aceptarlo podrás comenzar a crear la prueba. </p>
+</li>
+</ol>
+<h2 id="cómo-crear-un-test-mobile-en-testproject">¿Cómo crear un test mobile en TestProject?</h2>
+<p>Para crear una prueba deberás hacer click en <em>New Test</em> y elegir la opción <em>Mobile test</em>.</p>
+<figure class="aligncenter size-large"><img width="1024" height="117" src="/wp-content/uploads/2021/01/image12-1024x117.png" alt="" class="wp-image-2959"></figure>
+<p>Luego deberás asignarle un nombre y descripción a la prueba. Al seleccionar <em>Next</em>, elegí qué plataforma utilizarás (Android o iOS) y qué aplicación vas a testear. Si es la primera vez que creas una prueba, no vas a ver ninguna aplicación en la lista por lo que deberás hacer click en <em>Add a new application for testing</em>.</p>
+<figure class="aligncenter size-large"><img width="868" height="659" alt="" class="wp-image-2960 lazyload" src="/wp-content/uploads/2021/01/image1.png"></figure>
+<p>Y luego:</p>
+<figure class="aligncenter size-large"><img width="642" height="127" alt="" class="wp-image-2962 lazyload" src="/wp-content/uploads/2021/01/image18.png"></figure>
+<p><strong>Agregar una aplicación</strong></p>
+<p>Hay varias formas de agregar una aplicación. La más simple es asegurándote que tu dispositivo esté conectado y el agente esté corriendo, de esta manera TestProject te mostrará todas las aplicaciones disponibles en el dispositivo y bastará con seleccionar una. Si se desea se puede cargar un APK o realizarlo de forma manual.</p>
+<figure class="aligncenter size-large"><img width="866" height="654" alt="" class="wp-image-2963 lazyload" src="/wp-content/uploads/2021/01/image7.png"></figure>
+<p>Una vez que elegiste la aplicación y que le asignaste un nombre, deberás hacer click en <em>Finish.</em></p>
+<p><strong>Grabando un test</strong></p>
+<p>Ahora que creamos un test y especificamos qué aplicación utilizar, estamos listos para crear los pasos de nuestros test. Podrás crear pasos manualmente si lo deseas como también utilizar el recording de la herramienta.</p>
+<p>Si elegimos la opción de grabar, se visualizará un emulador que mostrará la pantalla de nuestro de dispositivo y los pasos que se irán grabando. </p>
+<figure class="aligncenter size-large"><img width="1024" height="485" alt="" class="wp-image-2976 lazyload" src="/wp-content/uploads/2021/01/image5-1024x485.png"></figure>
+<p>Para crear pasos deberás interactuar con el emulador de la aplicación y cada acción será grabada como un paso.</p>
+<p>Así se ve un script en TestProject:</p>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2964 lazyload" width="-173" height="-211" src="/wp-content/uploads/2021/01/image13.png"></figure>
+<p>Cada uno de los pasos se puede eliminar, duplicar y deshabilitar. Se pueden crear pasos manualmente haciendo click en este botón “+” o utilizando el recording de la herramienta.</p>
+<p>Al crear pasos manuales, tenemos la opción de agregar un test previamente creado, una acción o una acción de un elemento.</p>
+<figure class="aligncenter size-large"><img width="198" height="206" alt="" class="wp-image-2965 lazyload" src="/wp-content/uploads/2021/01/image11.png"></figure>
+<p>Si optamos por la opción <em>Element Action</em>, para cada elemento tendremos varios selectores a los que podremos ordenar eligiendo nosotros la prioridad. Los selectores disponibles para web son:</p>
+<ul>
+<li>XPATH</li>
+<li>CSSSELECTOR</li>
+<li>TAGNAME</li>
+<li>LINKTEXT</li>
+<li>PARTIALLINKTEXT </li>
+</ul>
+<p>y para mobile: </p>
+<ul>
+<li>ID</li>
+<li>CLASSNAME</li>
+<li> TAGNAME</li>
+<li> XPATH</li>
+<li>ACCESSIBILITYID</li>
+<li>ANDROIDUIAUTOMATOR</li>
+</ul>
+<p>Por otro lado, si queremos agregar una <em>Action</em> contamos con una amplia lista de acciones como podemos ver en la siguiente imagen:</p>
+<figure class="aligncenter size-large"><img width="452" height="607" alt="" class="wp-image-2966 lazyload" src="/wp-content/uploads/2021/01/image9.png"></figure>
+<h2 id="cómo-integrar-testproject-con-jenkins-ci">¿Cómo integrar TestProject con Jenkins CI?</h2>
+<p>Necesitarás una cuenta de TestProject y el servidor de <a href="https://www.jenkins.io/">Jenkins CI</a> corriendo. Luego deberás seguir los siguientes pasos:</p>
+<ol>
+<li>Instalar el plugin de TestProject en Jenkins
+<ol>
+<li>Abrir el servidor de Jenkins</li>
+<li>Dirigirse a <em>Administrar Jenkins</em> → <em>Administrar Plugins</em>→ <em>Todos los plugins</em></li>
+<li>Buscar <em>TestProject Automation Platform Plugin</em> e instalarlo</li>
+</ol>
+</li>
+<li>Crear una API Key en TestProject
+<ol>
+<li>Abrir la aplicación de TestProject y dirigirse a <em>Integrations</em> → <em>API</em></li>
+</ol>
+</li>
+<li>Crear una nueva API Key y otorgarle el acceso que se desee. Las claves de API pueden tener acceso sin restricciones, lo que significa que pueden usarse en cualquier proyecto o tener acceso a proyectos específicos.</li>
+<li>Una vez que la API key fue creada, deberás copiarla y volver al servidor de Jenkins.</li>
+<li>Configurar el plugin de TestProject en Jenkins y establecer la clave recién creada. Este es un paso que se realiza una sola vez.
+<ol>
+<li>En Jenkins, ir a <em>Administrar Jenkins</em> → <em>Configurar el sistema.</em> </li>
+<li>Busca la sección de TestProject, pega su clave en el campo API Key y presiona Guardar.</li>
+</ol>
+</li>
+<li>Crear un TestProject Job
+<ol>
+<li>Crea un proyecto de estilo libre (freestyle)</li>
+<li>Añadí un nuevo paso en la sección <em>Ejecutar</em>. Selecciona <em>Run TestProject Job</em> del menú desplegable.</li>
+<li>Selecciona un Project Id y Job Id de los menús correspondientes. </li>
+<li>Guarda</li>
+<li>Selecciona el proyecto recién creado y hacé click en <em>Construir ahora</em></li>
+</ol>
+</li>
+<li>Ver resultados
+<ol>
+<li>Una vez completada la ejecución, podrás acceder a <em>console output</em> donde tendrás un link al reporte en TestProject.</li>
+</ol>
+</li>
+</ol>
+<figure class="wp-block-image size-large"><img width="1024" height="485" alt="" class="wp-image-2970 lazyload" src="/wp-content/uploads/2021/01/image15-1024x485.png"></figure>
+<figure class="wp-block-image size-large"><img width="1024" height="266" alt="" class="wp-image-2971 lazyload" src="/wp-content/uploads/2021/01/image3-1024x266.png"></figure>
+<p>A continuación detallaremos algunas ventajas de la herramienta.</p>
+<h2 id="ventajas-de-la-herramienta">Ventajas de la herramienta</h2>
+<ul>
+<li>La herramienta es gratis. </li>
+<li>Tiene buena documentación (<a href="https://blog.testproject.io/#">blog</a>, <a href="https://forum.testproject.io/">foro</a>, <a href="https://www.youtube.com/channel/UCEAPPxNvHT74Xj6Ixt28mNw">canal de youtube</a> y <a href="https://docs.testproject.io/">documentación</a>).</li>
+<li>Ofrece un chat en línea para evacuar dudas.</li>
+<li>Se pueden realizar tanto pruebas para Android como iOS desde Windows.</li>
+<li>Si deseas trabajar con código, al crear un nuevo test, TestProject permite subir un archivo .zip, .jar o .dll.</li>
+<li>Si optamos por utilizar el recording de la herramienta, los selectores son autogenerados pero customizables (se pueden modificar o crear nuevos).</li>
+<li>Al trabajar con web elements sus selectores pueden variar desde el momento en que creamos los tests hasta que los ejecutamos. Gracias a funcionalidades basadas en Inteligencia Artificial de TestProject, cuando un test es re-ejecutado y no puede encontrar el selector que le indicamos, automáticamente intenta encontrar al elemento con otro selector.</li>
+<li>A cada paso del test le podremos agregar aserciones, pausas, condicionales y loops.</li>
+<li>Se puede realizar data-driven testing parametrizando la prueba y agregando un archivo csv de donde tomar los datos.</li>
+<li>Podemos utilizar expresiones regulares para extraer el valor de un campo y posteriormente trabajar con ese valor. Por ejemplo, si estamos trabajando con una aplicación que tiene determinado stock de un producto, podríamos extraer el número de productos que hay en stock, realizar una compra y verificar que ese número disminuyó. </li>
+<li>Nuestros tests pueden ser modularizados, llamando desde un test a otro para mejorar su mantenibilidad.</li>
+<li>Los tests pueden ser agrupados en jobs, donde se pueden agregar distintos tests, incluso repetidas veces como podemos ver en la imagen (el test <em>Opencart</em> está dos veces).</li>
+</ul>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2972 lazyload" width="-224" height="-180" src="/wp-content/uploads/2021/01/image10.png"></figure>
+<ul>
+<li>Al finalizar podremos exportar el código de nuestro test en lenguaje Java, C# o Python como podemos ver en la siguiente imagen:</li>
+</ul>
+<figure class="aligncenter size-large"><img width="877" height="654" alt="" class="wp-image-2973 lazyload" src="/wp-content/uploads/2021/01/image6.png"></figure>
+<ul>
+<li>A su vez podremos generar un test manual en una planilla de Excel:</li>
+</ul>
+<figure class="aligncenter size-large"><img width="1024" height="379" alt="" class="wp-image-2974 lazyload" src="/wp-content/uploads/2021/01/image8-1024x379.png"></figure>
+<p>y finalmente el documento de nuestro test:</p>
+<figure class="aligncenter size-large"><img width="1024" height="434" alt="" class="wp-image-2975 lazyload" src="/wp-content/uploads/2021/01/image17-1024x434.png"></figure>
+<h2 id="reflexiones-finales">Reflexiones finales</h2>
+<p>La rapidez del setup y la facilidad con la que alguien puede tener un test automatizado y ejecutando en Jenkins, hace que la herramienta se convierta en una posibilidad a considerar a la hora de automatizar. Como hemos mencionado anteriormente, en esta prueba de concepto encontramos varios puntos positivos. Esperamos poder hacer un uso más extensivo de la herramienta en un futuro y así poder compartirles más experiencias.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorias e tags"> <li> <a href="/pt/category/automation/">  Automation </a> </li><li> <a href="/pt/category/blog/">  Blog </a> </li><li> <a href="/pt/category/devops-y-cicd/">  DevOps y CI/CD </a> </li><li> <a href="/pt/category/escritor-invitado/">  Escritor invitado </a> </li><li> <a href="/pt/category/mobile/">  Mobile </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Receba as novidades</h2><p class="muted">Um e-mail quando houver algo novo: chamadas de peer workshops, palestras e o que eu publicar. Cancele quando quiser.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Inscrevendo…" data-ok="Pronto! Se você receber um e-mail de confirmação, abra-o para concluir a inscrição." data-error="Não foi possível fazer a inscrição. Tente novamente em alguns minutos."><label for="subscribe-email-box" class="visually-hidden">Seu e-mail</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Seu e-mail"><button class="btn btn-cta" type="submit">Inscrever-me</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador e Chief Quality Officer da <a href="https://abstracta.us/">Abstracta</a>. Site pessoal. </p> <ul> <li><a href="/pt/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Meu livro</a></li> <li><a href="/pt/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/pt/contato/">Contato</a></li> <li><a href="#newsletter">Inscrever-me</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

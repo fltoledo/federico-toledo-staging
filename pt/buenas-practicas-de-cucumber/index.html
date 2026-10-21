@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Buenas prácticas de Cucumber - Federico Toledo</title><meta name="description" content="Compartimos algunas buenas prácticas de Cucumber, especialmente al escribir escenarios utilizando el lenguaje Gherkin. Este artículo lo escribimos junto a Luis Zambra y Vicente Saettone de Abstracta, con la idea de esclarecer algunos conceptos de BDD (si no sabés lo que es, leé este post que cuenta qué es BDD) y a partir de estas […]"><link rel="canonical" href="https://federico-toledo.com/buenas-practicas-de-cucumber/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="pt_BR"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/buenas-practicas-de-cucumber/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/buenas-practicas-de-cucumber/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/buenas-practicas-de-cucumber/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/buenas-practicas-de-cucumber/"><meta property="og:type" content="article"><meta property="og:title" content="Buenas prácticas de Cucumber - Federico Toledo"><meta property="og:description" content="Compartimos algunas buenas prácticas de Cucumber, especialmente al escribir escenarios utilizando el lenguaje Gherkin. Este artículo lo escribimos junto a Luis Zambra y Vicente Saettone de Abstracta, con la idea de esclarecer algunos conceptos de BDD (si no sabés lo que es, leé este post que cuenta qué es BDD) y a partir de estas […]"><meta property="og:url" content="https://federico-toledo.com/buenas-practicas-de-cucumber/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://federico-toledo.com/wp-content/uploads/2018/11/cucumber.png"><meta property="article:published_time" content="2018-11-30T18:37:38.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Pular para o conteúdo</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/pt/" aria-label="Federico Toledo, início">FT</a> <a class="header-title" href="/pt/">fltoledo</a> <form class="header-search" role="search" action="/pt/busca/" method="get"> <label class="visually-hidden" for="header-q">Buscar no site</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Português"> PT <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/buenas-practicas-de-cucumber/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/buenas-practicas-de-cucumber/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/buenas-practicas-de-cucumber/" lang="pt-BR" hreflang="pt-BR" aria-current="true"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/pt/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/pt/palestras/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Palestras <span class="counter">247</span> </a><a href="/pt/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Arquivo <span class="counter">423</span> </a><a href="/pt/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/pt/publicacoes/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicações  </a><a href="/pt/sobre-mim/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> Sobre mim  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Localização"> <a href="/pt/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/pt/category/blog/">arquivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">buenas-practicas-de-cucumber</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2018-11-30" data-pagefind-sort="fecha:2018-11-30"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado em <time datetime="2018-11-30T18:37:38.000Z">30 de novembro de 2018</time> </span> </p> <span class="muted">Editado em 10 de dezembro de 2019</span> </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este post faz parte do arquivo.</strong> Publiquei em 2018, em espanhol, e não mantenho mais este blog: pode estar desatualizado.  <a href="/pt/category/blog/">Ver o arquivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Buenas prácticas de Cucumber</h1> <p>Compartimos algunas buenas prácticas de Cucumber, especialmente al escribir escenarios utilizando el lenguaje Gherkin. Este artículo lo escribimos junto a Luis Zambra y Vicente Saettone de <a href="http://abstracta.us">Abstracta</a>, con la idea de esclarecer algunos conceptos de BDD (si no sabés lo que es, leé este post que cuenta <a href="/pt/que-es-bdd/">qué es BDD</a>) y a partir de estas prácticas ayudar a construir mejores escenarios.</p>
+<hr>
+<figure class="wp-block-gallery columns-2 is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img width="472" height="472" src="/wp-content/uploads/2019/12/vicente.png" alt="" data-id="2212" data-link="http://federico-toledo.com/buenas-practicas-de-cucumber/vicente/" class="wp-image-2212"></figure></li><li class="blocks-gallery-item"><figure><img width="584" height="478" alt="" data-id="2214" data-full-url="http://federico-toledo.com/wp-content/uploads/2019/12/luis-zambra-1.png" data-link="http://federico-toledo.com/buenas-practicas-de-cucumber/luis-zambra-1/" class="wp-image-2214 lazyload" src="/wp-content/uploads/2019/12/luis-zambra-1.png"></figure></li></ul></figure>
+<hr>
+<p>BDD es una estrategia de desarrollo, pero más allá que no sigas esta práctica, nos resulta beneficioso utilizar Cucumber (o alguna herramienta similar) ya que <strong>“te obliga” a documentar tus pruebas automatizadas antes de implementarlas</strong>. Se hace fundamental que estos tests los hagamos legibles y claros para un usuario que a priori no conozca el comportamiento de la funcionalidad que se describe, y más mantenibles para reducir los costos de hacer modificaciones en los pasos de los tests. Al final de esta guía dejamos algunos artículos adicionales sobre Cucumber, Gherkin y BDD.</p>
+<p>Esta imagen refleja la idea de combinar pruebas automatizadas, tener una documentación viva, y a su vez, contar con especificaciones que son ejecutables. Todo esto gracias al enfoque de utilizar alguna herramienta del estilo de Cucumber. </p>
+<figure class="aligncenter"><img width="256" height="256" alt="" class="wp-image-1795 lazyload" src="/wp-content/uploads/2018/11/cucumber.png"></figure>
+<p>Para trabajar con Cucumber básicamente se van a necesitar estos archivos:</p>
+<ul>
+<li><strong>Feature file</strong>, archivo de texto donde se escriben los criterios de aceptación en formato Gherkin. Estos criterios de aceptación se podrían ver como las pruebas que vamos a preparar.</li>
+<li><strong>Step Definition</strong>, que son archivos en el lenguaje de programación usado, donde Cucumber va a poder asociar qué acciones ejecutar asociadas a cada paso de cada criterio de aceptación definido en las distintas features.</li>
+<li>Luego, dependiendo de a qué nivel hacemos los tests, se podrán necesitar otros archivos. Por ejemplo, si esto lo estamos haciendo a nivel de capa de presentación, de interfaz gráfica Web, entonces vamos a usar <a href="/pt/selenium-vs-watir/">algo como Selenium</a>, para lo cual sería bueno seguir algún patrón de diseño cómo Page Object. Pero esto ya es algo más específico y dependiente de qué es lo que estamos probando, y en este artículo queremos poner foco en la parte de Cucumber en sí.</li>
+</ul>
+<h2 id="feature-files-escenarios-en-gherkin">Feature files (escenarios en Gherkin)</h2>
+<h3 id="creación-de-una-feature">Creación de una feature</h3>
+<p>Para empezar creamos una carpeta en el proyecto donde guardaremos las features que vamos a escribir en Gherkin. En este ejemplo nos vamos a basar en un ejercicio de BDD (<a href="/pt/curso-agile-testing-abstracta-peregrinus/">que solemos hacer en el curso de Testing en Contextos Ágiles, de Abstracta y Peregrinus</a>) donde se quiere modelar el comportamiento de un cajero mediante funcionalidades en Gherkin y lo vamos a hacer siguiendo estas prácticas.</p>
+<p>Supongamos que nos interesa modelar el comportamiento de un cajero cuando queremos extraer dinero:</p>
+<ul>
+<li>Creamos dentro de la carpeta un archivo con extensión .feature (por ejemplo “extraer-dinero.feature”).</li>
+<li>Definimos un título que diga qué es la funcionalidad, algo como: “Feature: Extracción de dinero”.</li>
+<li>Comenzamos a escribir escenarios para nuestra funcionalidad.</li>
+</ul>
+<p>La descripción de un escenario se suele escribir de la siguiente forma:</p>
+<p><em>Scenario: Como [usuario concreto]</em><br>
+<em>quiero [realizar acción concreta]</em><br>
+<em>para [resultado o beneficio]</em></p>
+<p>Lo importante es que explique brevemente qué se quiere lograr con el escenario.</p>
+<p>Una forma de empezar a escribir nuestra Feature puede ser ésta:</p>
+<p><strong>Feature:</strong> Extracción de dinero</p>
+<p> <strong>Scenario:</strong> Como usuario existente y habilitado del cajero,<br>
+quiero realizar una extracción para obtener dinero.</p>
+<p>Algunos puntos importantes sobre Feature files:</p>
+<ul>
+<li>Lo más recomendable es utilizar una Feature por funcionalidad del sistema, y que lo especificado en la Feature sea específico de una sola funcionalidad en concreto y lo más independiente posible de otras funcionalidades.</li>
+<li>La mejor forma de hacer nuestras Feature files entendibles para un cliente es utilizando el mismo lenguaje que éste utiliza para describir la funcionalidad, por lo tanto siempre es mejor describir las acciones como lo haría el cliente.</li>
+</ul>
+<h3 id="features-y-escenarios">Features y escenarios</h3>
+<p>En Gherkin los escenarios son ejemplos de un comportamiento individual para establecer criterios de aceptación, por lo que nos puede interesar escribir varios por funcionalidad para observar distintos resultados y hacer más completo nuestro test (se recomienda escribir los escenarios positivos primero).</p>
+<p>Para describir los escenarios se utilizan sentencias de Gherkin: Given, When, Then, But y And.</p>
+<p>Lo más importante es que los pasos describan brevemente qué se quiere hacer en la funcionalidad y no cómo se quiere hacer (esto es responsabilidad de los step definitions, explicados más abajo). Un ejemplo de escenario mal escrito puede ser éste:  </p>
+<p><strong>Scenario</strong>: Como usuario existente y habilitado del cajero,<br>
+quiero realizar una extracción para obtener dinero.</p>
+<p><strong>Given</strong> Me autentiqué con una tarjeta habilitada<br>
+<strong>And</strong> El saldo disponible en mi cuenta es positivo<br>
+<strong>And</strong> El cajero tiene suficiente dinero<br>
+<strong>And</strong> El cajero tiene papel suficiente para imprimir recibos<br>
+<strong>When</strong> Introduzco la tarjeta en el cajero<br>
+<strong>And</strong> Escribo en el teclado el pin de la tarjeta<br>
+<strong>And</strong> Presiono el botón de confirmar pin<br>
+<strong>And</strong> Presiono el botón próximo a la opción extraer dinero<br>
+<strong>And</strong> Ingreso una cantidad menor o igual a mi saldo disponible<br>
+<strong>And</strong> Presiono el botón de confirmar extracción<br>
+<strong>And</strong> Presiono el botón de confirmar imprimir recibo<br>
+…<strong>…</strong></p>
+<p>Es mejor evitar escribir los escenarios de esta manera pues los hace muy largos, con muchos detalles innecesarios y difícil de leer y entender. Otra desventaja de escribirlos así es que los hace difíciles de mantener, ya que al mínimo cambio que tengamos que hacer al comportamiento es muy probable que tengamos que modificar muchos pasos en el escenario. Una forma más resumida, descriptiva y clara de escribir el escenario puede ser ésta:</p>
+<p><strong>Scenario</strong>: Como usuario existente y habilitado del cajero,<br>
+quiero realizar una extracción para obtener dinero.</p>
+<p><strong>Given</strong> Me autentiqué con una tarjeta habilitada<br>
+<strong>And</strong> El saldo disponible en mi cuenta es positivo<br>
+<strong>When</strong> Selecciono la opción de extraer dinero<br>
+<strong>And</strong> Ingreso la cantidad de dinero menor al saldo disponible y disponible del cajero<br>
+<strong>Then</strong> Obtengo dinero<br>
+<strong>And</strong> El dinero que obtuve se resta del saldo disponible de mi cuenta<br>
+<strong>And</strong> El sistema devuelve la tarjeta automáticamente<br>
+<strong>And</strong> El sistema muestra el mensaje de transacción  finalizada</p>
+<p>Aquí hay algunos puntos importantes sobre escenarios y pasos en Gherkin:</p>
+<ul>
+<li>
+<p>Las sentencias se deben escribir en orden Given-When-Then. Esto es porque Given representa una precondición, When una acción y Then un resultado o consecuencia de la acción (criterio de aceptación del usuario). Por lo que escribir un When después del Then, por ejemplo, no estaría bien conceptualmente y no sería muy claro.</p>
+</li>
+<li>
+<p>Tampoco deberían repetirse los Given-When-Then por escenario, para extender cualquiera de las sentencias se utiliza And. El motivo de ésto es que un escenario representa un comportamiento individual, y si definimos algo del estilo: Given-When-Then-When…, seguramente podemos dividirlo en más de un escenario.</p>
+</li>
+<li>
+<p>Las sentencias tienen que ser consistentes entre sí y con la descripción del escenario, o sea, si la descripción del escenario está escrita en primera persona las sentencias también deberían escribirse en primera persona (desarrollaremos la cuestión de las personas gramaticales que se utilizan en la redacción de los escenarios en la siguiente sección del artículo).</p>
+</li>
+<li>
+<p>En la medida de lo posible no usar muchos pasos para un solo escenario, la idea es que un usuario que no conozca la funcionalidad sea capaz de entenderla leyendo el escenario. <em>Mientras menos tenga que leer para entenderlo, mejor</em>.</p>
+</li>
+<li>
+<p>Para esto también se recomienda que las sentencias sean explicativas y breves.</p>
+</li>
+<li>
+<p><em>Deberíamos escribir los escenarios como nos gustaría que nos lo presentaran.</em></p>
+</li>
+<li>
+<p>La sentencia But funciona igual que Then, pero se utiliza cuando queremos verificar que no se observa un resultado concreto, por ejemplo:</p>
+</li>
+</ul>
+<p><strong>Given</strong> Cumplo una precondición<br>
+<strong>When</strong> Ejecuto una acción<br>
+<strong>Then</strong> Observo este resultado<br>
+<strong>But</strong> No debería poder observar este otro resultado</p>
+<ul>
+<li>Es muy importante que los escenarios sean lo más independientes entre sí mientras sea posible, es decir: no puede pasar que se acoplen escenarios. Por ejemplo, no es conveniente que si en un escenario insertamos registros en una base de datos, el resultado de escenarios siguientes dependan de la existencia de esos registros. Tener escenarios acoplados puede generar errores, por ejemplo, si tenemos que ejecutarlos en paralelo, o si uno falla.</li>
+</ul>
+<h3 id="cómo-separar-los-archivos">¿Cómo separar los archivos?</h3>
+<p>Al separar los features la cantidad de archivos puede llegar a ser enorme, entonces hay que pensar cómo hacer la división de features en diferentes archivos. </p>
+<p>Una opción muy usada es tener un archivo con las features que agrupen todo lo relacionado con un aspecto de la aplicación, e incluso organizar en directorios. </p>
+<p>En un caso concreto, para un sistema de espectáculos, podríamso tener esto:</p>
+<ul>
+<li>En el primer nivel podríamos tener una carpeta “espectáculos”.</li>
+<li>Dentro, distintos features de crear, editar, eliminar y todo lo que tenga que ver con ellos.</li>
+</ul>
+<p>Así se organiza mejor y es más fácil ubicar cada test y dónde encontrar cada cosa.</p>
+<h3 id="escenarios-con-datos-concretos">Escenarios con datos concretos</h3>
+<p>BDD es en cierta forma similar a SBT (Sample based testing), en cuanto a que se busca reducir ambigüedades al mostrar ejemplos. Considerando esto, tal vez el ejemplo anterior sería mejor si lo bajamos a datos concretos, como en el siguiente caso:</p>
+<p><strong>Scenario</strong>: Como usuario existente y habilitado del cajero,<br>
+quiero realizar una extracción para obtener dinero.</p>
+<p><strong>Given</strong> Me autentiqué con una tarjeta habilitada<br>
+<strong>And</strong> El saldo disponible en mi cuenta es de $10.000<br>
+<strong>And</strong> El cajero cuenta con $100.000 en efectivo<br>
+<strong>When</strong> Selecciono la opción de extraer dinero<br>
+<strong>And</strong> Indico que quiero extraer $1.000<br>
+<strong>Then</strong> Obtengo $1.000 en dos billetes de $500<br>
+<strong>And</strong> El saldo de mi cuenta pasa a ser $9.000<br>
+<strong>And</strong> El cajero se queda con $99.000 en efectivo<br>
+<strong>And</strong> El sistema devuelve la tarjeta automáticamente<br>
+<strong>And</strong> El sistema muestra el mensaje de transacción finalizada</p>
+<h3 id="en-primera-persona-o-en-tercera-persona">¿En primera persona o en tercera persona?</h3>
+<p>Una duda muy común que surge a la hora de redactar un escenario (y sus respectivos pasos) es el punto de vista que debe utilizarse. La pregunta habitual es: <strong>¿debo escribir los escenarios en primera o tercera persona?</strong> La cuestión es más compleja de lo que parece.</p>
+<p>Los ejemplos utilizados en la documentación oficial de Cucumber utilizan ambos puntos de vista, así que no es una referencia exacta para resolver el problema.</p>
+<p>Analicemos los argumentos a favor de cada una de las posturas.</p>
+<h4 id="uso-de-la-primera-persona">Uso de la primera persona</h4>
+<p>Dan North (considerado como el creador de BDD), según encontramos en una <a href="https://stackoverflow.com/questions/34839651/what-person-and-mood-should-i-use-in-gherkin-specflow-given-when-then-statements">referencia en Stack Overflow</a>, recomienda el uso de la primera persona, y de hecho es la que utiliza para escribir sus escenarios en su artículo <a href="https://dannorth.net/introducing-bdd/">Introducing BDD</a>.</p>
+<p>El uso de la primera persona permite escribir el escenario siendo coherentes con su descripción, que, como se mencionó anteriormente, suele seguir la forma “<em>Como [usuario concreto] quiero [realizar acción concreta] para [resultado o beneficio]</em>”.</p>
+<p>Dado que el rol o usuario concreto para el cual se construye el escenario está especificado en la descripción, y la idea es ponerse en los pies de ese usuario, el uso de la primera persona puede resultar una forma coherente de redacción.</p>
+<h4 id="uso-de-la-tercera-persona">Uso de la tercera persona</h4>
+<p>Los defensores de esta postura argumentan que el uso de la primera persona hace que el lector del escenario pierda la referencia sobre el rol o el usuario del que se está hablando. Si escribo en un step “Elimino un artículo del sistema”, ¿quién es el que elimina? ¿Un administrador, un usuario en particular? ¿Un conjunto de roles?</p>
+<p>De alguna forma, el uso de la tercera persona disminuye el riesgo o la dificultad de que el lector haga presunciones erróneas sobre quién es el o los stakeholders involucrados.</p>
+<p>También se sostiene que el uso de la tercera persona, especialmente en inglés, presenta la información de una forma más formal y objetiva.</p>
+<h4 id="conclusión">Conclusión</h4>
+<p>No hay una regla general sobre el punto de vista a utilizar para escribir los escenarios. Lo importante en este punto, como ya se mencionó, mantener la consistencia entre la descripción del escenario y sus pasos (no alternar personas gramaticales), respetar los criterios utilizados en el caso de que estemos agregando escenarios a un proyecto ya existente y favorecer la claridad de lo que se escribe.</p>
+<h3 id="otras-palabaras-clave-para-describir-escenarios">Otras palabaras clave para describir escenarios</h3>
+<h4 id="background">Background</h4>
+<p>Si en todos los escenarios de una misma feature se cumplen algunas precondiciones, es mucho más práctico usar un <strong>Background</strong> que escribir lo mismo varias veces. Esto sirve como una serie de pasos que se van a ejecutar antes de todos los escenarios de la feature. Veamos un ejemplo:</p>
+<p><strong>Feature:</strong> Extracción de dinero</p>
+<p><strong>Background:</strong><br>
+<strong>Given</strong> La tarjeta de crédito está habilitada<br>
+<strong>And</strong> El saldo disponible en mi cuenta es positivo<br>
+<strong>And</strong> El cajero tiene suficiente dinero</p>
+<p><strong>Scenario: …</strong></p>
+<p>Se recomienda que los Backgrounds sean lo más cortos posibles en cuanto a cantidad de pasos, ya que si se hacen muy largos puede ser difícil entender los escenarios que siguen al Background. Siempre es mejor tener escenarios lo más autocontenidos posible, y en caso de tener un Background que sea lo más breve posible.</p>
+<h4 id="scenario-outline">Scenario Outline</h4>
+<p><strong>Scenario Outline</strong> son un tipo de escenario donde se especifican datos de entrada. Son muy prácticos ya que gracias a esto no es necesario escribir un escenario por dato de entrada, por ejemplo:</p>
+<p><strong>Scenario outline:</strong> Extraer dinero con distintas claves de tarjeta.</p>
+<p><strong>Given</strong> La tarjeta de crédito está habilitada<br>
+<strong>And</strong> El saldo disponible en mi cuenta es positivo<br>
+<strong>And</strong> El cajero tiene suficiente dinero<br>
+<strong>When</strong> Introduzco la tarjeta en el cajero<br>
+<strong>And</strong> Ingreso el <pin> de la tarjeta<br>
+<strong>…</strong><br>
+<strong>Examples:</strong>  <br>
+  <strong>|</strong> pin <strong>|</strong><br>
+  <strong>|</strong> 1234 <strong>|</strong>  <br>
+  <strong>|</strong> 9876 <strong>|</strong>  </pin></p>
+<h4 id="doc-strings">Doc Strings</h4>
+<p>Los <strong>Docs Strings</strong> son útiles para agregar cadenas de caracteres largas a un step de una forma más prolija.</p>
+<p>Para utilizarlos, se debe agregar el texto deseado en el step entre tres comillas dobles (“””). Por ejemplo:</p>
+<p><strong>Scenario outline</strong>: …<br>
+<strong>Given</strong> …<br>
+<strong>When</strong> …<br>
+<strong>Then</strong> Obtengo dinero<br>
+<strong>And</strong> Se muestra mensaje de confirmación con el texto:<br>
+  """<br>
+  Estimado cliente:<br>
+  Se ha retirado de su cuenta n° <cuenta> el siguiente monto: <monto>.<br>
+  Gracias por utilizar nuestros servicios.<br>
+  """<br>
+<strong>Examples:</strong>   <br>
+    <strong>|</strong> pin  | cuenta    | monto |<br>
+   | 1234 | 112235489 | 5000  |<br>
+   | 9876 | 668972214 | 6000  |</monto></cuenta></p>
+<p>Como se puede ver en el ejemplo anterior, una Doc String (que es en sí mismo un dato de entrada) puede ser utilizada en combinación con otros datos de entrada para mostrar datos propios del escenario que se está ejecutando.</p>
+<h4 id="data-tables">Data Tables</h4>
+<p>Las Data Tables, en su estructura y utilidad, son muy similares a Scenario Outlines. Sus dos diferencias principales son:</p>
+<ul>
+<li>Las Data Tables son definidas a nivel de un step y no a nivel del escenario, por lo cual sirven para pasar datos de entrada a un solo paso dentro del escenario.</li>
+<li>No es necesario definirles un cabezal, aunque es útil y recomendable para poder referenciar los datos con mayor facilidad.</li>
+</ul>
+<p>Ejemplo de su uso:</p>
+<p><strong>Scenario</strong>: Extraer dinero con distintas claves de tarjeta.<br>
+<strong>Given</strong> La tarjeta de crédito está habilitada<br>
+<strong>And</strong> El saldo disponible en mi cuenta es positivo<br>
+<strong>And</strong> El cajero tiene suficiente dinero<br>
+<strong>When</strong> Introduzco la tarjeta en el cajero<br>
+<strong>And</strong> Ingreso los siguientes <pin> y obtengo el resultado <resultado> :<br>
+   | pin  | resultado |<br>
+   | 1234 | Error     |
+   | 9876 | OK        |</resultado></pin></p>
+<p>En el ejemplo anterior, agregamos una segunda columna “resultado”, para indicar el resultado esperado de acuerdo al PIN ingresado (“1234” es incorrecto y “9876” es correcto). No es necesario utilizar las Data Table de esa forma, pero se incluye como un ejemplo de cómo pueden ser utilizados los datos de entrada en un escenario.</p>
+<h4 id="languages">Languages</h4>
+<p>Cucumber brinda la posibilidad de escribir los escenarios en distintos idiomas, siguiendo las mismas convenciones que normalmente utilizamos en inglés.</p>
+<p>Para hacer uso de esta característica, se debe encabezar la funcionalidad con “# language:”, seguido del código del dialecto a utilizar (por ejemplo, “# language: es” para español).</p>
+<p>En la <a href="https://docs.cucumber.io/gherkin/reference/#spoken-languages">documentación oficial de Cucumber</a> se puede encontrar toda la información necesaria para utilizar esta característica, incluyendo el código de cada dialecto y las palabras que deberían utilizarse para cada idioma para sustituir las habituales (por ejemplo y para idioma español, se utiliza “Característica” en lugar de “feature”, “Escenario” en lugar de “scenario”, etc.).</p>
+<h4 id="tags">Tags</h4>
+<p>En ciertas ocasiones puede ocurrir que queramos no ejecutar todos los escenarios de nuestro test y en lugar de eso queremos agrupar ciertos escenarios y ejecutarlos por separado. Cucumber proporciona una forma de configurar esto mediante etiquetas (tags). Los tags son anotaciones que sirven para agrupar y organizar escenarios e incluso features, estos se escriben con el símbolo @ seguido de un texto significativo, ejemplos:</p>
+<p><em>@gui</em><br>
+<strong>Feature:</strong> …</p>
+<p><em>@SmokeTest @wip</em><br>
+<strong>Scenario:</strong> …</p>
+<p><em>@RegressionTest</em><br>
+<strong>Scenario:</strong> …</p>
+<p>Es importante notar que los tags que especifiquemos a los títulos de las Feature files serán heredados por los escenarios de la misma, incluidos Scenario Outlines.</p>
+<p>Si tenemos un Scenario outline bajo un tag, todos los ejemplos de datos que tenga el escenario van a ejecutarse bajo ese tag.</p>
+<p>Habiendo asignado nuestros tags, existen muchas formas de configurarlos en la ejecución en el apartado de tags de @CucumberOptions. Algunos ejemplos:</p>
+<p><strong>tags = {“@SmokeTest”}</strong> Ejecuta todos los escenarios bajo el tag @SmokeTest</p>
+<p><strong>tags = {“@gui”}</strong> Ejecuta todos los escenarios bajo el tag @gui, como en el ejemplo tenemos una feature bajo este tag, se ejecutarán todos los escenarios de esa feature.</p>
+<p><strong>tags = {“@SmokeTest, @wip”}</strong> Ejecuta todos los escenarios que estén bajo el tag @SmokeTest o bajo el tag @wip (condición OR).</p>
+<p><strong>tags = {“@SmokeTest”, “@RegressionTest”}</strong> Ejecuta todos los escenarios que estén bajo los tags @SmokeTest y @RegressionTest (condición AND).</p>
+<p><strong>tags = {“~@SmokeTest”}</strong> ignora todos los escenarios bajo el tag @SmokeTest</p>
+<p><strong>tags = {“@RegressionTest, ~@SmokeTest”}</strong> ejecuta todos los escenarios bajo el tag @RegressionTest, pero ignora todos los escenarios bajo el tag @SmokeTest</p>
+<p><strong>tags = {“@gui“, “<del>@SmokeTest”, “</del>@RegressionTest”}</strong> ignora todos los escenarios bajo el tag @SmokeTest y @RegressionTest pero ejecuta todos los que estén bajo el tag “@gui”, si seguimos el ejemplo es como ejecutar todos los escenarios de la feature que no estén bajo ningún otro tag.</p>
+<p>En definitiva, los tags no sólo son útiles para organizar y agrupar nuestros escenarios/features (lo cual aporta mucho a la claridad del test), sino que también  nos permiten ejecutarlos selectivamente, como por ejemplo, ejecutar más frecuentemente los escenarios más rápidos.</p>
+<h2 id="step-definitions-implementación-de-los-pasos">Step Definitions (implementación de los pasos)</h2>
+<p>Lo que realizamos anteriormente fue la especificación de los pasos de nuestros escenarios, describimos qué procesos va a seguir nuestro test, pero no definimos cómo queremos que se haga. Esta responsabilidad pasa a ser de la implementación de las sentencias Gherkin que escribimos en los escenarios (step definitions).</p>
+<p>Las step definitions sirven a Cucumber como traducción de los pasos que escribimos en acciones a ejecutar para interactuar con el sistema.</p>
+<p>Si bien los ejemplos que se darán a continuación para la implementación de los pasos están desarrollados en Java, hay que mencionar que Cucumber también puede utilizarse con JavaScript, Ruby, C++ y <a href="https://docs.cucumber.io/installation/">otros lenguajes</a>.</p>
+<p>Para comenzar a escribir step definitions, si estamos trabajando en un IDE con dependencias de Gherkin y Cucumber ya instaladas, éste nos sugerirá implementarlas (van a aparecer subrayadas), y nos va a permitir crear un archivo .java o elegir uno donde ya tengamos pasos implementados. Escogiendo cualquiera de estas dos opciones se nos generará un método en la clase, por ejemplo si decidimos crear un step definition para el paso:</p>
+<p> <strong>Given</strong> La tarjeta de crédito está habilitada</p>
+<p>se nos generará automáticamente un método con una anotación, donde el texto del encabezado va a coincidir con la descripción del paso:</p>
+<p>@Given(“^La tarjeta de crédito está habilitada$”)<br>
+   public void verificarTarjetaHabilitada() throws Throwable {<br>
+      // Write code here that turns the phrase above into concrete actions<br>
+       throw new PendingException();<br>
+}</p>
+<p>En el caso de que el paso incluya datos de entrada definidos a través de Scenario Outline o Data Tables, esos datos son incluidos en la anotación como expresiones regulares, y en el método como parámetros recibidos:</p>
+<p>@When(“^Ingreso el \”([0-9]+)\” de la tarjeta $”)<br>
+   public void ingresarPIN(int pin) throws Throwable {<br>
+      // Write code here that turns the phrase above into concrete actions <br>
+      throw new PendingException();<br>
+}</p>
+<p>Automáticamente cuando hacemos esto, el paso en la feature (la sentencia en Gherkin) ya reconoce dónde está la implementación. Aquí hay algunos puntos importantes a la hora de implementar step definitions:</p>
+<ul>
+<li>Lo más recomendable es crear step definitions que sólo se tengan que implementar una vez y reusar en muchos escenarios (incluso de distintas features).</li>
+<li>Esto es práctico no sólo para ahorrar la cantidad de código que hay que escribir, también aporta mucho a la mantenibilidad de los tests ya que eventualmente va a ser menor la cantidad de step definitions que vamos a tener que modificar en cualquier caso.</li>
+<li>Una manera de reutilizar step definitions es definirlos en Scenario outlines y parametrizarlos.</li>
+</ul>
+<h2 id="referencias-para-seguir-leyendo">Referencias para seguir leyendo</h2>
+<p>Te dejamos algunas referencias por si querés seguir leyendo sobre BDD, Cucumber o Gherkin:</p>
+<ul>
+<li><a href="https://automationpanda.com/2017/01/25/bdd-101-introducing-bdd/">https://automationpanda.com/2017/01/25/bdd-101-introducing-bdd/</a> </li>
+<li><a href="https://hiptest.com/docs/writing-scenarios-with-gherkin-syntax/">https://hiptest.com/docs/writing-scenarios-with-gherkin-syntax/</a></li>
+<li><a href="https://docs.cucumber.io/gherkin/reference/">https://docs.cucumber.io/gherkin/reference/</a></li>
+<li><a href="https://www.foreach.be/blog/9-tips-improving-cucumber-test-readability">https://www.foreach.be/blog/9-tips-improving-cucumber-test-readability</a></li>
+<li><a href="https://saucelabs.com/blog/write-great-cucumber-tests">https://saucelabs.com/blog/write-great-cucumber-tests</a></li>
+<li><a href="https://blog.codeship.com/cucumber-best-practices/">https://blog.codeship.com/cucumber-best-practices/</a></li>
+<li><a href="https://automationpanda.com/2018/02/03/are-gherkin-scenarios-with-multiple-when-then-pairs-okay/">https://automationpanda.com/2018/02/03/are-gherkin-scenarios-with-multiple-when-then-pairs-okay/</a></li>
+<li><a href="https://automationpanda.com/2018/01/31/good-gherkin-scenario-titles/">https://automationpanda.com/2018/01/31/good-gherkin-scenario-titles/</a></li>
+<li><a href="https://automationpanda.com/2017/01/30/bdd-101-writing-good-gherkin/">https://automationpanda.com/2017/01/30/bdd-101-writing-good-gherkin/</a></li>
+<li><a href="http://toolsqa.com/cucumber/background-in-cucumber">http://toolsqa.com/cucumber/background-in-cucumber</a></li>
+<li><a href="https://www.engineyard.com/blog/15-expert-tips-for-using-cucumber">https://www.engineyard.com/blog/15-expert-tips-for-using-cucumber</a></li>
+<li><a href="http://toolsqa.com/cucumber/cucumber-tags/">http://toolsqa.com/cucumber/cucumber-tags/</a></li>
+<li><a href="https://stackoverflow.com/questions/34839651/what-person-and-mood-should-i-use-in-gherkin-specflow-given-when-then-statements.">https://stackoverflow.com/questions/34839651/what-person-and-mood-should-i-use-in-gherkin-specflow-given-when-then-statements.</a></li>
+<li><a href="https://www.spritecloud.com/2018/03/the-3-most-common-mistakes-writing-gherkin-features/">https://www.spritecloud.com/2018/03/the-3-most-common-mistakes-writing-gherkin-features/</a></li>
+<li><a href="https://automationpanda.com/2017/01/18/should-gherkin-steps-use-first-person-or-third-person">https://automationpanda.com/2017/01/18/should-gherkin-steps-use-first-person-or-third-person</a></li>
+</ul> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorias e tags"> <li> <a href="/pt/category/automation/">  Automation </a> </li><li> <a href="/pt/category/blog/">  Blog </a> </li><li> <a href="/pt/category/escritor-invitado/">  Escritor invitado </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Receba as novidades</h2><p class="muted">Um e-mail quando houver algo novo: chamadas de peer workshops, palestras e o que eu publicar. Cancele quando quiser.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Inscrevendo…" data-ok="Pronto! Se você receber um e-mail de confirmação, abra-o para concluir a inscrição." data-error="Não foi possível fazer a inscrição. Tente novamente em alguns minutos."><label for="subscribe-email-box" class="visually-hidden">Seu e-mail</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Seu e-mail"><button class="btn btn-cta" type="submit">Inscrever-me</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador e Chief Quality Officer da <a href="https://abstracta.us/">Abstracta</a>. Site pessoal. </p> <ul> <li><a href="/pt/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Meu livro</a></li> <li><a href="/pt/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/pt/contato/">Contato</a></li> <li><a href="#newsletter">Inscrever-me</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tipos de Testers (en Español, original de Ministry of Testing) - Federico Toledo</title><meta name="description" content="En este post comparto la traducción de &#34;tester types&#34; de Ministry of Testing por Rob Lambert, donde de forma divertida se muestran los tipos de testers"><link rel="canonical" href="https://federico-toledo.com/tipos-de-testers-en-espanol-original-de-ministry-testing/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="pt_BR"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/tipos-de-testers-en-espanol-original-de-ministry-testing/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/tipos-de-testers-en-espanol-original-de-ministry-testing/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/tipos-de-testers-en-espanol-original-de-ministry-testing/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/tipos-de-testers-en-espanol-original-de-ministry-testing/"><meta property="og:type" content="article"><meta property="og:title" content="Tipos de Testers (en Español, original de Ministry of Testing) - Federico Toledo"><meta property="og:description" content="En este post comparto la traducción de &#34;tester types&#34; de Ministry of Testing por Rob Lambert, donde de forma divertida se muestran los tipos de testers"><meta property="og:url" content="https://federico-toledo.com/tipos-de-testers-en-espanol-original-de-ministry-testing/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://federico-toledo.com/wp-content/uploads/2017/08/tester-types-2.png"><meta property="article:published_time" content="2017-08-18T15:02:02.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Pular para o conteúdo</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/pt/" aria-label="Federico Toledo, início">FT</a> <a class="header-title" href="/pt/">fltoledo</a> <form class="header-search" role="search" action="/pt/busca/" method="get"> <label class="visually-hidden" for="header-q">Buscar no site</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Português"> PT <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/tipos-de-testers-en-espanol-original-de-ministry-testing/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/tipos-de-testers-en-espanol-original-de-ministry-testing/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/tipos-de-testers-en-espanol-original-de-ministry-testing/" lang="pt-BR" hreflang="pt-BR" aria-current="true"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/pt/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/pt/palestras/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Palestras <span class="counter">247</span> </a><a href="/pt/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Arquivo <span class="counter">423</span> </a><a href="/pt/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/pt/publicacoes/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicações  </a><a href="/pt/sobre-mim/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> Sobre mim  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Localização"> <a href="/pt/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/pt/category/blog/">arquivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">tipos-de-testers-en-espanol-original-de-ministry-testing</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2017-08-18" data-pagefind-sort="fecha:2017-08-18"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado em <time datetime="2017-08-18T15:02:02.000Z">18 de agosto de 2017</time> </span> </p>  </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este post faz parte do arquivo.</strong> Publiquei em 2017, em espanhol, e não mantenho mais este blog: pode estar desatualizado.  <a href="/pt/category/blog/">Ver o arquivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Tipos de Testers (en Español, original de Ministry of Testing)</h1> <p>En este post comparto algo que publicaron en el 2009 en <a href="https://www.ministryoftesting.com/">Ministry of Testing</a> que me encantó, e incluso lo tenemos colgado en una de las paredes de la oficina en <a href="http://abstracta.us">Abstracta</a>. Se trata de los “Tipos de Testers” (<a href="http://www.ministryoftesting.com/2009/12/tester-types/">Tester types, este es el artículo original</a>, por <a href="https://twitter.com/Rob_Lambert">Rob Lambert</a>), donde de forma divertida y gráfica se distinguen distintos <a href="/pt/psicologia-de-un-tester-igualador-o-comparador/">tipos de testers según sus características</a>. Creo que todos de una forma u otra nos podemos sentir identificados, incluso con más de uno a la vez.</p>
+<p>Debo agradecer a mucha gente de <a href="http://abstracta.us">Abstracta</a> que en distintos momentos me fueron ayudando en esta traducción, entre ellos a <a href="https://www.linkedin.com/in/rafaelmartinsmagallanes/?ppe=1">Rafael Martins</a>, <a href="https://twitter.com/Gabyeke">Gabriela Sánchez</a>, <a href="https://twitter.com/giulliana_psv">Giulliana Scuoteguazza</a>, <a href="https://www.linkedin.com/in/santiago-cabrera-227251140/">Santiago Cabrera</a>, <a href="https://www.linkedin.com/in/alejandrosagrera/">Alejandro Sagrera</a> y en la revisión y corrección a <a href="https://twitter.com/JokinAspiazu">Jokin Aspiazu</a>, <a href="https://twitter.com/TDelalic">Tomislav Delalic</a>, y especialmente a <a href="https://twitter.com/AntzScaravilli">Antonella Scaravilli</a>. Claro que a <a href="https://twitter.com/rosiesherry">Rosie Sherry</a> por permitirme publicar esto.</p>
+<hr>
+<p>Por Rob Lambert.</p>
+<p>Después de trabajar muchos años como tester, he conocido gente muy interesante. En el camino, estas personas han formado a la persona que soy hoy y por eso les estaré eternamente agradecido. Lo que también han hecho estas personas es darme la visión y personalidades que son la base de los tipos de testers. Estos compañeros, colegas y jefes me han dado la inspiración que necesitaba para crear los 19 tipos de tester que verás en este artículo. He explorado sus personalidades, sobre exagerado sus comportamientos y dramatizado sus características, sin embargo, estas personas que he conocido aparecen de alguna forma en el transcurso de este artículo. Espero que cada uno de ustedes pueda relacionarse con este tipo de personas de alguna forma también. Finalmente, los tipos de testers sólo son un poco de diversión. Son caricaturas de personas con las que hemos trabajado.</p>
+<p>Las ilustraciones son cortesía de ‘The Software Testing Club’ (El Club de Testing de Software).</p>
+<p>Por último, este artículo es tuyo para que te lo quedes, lo muestres y lo prestes. El artículo es tuyo para que lo utilices cuando necesites inspiración, una carcajada, un lugar donde descargar tu enfado o solamente un poco de calma. Lo que te pedimos es que cumplas con los atributos comerciales de copyright, referencies a los creadores y que te diviertas en lo que haces.</p>
+<p>Gracias.</p>
+<p>Rob (El tester social)</p>
+<p>En colaboración con The Software Testing Club (El Club de Testing de Software).</p>
+<hr>
+<h2 id="el-ejecutor">El Ejecutor</h2>
+<p><img src="/wp-content/uploads/2017/08/el-ejecutor-248x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Mide la calidad, habla de calidad, inculca la calidad, castiga a aquellos que carecen de la calidad.</p>
+<p><strong>Frase favorita</strong>: “Calidad, calidad, calidad.”</p>
+<p><strong>Némesis</strong>: Gestión de Proyectos, Gestión, programadores, a veces otros testers</p>
+<p>Los Ejecutores son la fuerza del testing que velarán por la calidad y nada más que la calidad.</p>
+<p>A menudo se los llama policías de la calidad, y generalmente son conocidos por ser demasiado centrados en la calidad.</p>
+<p>Harán cumplir la calidad en todo, desde la construcción y liberación hasta la documentación. Incluso si nadie les pidió su participación.</p>
+<p>Romperán en pedazos cualquier especulación, imponiendo la calidad en cualquier reunión que a la que asistan y tendrán en cuenta la calidad en cada aspecto del ciclo de vida de desarrollo del software.</p>
+<p>El Ejecutor vive, respira y sueña calidad.</p>
+<p>Muéstrale al Ejecutor el triángulo de calidad, el tiempo y costos y todo lo que verá son los tres lados que dicen “calidad”.</p>
+<p>Es respetado y necesario en todo proyecto, pero a menudo pasa por alto aspectos comerciales, lo que significa que pueden ser conocidos como problemáticos, inquebrantables e inflexibles.</p>
+<p>Los Ejecutores a menudo tienen una reputación de entrometidos e intimidantes. Es la calidad o nada para algunos Ejecutores.</p>
+<p>Cree que él está a cargo del proyecto. Es bastante común que no entienda que la calidad es algo de valor para una persona de interés y que él como tester no es la persona que más importa.</p>
+<p>A diferencia de Clint Eastwood, El Ejecutor no lleva una Magnum 44 para ejecutar las pruebas. Bueno, no todos ellos…</p>
+<p>EL TRIÁNGULO DE CALIDAD DEL EJECUTOR</p>
+<p><img src="/wp-content/uploads/2017/08/tri%C3%A1ngulo-del-ejecutor-300x167.png" alt=""></p>
+<h2 id="la-reina-del-drama">La Reina del Drama</h2>
+<p><img src="/wp-content/uploads/2017/08/reina-del-drama-258x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Infunde pánico masivo cuando se encuentra algún defecto, agita los brazos, grita con lágrimas de horror.</p>
+<p><strong>Frase favorita</strong>: “¡¡Mira, mira está roto!!”</p>
+<p><strong>Némesis</strong>: El Programador</p>
+<p>Reacciona exageradamente con cada error encontrado. Sea error de ortografía o una falla catastrófica, ella siempre reacciona de la misma manera.</p>
+<p>Se la puede ver corriendo a toda velocidad hacia el equipo de programación, regresando con al menos cinco de ellos y apuntando salvajemente la pantalla y gritando ‘Mira, Mira, está roto’. En realidad, a menudo es ‘sólo un error’ que se corrige inmediatamente con poco o ningún problema.</p>
+<p>La reina del drama realmente pondrá a los programadores de cabeza de tal modo que nunca estarán seguros de si su código está así de mal o si pasaron por alto algo. ¿El pastorcito mentiroso?</p>
+<h2 id="el-comediante">El Comediante</h2>
+<p><img src="/wp-content/uploads/2017/08/comediante.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Se ríe, bromea, hace bromas a los demás, se divierte</p>
+<p><strong>Frase favorita</strong>: “¿Sabes qué sería gracioso?”</p>
+<p><strong>Némesis</strong>: Líder de Testing</p>
+<p>El Comediante a menudo le da un enfoque más relajado al testing.</p>
+<p>Ellos están en el trabajo para hacer un gran trabajo, pero también para divertirse.</p>
+<p>Es un tipo divertido, de esos que siempre tienen una broma y una risita, incluso cuando los tiempos son difíciles. Incluso después de trabajar 14 horas de corrido el comediante sigue de buen humor.</p>
+<p>Los reportes de defectos de Los Comediantes, si bien son muy precisos, son conocidos por hacer descostillar de la risa a los desarrolladores.</p>
+<p>Si bien a veces puede parecer que el Comediante carece de profesionalismo y madurez para moverse dentro del ranking del área de Testing es muy respetado en otros departamentos.</p>
+<p>El objetivo principal de Los Comediantes es divertirse en el trabajo y hacer del ambiente de trabajo un lugar divertido.</p>
+<p>A pesar del hecho de que a veces puede ser molesto, especialmente después de la vigésima broma involucrando insectos de goma y una cámara digital, no se puede negar su enfoque de trabajo es refrescante.</p>
+<h2 id="el-mago">El Mago</h2>
+<p><img src="/wp-content/uploads/2017/08/mago-232x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Encuentra bugs de forma instantánea, está en el lugar correcto en el momento oportuno. ¡Es magia!</p>
+<p><strong>Frase favorita</strong>: “¡No busco bugs, los bugs me buscan a mí!”</p>
+<p><strong>Némesis</strong>: Gerente de proyectos, Gerente, Programadores, Testers.</p>
+<p>A menudo llamado Forrest Gump, ya que siempre parece estar en el lugar correcto en el momento adecuado.</p>
+<p>Se sienta a probar una aplicación que ya ha sido probada en gran medida y de inmediato encuentra un bug sensacional.</p>
+<p>Encuentra un defecto al instante en cada pieza de software que toca.</p>
+<p>Todos los testers en algún momento tienen un hechizo mágico breve como El Mago, pero algunos testers tienen esta habilidad de forma permanente.</p>
+<p>El problema surge cuando abusa de sus poderes:</p>
+<ul>
+<li>Se convierten en arrogantes y tienden a dar sesiones de arrogancia. Esto puede conducir a la vergüenza y el resentimiento.</li>
+<li>Usan sus habilidades de mago para ocultar defectos y hacer desaparecer toda evidencia de los malos resultados. La verdad saldrá a la luz.</li>
+<li>Convierten a su equipo de proyecto en animales de corral. sin embargo, lo divertido, es a menudo visto como abuso de poder. La política de salud y seguridad son rotas también.</li>
+<li>Usa trajes de mago llamativos y sombreros puntiagudos. A nadie le gustan los disfraces.</li>
+</ul>
+<p>Es por momentos como este cuando El Mago es despojado de su poder y es degradado a tester humano.</p>
+<p>Un Mago nunca llega tarde tampoco. Llegan siempre en el momento en el que querían llegar. ¡Esto puede que explique la magia de los bugs!</p>
+<p>Si bien todos creemos que tenemos poco control sobre si llegamos o no a ser Magos existen algunos tips:</p>
+<ul>
+<li>Leer todo lo que se pueda sobre Testing</li>
+<li>Tener un fuerte deseo de aprender</li>
+<li>Practicar, practicar, practicar</li>
+</ul>
+<p>Si haces todo esto, entonces quizás tú también podrías convertirte en un Mago algún día.</p>
+<h2 id="chuck-norris">Chuck Norris</h2>
+<p><img src="/wp-content/uploads/2017/08/chuck-norris-255x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Golpea escritorios, grita, da patadas, puñetazos, dice palabrotas, patalea y es agresivo en general.</p>
+<p><strong>Frase favorita</strong>: “¡Lo voy a reventar!”</p>
+<p><strong>Némesis</strong>: Cualquiera que tenga una constitución débil</p>
+<p>El Chuck Norris tiene mala actitud.</p>
+<p>Se molesta cuando encuentra un error y más aún cuando es él quien tiene que reportarlo, y es casi apocalíptico si el arreglo no funciona.</p>
+<p>No puede hacer ninguna operación en el ordenador sin enfadarse.</p>
+<p>Odia los programadores, detesta los directores de proyectos y desprecia positivamente el usuario final.</p>
+<p>Conocido por cerrar de golpe su puño sobre la mesa cuando el orden de tabulación está incorrecto o cuando los programadores le pronuncian las palabras “¿Es realmente un problema?”</p>
+<p>El Chuck Norris es un animal.</p>
+<p>(PD: para el verdadero Chuck Norris. Por favor, no me haga daño. <a href="http://www.chucknorrisfacts.com/">Http://www.chucknorrisfacts.com/</a>)</p>
+<h2 id="el-explorador">El Explorador</h2>
+<p><img src="/wp-content/uploads/2017/08/el-explorador.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Anda por el camino ya trillado, con sus auriculares siempre puestos, toma muchas notas, realiza poco testing planificado, tiene una actitud contemplativa.</p>
+<p><strong>Frase favorita</strong>: “Parecía interesante.”</p>
+<p><strong>Némesis</strong>: El Checklister</p>
+<p>Establece su propia ruta, a menudo a partir de un caso de prueba. Su objetivo es probar la aplicación para encontrar escenarios interesantes. La información que obtiene en algunos casos lo hace redefinir su estrategia.</p>
+<p>Los defectos que encuentra son realmente originales y en general difíciles de solucionar por los programadores, lo que hace que éstos se mueran de rabia.</p>
+<p>El Explorador prueba todo, en cualquier momento y en cualquier estado. No se sienten cercados por las limitaciones del Checklister, se sienten libres… exploran.</p>
+<p>Una desventaja del Explorador es que piensa que a menudo puede ser rebelde y suelen persiguen sus propias ideas aún en contra de su grupo de trabajo. Algunos se niegan a creer que predefinir casos de prueba es algo valioso y que checklisting es parte del testing.</p>
+<p>Sin embargo, las pruebas de testing exploratorio van adquiriendo cada vez más importancia en el proceso de testing.</p>
+<h2 id="el-checklister">El Checklister</h2>
+<p><img src="/wp-content/uploads/2017/08/checklister-239x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Chequear, contar.</p>
+<p><strong>Frase favorita</strong>: “El caso de prueba no decía que había que validar eso.”</p>
+<p><strong>Némesis</strong>: El Explorador</p>
+<p>Hay dos extremos de Checklister uno negativo, uno positivo. Y los que están en el medio.</p>
+<p>En un extremo (negativo):</p>
+<ul>
+<li>Tenemos la imagen estereotipada de un tester de software sin entrenamiento, robótico, que simplemente ejecuta pruebas predefinidas y cuenta las ejecutadas.</li>
+<li>No cuestiona la prueba o el software o la especificación, no exploran fuera del camino. ¿Realmente existen estos<br>
+testers? Aparentemente sí.</li>
+</ul>
+<p>Esta interpretación de las pruebas de software es la que lleva a la gente a creer que la prueba puede y debe ser automatizada por ser una actividad no calificada, irreflexiva, tediosa, aburrida, repetitiva…</p>
+<p>En el otro extremo (positivo):</p>
+<ul>
+<li>Están aquellos que utilizan las pruebas planificadas como un recordatorio, un símbolo, una verdadera lista de control o una guía de lo que se debe probar. Es una fuente de información que ayuda a guiar al tester para encontrar defectos, no es un documento que necesita ser actualizado constantemente.</li>
+<li>Las listas de comprobación y los tests planificados aseguran que no se pasen cosas por alto, que se comparta el conocimiento, añaden estructura. Permiten sacar métricas cuando es necesario, pero no están limitados por los checklist.</li>
+<li>Estos testers mezclan la exploración con el guión en un equilibrio que se adapte el proyecto, su nivel de habilidad y de las necesidades del proyecto. Estos probadores escriben pruebas que los testers junior pueden correr mientras ellos aprenden y exploran al mismo tiempo. Y esta imagen es positiva. De hecho, es una gran interpretación. Pero por desgracia, no es la imagen más común que hay en la industria.</li>
+</ul>
+<p>La imagen negativa del Checklister es una imagen tan poderosa sobre el Testing en sí que resulta difícil de cambiarla. ¡Si tan sólo pudiéramos convencer a la gente (testers, gerentes y programadores) que el Testing de Checklister robótico, aburrido, infravalorado no es todo de lo que se trata el Testing! …</p>
+<h2 id="el-sabio">El Sabio</h2>
+<p><img src="/wp-content/uploads/2017/08/sabio-154x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Fuma pipa, contemplativo, meditativo</p>
+<p><strong>Frase favorita</strong>: “Hm…Déjame contarte una historia.”</p>
+<p><strong>Némesis:</strong> Expertos e intelectuales</p>
+<p>Es un tester que ha estado al borde del abismo un par de veces y sobrevivió para contarlo. Son más comunes probablemente en los principios de los tiempos y, probablemente, luchó en al menos una guerra. En una guerra metodológica.</p>
+<p>Es tranquilo, reservado y contemplativo.</p>
+<p>Experto, humilde, intelectual, pero no a expensas de los demás.</p>
+<p>Nunca grita y nunca interrumpe. Escucha, piensa y luego responde con sabiduría y bondad.</p>
+<p>El resto de la oficina nunca sabe si el sabio está en el trabajo a menos que necesiten hablar con él debido a su tranquilidad y serenidad.</p>
+<p>Siempre tiene una barba (si es hombre). Conoce a todos, y todo y suele tener historias hilarantes, pero significativas que contar. Nunca imponen su opinión a otros.</p>
+<p>El sabio siempre ha escrito por lo menos dos libros.</p>
+<h2 id="el-sociable">El Sociable</h2>
+<p><img src="/wp-content/uploads/2017/08/sociable.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Se ríe, charla, disfruta su trabajo, se divierte.</p>
+<p><strong>Frase favorita</strong>: “Nos tomamos una y lo discutimos.”</p>
+<p><strong>Némesis:</strong> Muy pocas personas</p>
+<p>Todo equipo debería tener un Sociable</p>
+<p>Disfruta su trabajo y lo hace con una sonrisa</p>
+<p>Le gusta hacer reír y hacer amigos</p>
+<p>A menudo organiza eventos sociales, es un gran conector entre los equipos o dentro de los miembros de un equipo.</p>
+<p>El Sociable a menudo es referido como “El oficial Moral” debido a que juega un papel clave en la organización de las salidas y promover el café en el descanso.</p>
+<p>El Sociable a veces necesita un tirón de orejas cuando su vida social empieza a tener prioridad sobre el trabajo.</p>
+<h2 id="el-soñador">El Soñador</h2>
+<p><img src="/wp-content/uploads/2017/08/so%C3%B1ador-219x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Siempre con sueño, concentrado en todo menos en el trabajo.</p>
+<p><strong>Frase favorita</strong>: “Cuando encuentre mi verdadera vocación en la vida…”</p>
+<p><strong>Némesis</strong>: Todos los testers que disfrutan de su trabajo.</p>
+<p>El Soñador es generalmente un tester que no quiere ser tester, llegó a Testing de alguna de las siguientes maneras:</p>
+<ul>
+<li>Pensó que el Testing era sencillo, pero resultó no ser así.</li>
+<li>No pudo entrar en otro departamento.</li>
+<li>Aterrizó en las pruebas por error y luego se quedó atascado</li>
+<li>En algún momento le gustó el testing pero luego una mala gestión lo desmotivó.</li>
+</ul>
+<p>Pasa más tiempo pensando en su almuerzo, su coche, sus vacaciones, sus aspiraciones y sus actividades nocturnas que en el trabajo que hay que hacer.</p>
+<p>Es un alma perdida en busca de significado y no ha encontrado ningún significado en el trabajo. Yo debería saber, que una vez fui un soñador.</p>
+<p>Algunos de estos soñadores encuentran un incidente y quedan atrapados de por vida. Otros vuelven a encender su pasión por el Testing, mientras que otros se pierden en aburridos trabajos “control de calidad”. Otros se mueven a otras carreras en otras industrias, mientras que todo el tiempo están buscando el verdadero significado de la vida.</p>
+<p>El Soñador es un personaje interesante de tener en el equipo.</p>
+<p>Ellos consiguen a menudo pesadamente los trabajos aburridos y desmotivados que se suma a su cada vez mayor desprecio al testing.</p>
+<p>No son ni súper eficaces ni completamente improductivos.</p>
+<p>Para la mayoría de los soñadores un buen gerente o mentor es todo lo que necesitan para traerlos de vuelta.</p>
+<p>Para otros, por desgracia, un traslado a otro puesto de trabajo es lo mejor que se puede hacer.</p>
+<p>Todos tenemos momentos de soñadores durante el día, a menudo con efectos positivos. Después de todo, un descanso para pensar y reflexionar es una pausa sana. El problema surge cuando se empieza a soñar todo el día…</p>
+<h2 id="el-jefe">El Jefe</h2>
+<p><img src="/wp-content/uploads/2017/08/el-jefe-261x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Frío, relajado, tiene el control, es un buen comunicador, cuenta con el respeto del equipo.</p>
+<p><strong>Frase favorita</strong>: “No hay problema.”</p>
+<p><strong>Némesis</strong>: La Alta Dirección</p>
+<p>El jefe tiene R.E.S.P.E.T.O, puede decir “No” a la gestión y a menudo lo hace, eso lo hace poco popular con los de más arriba, pero es verdaderamente respetado por los de abajo.</p>
+<p>No ve a nadie como inferior o superior. Sólo ve un equipo y un conjunto de objetivos y respeta las opiniones y conocimientos de todos.</p>
+<p>Si le fijan metas que son vagas o imposibles, él lo dirá.</p>
+<p>Elige un equipo de personas que van a trabajar bien juntos, no sólo talentos individuales. Elige un equipo bien equilibrado con miembros experimentados y otros más jóvenes.</p>
+<p>Considera la configuración social del equipo, en lugar de los miembros individuales del equipo.</p>
+<p>Entiende que los miembros del equipo júnior tienen que aprender y con frecuencia tienen las mentes más creativas.</p>
+<p>El Jefe entiende que los equipos pueden hacer que el proyecto sea un éxito o un fracaso.</p>
+<p>El Jefe compra pasteles y cerveza para todo su equipo.</p>
+<p>Confía en todos los miembros de su equipo.</p>
+<p>Es justo, aunque crítico al mismo tiempo.</p>
+<p>En otras palabras: es un líder… un inspirador.</p>
+<p>Tienen integridad, honestidad y es confiable.</p>
+<p>Defiende lo que cree, sin ser arrogante.</p>
+<p>Si encuentras un jefe así, eres de hecho muy afortunado.</p>
+<h2 id="el-automatizador">El Automatizador</h2>
+<p><img src="/wp-content/uploads/2017/08/el-automatizador-224x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Automatización, Automatización, Automatización</p>
+<p><strong>Frase favorita</strong>: “Pero yo no puedo hacer eso en esta herramienta de prueba.”</p>
+<p><strong>Némesis</strong>: Tester manuales</p>
+<p>Es un personaje muy interesante. Viven para automatizar. Se automatizan todo. Hablan como programadores y actúan como un tester.</p>
+<p>Son geniales cuando toman el rol de herreros, volcando su conocimiento acerca de todo de forma útil. Estos herreros saben cómo codificar y tienen conocimientos de testing, profundo conocimiento y experiencia en Testing y además son buenos programadores.</p>
+<p>Resuelven los problemas de testing con herramientas. No sólo automatizan pruebas. Si se necesita hacer… vamos a encontrar la herramienta adecuada para hacerlo.</p>
+<p>Es cuando llegan a la tierra en forma de una herramienta de testing que comienzan a perder su intrínseco atractivo. El Automatizador de una sola herramienta sólo sabe QTP o WinRunner o cualquier otra de las grandes herramientas de proveedores. No es que ellos no podrían entender, aprender y utilizar las demás, es sólo que iría en contra de su código de ética de automatización de utilizar otra cosa que no sea su herramienta amada. A menudo tienen lealtad a la marca, no probar la resolución de problemas de lealtad. Si no se puede hacer con esta herramienta… no se puede hacer.</p>
+<p>Adoro a los automatizadores. Son únicos en la comunidad de desarrollo.</p>
+<p>Parte testers parte programadores. Parte humana, parte máquina.</p>
+<h2 id="el-paseandero">El Paseandero</h2>
+<p><img src="/wp-content/uploads/2017/08/el-paseandero.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Errante, vagando, paseando</p>
+<p><strong>Frase favorita</strong>: “Voy y vuelvo en un momento.”</p>
+<p><strong>Némesis</strong>: Líder de Testing, gerentes</p>
+<p>Es un espanto para la mayoría de los testers. Parecen no hacer nada excepto vagar alrededor de la oficina o en el estacionamiento.</p>
+<p>Siempre con un bloc de notas en la mano y parecen estar saliendo de una reunión. Sin embargo, todo lo que hacen es vagar.</p>
+<p>Es increíble cómo se las arreglan para permanecer con trabajo.</p>
+<p>Cualquiera de ellos tiene menos trabajo que la mayoría o son simplemente súper eficientes.</p>
+<p>Siempre se ve ocupado.</p>
+<p>Tanto el bloc de notas como el caminar con un propósito desprenden un aire de importancia, cuando en realidad hayan salido al estacionamiento a fumar un cigarrillo o al baño para jugar en su teléfono móvil.</p>
+<p>Rara vez habla con alguien y siempre evita el contacto visual con los superiores.</p>
+<p>A veces todos nosotros cumplimos el rol de paseandero en pequeñas dosis es bueno para la mente y el cuerpo. Nos deja un tiempo para despejar la mente, aliviar la tensión de la pantalla y conseguir un poco de aire fresco. Pero cuando el 90% de su tiempo está vagando y el 10% está trabajando es el momento de cuestionar sus motivaciones reales.</p>
+<h2 id="el-micromanager">El Micromanager</h2>
+<p><img src="/wp-content/uploads/2017/08/el-micromanager.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Saca cuentas, está siempre al acecho, suele dar puñaladas por la espalda, habla cuchicheando.</p>
+<p><strong>Frase favorita</strong>: “¿Dónde están mis métricas?”</p>
+<p><strong>Némesis</strong>: Todos los testers</p>
+<p>Es generalmente un líder de Testing o un Gerente que no está totalmente a cargo del área.</p>
+<p>Tiene un equipo y, a menudo una serie de objetivos. Los objetivos son normalmente vagos e imposible como: “No puede haber defectos en el release” o ” se debe probar exhaustivamente” o “usar todas las mejores prácticas”.</p>
+<p>El Micromanager a menudo pierde el rasgo más importante que lo diferencia de “El Jefe”. Se llama coraje.</p>
+<p>No puede decir “No” a la dirección. Simplemente aceptan y luego esparce una lluvia de terror en su equipo.</p>
+<p>Busca hacer puntos, espía al equipo, confabula, da puñaladas por la espalda, siempre culpan a los demás, susurra. Están siempre tramando algo. Siempre eligen el “mejor” y la persona con más experiencia para su equipo, sin importar la dinámica o moral del equipo. Tienen miembros favoritos en el equipo, que muy a menudo no es el experto.</p>
+<p>El Micromanager dice cosas como “Vamos, vamos a trabajar en equipo y hacerlo a mi manera” o “No es una cultura de culpar, pero es definitivamente su culpa”.</p>
+<p>No confían en nadie, porque en el fondo saben que el equipo va a lograr grandes cosas sin ellos.</p>
+<h2 id="el-quisquilloso">El Quisquilloso</h2>
+<p><img src="/wp-content/uploads/2017/08/quisquilloso.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Continuamente está comparando todos los documentos con la aplicación.</p>
+<p><strong>Frase favorita</strong>: “Si, pero este mail que enviaste hace 2 años dice que…”</p>
+<p><strong>Némesis</strong>: Todo el mundo</p>
+<p>Tarda más tiempo probando que el resto, reporta una enorme cantidad de defectos de los cuales sólo el 1% son errores genuinos.</p>
+<p>Reporta defectos sobre todo lo que no está documentado, incluso si funciona y tiene sentido. Utiliza el sistema de reporte de defectos en lugar de hablar con el resto del equipo del proyecto.</p>
+<p>A menudo reporta varias instancias de un mismo incidente, con el único objetivo de elevar su recuento de incidentes.</p>
+<p>Se toma mucho tiempo para probar, referencia de forma cruzada cada pieza de documentación e incluye demasiados detalles en los reportes de incidentes.</p>
+<p>El lado positivo: son extremadamente minuciosos.</p>
+<p>No es receptivo a cambiar.</p>
+<p>Necesita que todo esté documentado y cada cambio quede por escrito. Toda conversación debe quedar documentada y firmada para realizar el seguimiento de todos los detalles acordados.</p>
+<p>El control de cambios lo aterroriza.</p>
+<p>La falta de documentación es su peor pesadilla.</p>
+<p>El Quisquilloso a menudo gasta mucho tiempo produciendo documentos de referencia cruzada y matrices que parecen ser útiles, pero al final cuestan tiempo y dinero mantenerlas.</p>
+<p>Cree que un conjunto estándar de métricas debe aplicarse a todos los proyectos de prueba.</p>
+<p>Ama las mejores prácticas.</p>
+<p>A menudo, se centra en las cosas que no importan y argumenta sobre puntos irrelevantes hasta que se oculta el sol.</p>
+<p>Trabajar con un Quisquilloso es un desafío.</p>
+<p>No sólo requieren una actualización constante de la documentación, pero a menudo se rehúsan a empezar a trabajar hasta que la documentación esté firmado por triplicado bajo la falsa creencia de que el testing no puede comenzar hasta una fecha acordada y lanzado el software.</p>
+<p>Requiere paciencia, tiempo y papeleo y esto a menudo resulta demasiado para la mayoría de los testers.</p>
+<h2 id="el-experto">El Experto</h2>
+<p><img src="/wp-content/uploads/2017/08/experto-249x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Interrumpir y explicar cómo funcionan las cosas.</p>
+<p><strong>Frase favorita</strong>: “Yo sé todo sobre eso.”</p>
+<p><strong>Némesis</strong>: Todo el mundo</p>
+<p>Como la mayoría de los tipos de testers, hay dos lados de cada uno de ellos. A menudo un lado positivo y un lado negativo. Y El Experto no es diferente.</p>
+<p>El Experto positivo es alguien quien, sin dudas es un experto en su campo. Ellos saben lo que hacen. Ellos son “El Oráculo”. Y ellos siempre están dispuesto a ayudar.</p>
+<p>Una vez que hemos alcanzado el nivel de Experto, muchos de nosotros somos humildes y serviciales.</p>
+<p>Sin embargo, El Experto Negativo es alguien que siente que es un experto cuando en realidad pueden no serlo. Y si son expertos se aseguran de que el mundo entero lo sepa.</p>
+<p>El tipo de persona del que sólo sabes que está en el trabajo porque tú puedes escucharlos…siendo expertos. Pero sólo se les escucha cuando pueden saltar a una conversación y ser el experto. De lo contrario, se quedan en silencio, esperando la conversación apropiada. Esperando para saltar y mostrar de lo mucho que saben.</p>
+<p>El Experto Negativo es a menudo conocido por estar hablando al azar cuando en realidad están simplemente respondiendo a una conversación que terminó hace 4 horas atrás. Si el experto ha probado algo mal, normalmente responden con “Solía funcionar de esa manera” o “El diccionario Inglés Oxford está mal” o “Yo en realidad estaba hablando sobre una versión sutil de esto, es por eso que yo estaba diciendo algo que parecía equivocado. ”</p>
+<p>Así que, con el objetivo de ser un experto, sería prudente entender cómo utilizar esas habilidades una vez en ese nivel. ¿Ayudar a las personas o gritar sobre lo bueno que eres? Tú decides…</p>
+<h2 id="el-redactor">El Redactor</h2>
+<p><img src="/wp-content/uploads/2017/08/redactor-253x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Inicialmente lucen confundidos de que exactamente están haciendo trabajando como un tester.</p>
+<p><strong>Frase favorita</strong>: “No soy realmente un tester, sólo estoy ayudando.”</p>
+<p><strong>Némesis</strong>: Tester experto.</p>
+<p>El Redactor es un miembro de otro equipo, traído para probar. A veces los redactores son traídos bajo la falsa idea de hacerse cargo de aquello que “nadie” puede probar. A veces son traídos simplemente para ayudar.</p>
+<p>Pueden venir de cualquier otro departamento de la empresa: administración, finanzas, programación, soporte, documentación, ventas, etc.</p>
+<p>Algunos continúan a pesar de que carecer de pensamiento crítico y la pasión necesaria.</p>
+<p>Sin embargo, muchos al encontrar bugs descubren que les gusta el trabajo, que tienen esa aptitud natural para encontrar incidentes y se convierten en excelentes testers.</p>
+<p>Otros simplemente permanecen hasta que la empresa para la que trabajan:</p>
+<ul>
+<li>se declara en quiebra o cierra</li>
+<li>contrata a alguien que hace que luzca incompetente</li>
+<li>se retira de la empresa</li>
+</ul>
+<p>De los tres testers consultados en mi estudio científico, un grandísimo 100% eran originalmente redactores. Y ellos son geniales.</p>
+<p>El tiempo entre ser llamado un Redactor y convertirse en un tester pleno, puede variar por persona. Pero generalmente, tan pronto como se empieza defendiendo la calidad y haciendo preguntas difíciles entonces puedes con seguridad asumir que has hecho el movimiento.</p>
+<h2 id="el-networker">El Networker</h2>
+<p><img src="/wp-content/uploads/2017/08/networker-211x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Redes, hablar, ambulante</p>
+<p><strong>Frase favorita</strong>: “Conozco a alguien…”</p>
+<p><strong>Némesis</strong>: Nadie (si es que son sensatos)</p>
+<p>El Networker básicamente conoce a todos, en todas partes. Usted tiene un problema con Active Directory, el Networker sabe la chica que escribió parte del código. Usted tiene un problema con las bases de datos de Oracle. El hermano del Networker la diseñó.</p>
+<p>El Networker sabe de todo el mundo dentro y fuera de la empresa. Tienen contactos en todas partes. Los demás testers deben averiguar quién es el Networker en su primer día de trabajo, ya que son un recurso muy valioso.</p>
+<p>La desventaja de trabajar con el Networker es que con cualquiera que hables del Networker lo conoce. Por lo que tienes que tener cuidado con lo que decís. A nadie le disgusta el Networker – no públicamente al menos. La construcción de su propia red puede ser un proceso muy costoso.</p>
+<p>La información dentro de una empresa a menudo fluye a través de las fuentes menos deseadas y ser capaces de aprovechar esa información cuando sea necesario puede significar la diferencia entre el éxito y el fracaso.</p>
+<h2 id="el-intelectual">El Intelectual</h2>
+<p><img src="/wp-content/uploads/2017/08/el-intelectual-257x300.png" alt=""></p>
+<p><strong>Comportamiento</strong>: Gasta tiempo del almuerzo escribiendo poesía, leyendo libros en idiomas extranjeros y estudiando ciencia</p>
+<p><strong>Frase favorita</strong>: “El fin de la ingeniería centrada en una sola perspectiva se adecua a todas las iniciativas, un enfoque inteligente para cortar la burocracia a través de rediseño de procesos y culturas, un renovado énfasis en el desarrollo estratégico con el fin de equipar mejor a nuestras pruebas para afrontar los retos amorfos de gestión de plataformas cruzadas de bugs, riesgos y oportunidades”</p>
+<p><strong>Némesis</strong>: Cualquiera que no los entienda.</p>
+<p>Los Intelectuales son geniales. Ellos no sólo son buenos testers pero ellos también hacen que un programador promedio se sienta estúpido (que para mí, no es cosa fácil).</p>
+<p>Una conversación entre un Programador Intelectual y un Tester Intelectual, es algo que sólo puedes llegar a escuchar una vez en tu carrera. Además, o te enviará a dormir o hará perder el conocimiento, cualquiera de las dos opciones podría llegar a ser más agradable que la conversación en sí.</p>
+<p>El problema con los Testers Intelectuales es que utilizan palabras, frases y estructuras de frases que no significan nada para la mayoría de la gente. Yo necesito tres horas, un diccionario, un diccionario de sinónimos y traductor Google para averiguar lo que El Intelectual está tratando de decir.</p>
+<p>El Intelectual y el Experto van bien juntos. Los Intelectuales usan palabras largas y la jerga los convierte automáticamente en expertos (ya que nadie puede entender realmente lo que dicen – a excepción de otros Intelectuales).</p>
+<p>No todos los Expertos son Intelectuales.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorias e tags"> <li> <a href="/pt/category/blog/">  Blog </a> </li><li> <a href="/pt/category/introduccion-al-testing/">  Introducción al testing </a> </li><li> <a href="/pt/category/off-topic/">  Off-topic </a> </li><li> <a href="/pt/category/softskills/">  Softskills </a> </li><li> <a href="/pt/category/testing/">  Testing </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Receba as novidades</h2><p class="muted">Um e-mail quando houver algo novo: chamadas de peer workshops, palestras e o que eu publicar. Cancele quando quiser.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Inscrevendo…" data-ok="Pronto! Se você receber um e-mail de confirmação, abra-o para concluir a inscrição." data-error="Não foi possível fazer a inscrição. Tente novamente em alguns minutos."><label for="subscribe-email-box" class="visually-hidden">Seu e-mail</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Seu e-mail"><button class="btn btn-cta" type="submit">Inscrever-me</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador e Chief Quality Officer da <a href="https://abstracta.us/">Abstracta</a>. Site pessoal. </p> <ul> <li><a href="/pt/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Meu livro</a></li> <li><a href="/pt/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/pt/contato/">Contato</a></li> <li><a href="#newsletter">Inscrever-me</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

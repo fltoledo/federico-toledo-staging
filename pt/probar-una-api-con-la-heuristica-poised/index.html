@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Probar una API con la heurística POISED - Federico Toledo</title><meta name="description" content="Post escrito por Marcos Pérez de Abstracta, contando su experiencia al probar una API utilizando la heurística POISED"><link rel="canonical" href="https://federico-toledo.com/probar-una-api-con-la-heuristica-poised/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="pt_BR"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/probar-una-api-con-la-heuristica-poised/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/probar-una-api-con-la-heuristica-poised/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/probar-una-api-con-la-heuristica-poised/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/probar-una-api-con-la-heuristica-poised/"><meta property="og:type" content="article"><meta property="og:title" content="Probar una API con la heurística POISED - Federico Toledo"><meta property="og:description" content="Post escrito por Marcos Pérez de Abstracta, contando su experiencia al probar una API utilizando la heurística POISED"><meta property="og:url" content="https://federico-toledo.com/probar-una-api-con-la-heuristica-poised/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://ec2-54-193-104-198.us-west-1.compute.amazonaws.com/wp-content/uploads/2021/06/pexels-startup-stock-photos-7367-scaled.jpg"><meta property="article:published_time" content="2021-06-28T22:04:16.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Pular para o conteúdo</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/pt/" aria-label="Federico Toledo, início">FT</a> <a class="header-title" href="/pt/">fltoledo</a> <form class="header-search" role="search" action="/pt/busca/" method="get"> <label class="visually-hidden" for="header-q">Buscar no site</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Português"> PT <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/probar-una-api-con-la-heuristica-poised/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/probar-una-api-con-la-heuristica-poised/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/probar-una-api-con-la-heuristica-poised/" lang="pt-BR" hreflang="pt-BR" aria-current="true"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/pt/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/pt/palestras/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Palestras <span class="counter">247</span> </a><a href="/pt/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Arquivo <span class="counter">423</span> </a><a href="/pt/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/pt/publicacoes/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicações  </a><a href="/pt/sobre-mim/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> Sobre mim  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Localização"> <a href="/pt/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/pt/category/blog/">arquivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">probar-una-api-con-la-heuristica-poised</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2021-06-28" data-pagefind-sort="fecha:2021-06-28"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado em <time datetime="2021-06-28T22:04:16.000Z">28 de junho de 2021</time> </span> </p>  </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este post faz parte do arquivo.</strong> Publiquei em 2021, em espanhol, e não mantenho mais este blog: pode estar desatualizado.  <a href="/pt/category/blog/">Ver o arquivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Probar una API con la heurística POISED</h1> <p>En este artículo les comparto algo escrito por Marcos Pérez de <a href="http://abstracta.us">Abstracta</a>, contando su experiencia al probar una API de forma “manual” utilizando la heurística POISED explicada en el <a href="https://testautomationu.applitools.com/exploring-service-apis-through-test-automation/">curso “Exploring Service APIs Through Test Automation”</a> de Test Automation University por <a href="https://www.linkedin.com/in/amber-race-tests/">Amber Race</a>. </p>
+<hr>
+<p>Si bien el curso está enfocado en <a href="/pt/api-testing-con-postman-y-soapui/">automatización de pruebas a nivel de API</a>,  en mi caso, resultó de gran utilidad para probar una API con foco en su funcionalidad, de manera “manual”/exploratoria, por lo que recomiendo realizar el curso dado que además de explicar en detalle la heurística propuesta (uno de los objetivos de este post) se explican conceptos sobre API testing, se mencionan herramientas para pruebas, entre otras cosas.</p>
+<h2 id="heurística-poised-para-api-testing">Heurística POISED para API testing</h2>
+<p>En mi caso utilizaba la heurística POISED como checklist al momento de diseñar los casos de prueba sobre determinada API. Se tornaba realmente útil cuando surgía la pregunta “¿estoy cubriendo todos los aspectos importantes de la API?”</p>
+<p>Siguiendo dicha heurística se cubren varios aspectos interesantes a probar como lo son:</p>
+<ol>
+<li><strong>P</strong>arameters (Parámetros): considerar todos los parámetros pasados ​​a la API.</li>
+<li><strong>O</strong>utput (Salidas): validar las salidas adecuadas para parámetros válidos e inválidos.</li>
+<li><strong>I</strong>nteroperability (Interoperabilidad): verificar la coherencia con otras API.</li>
+<li><strong>S</strong>ecurity (Seguridad): verificar el mantenimiento del acceso y la autorización para las llamadas a la API.</li>
+<li><strong>E</strong>xceptions (Excepciones): verificar que se informen los errores de forma clara y precisa.</li>
+<li><strong>D</strong>ata (Datos): verificar que se manejen las estructuras de datos y los datos reales correctamente y en el tiempo adecuado.</li>
+</ol>
+<h2 id="operación-para-ejemplificar">Operación para ejemplificar</h2>
+<p>Para explicar punto a punto la heurística y mostrar algunos ejemplos vamos a considerar una operación POST simple sobre determinado endpoint que se encargaría de crear una persona o usuario en la base de datos, a partir de los valores enviados en el body del mensaje con datos básicos de una persona o usuario de un sistema:</p>
+<p>{
+“firstname” : “XXX”,  (alfanumérico de largo 10)
+“lastname” : “YYY”,  (alfanumérico de largo 10)
+“age” : ZZ  (solo números enteros de largo 2)
+}</p>
+<h2 id="1--parámetros">1- Parámetros</h2>
+<p>A continuación un ejemplo de una invocación incluyendo los valores a enviar en los parámetros:</p>
+<p>{
+“firstname” : “Juan”,
+“lastname” : “Pérez”,
+“age” : 30
+}</p>
+<p>Cuando hablamos de <strong>parámetros</strong> válidos o inválidos nos referimos en este caso a los parámetros “firstname”, “lastname” y “age” utilizando valores válidos (los valores en el ejemplo) o valores inválidos como podrían llegar a ser (dependiendo del comportamiento de cada API) valores vacíos, caracteres especiales, espacios en blanco, valores “null”, no enviar determinado parámetro, tipos de datos no soportados, entre otros. Aquí un ejemplo:</p>
+<p>{
+“firstname” : “ ”,
+“lastname” : “lastname”,
+“age” : “string”
+}</p>
+<p>Es importante considerar el criterio de “no solapamiento de errores”, tal como Federico <a href="/pt/libro-de-testing-introduccion-a-las-pruebas-de-sistemas-de-informacion/">lo explica en su libro</a>. También aplicar las técnicas típicas de caja negra, como clases de equivalencia y valores límite, y técnicas de combinación de datos como pairwise. </p>
+<h2 id="2--salidas">2- Salidas</h2>
+<p>El siguiente aspecto a considerar son las <strong>salidas</strong> de una operación, esto incluye el status o códigos de respuesta http, el body o cuerpo de salida, headers devueltos, etc.</p>
+<p>Siguiendo con el ejemplo planteado, la idea es que dependiendo de si la persona es mayor de edad (mayor o igual a 18) o menor (menor a 18) se obtengan distintas respuestas en la operación. En este caso estaríamos enviando datos de una persona mayor de edad:</p>
+<p>{
+“firstname” : “Juan”,
+“lastname” : “Pérez”,
+“age” : 30
+}</p>
+<p>Supongamos que la respuesta fue la siguiente:</p>
+<p>Status: 
+200 OK
+Body:
+“La persona creada es mayor de edad.”</p>
+<p>Mientras que si lo que enviamos son datos de una persona menor de edad por ejemplo:</p>
+<p>{
+“firstname” : “Juan”,
+“lastname” : “Pérez”,
+“age” : 15
+}</p>
+<p>Podriamos obtener una salida distinta a la anterior:</p>
+<p>Status: 
+200 OK
+Body:
+“La persona creada es menor de edad.”</p>
+<p><strong>Códigos de estatus http más comunes:</strong></p>
+<ul>
+<li>200: OK</li>
+<li>3xx: redirección
+<ul>
+<li>301: Permanent Redirect</li>
+<li>302: Temporary Redirect</li>
+</ul>
+</li>
+<li>4xx: error del lado del usuario (del que invoca)
+<ul>
+<li>403: Forbidden</li>
+<li>404: Not Found</li>
+</ul>
+</li>
+<li>5xx: error del lado del servidor
+<ul>
+<li>500: Internal Server Error</li>
+<li>503: Service Unavailable</li>
+</ul>
+</li>
+</ul>
+<p>Además de pensar en los códigos de respuesta de salida, es posible aplicar las técnicas de clases de equivalencia y valores límite sobre las variables de salida (esto complementa el punto anterior donde dijimos de aplicarla sobre las variables de entrada). </p>
+<h2 id="3--interoperabilidad">3- Interoperabilidad</h2>
+<p>El tercer aspecto a considerar según la heurística POISED es el de <strong>interoperabilidad</strong>.</p>
+<blockquote>
+<p><em>Según Wikipedia, la IEEE define</em> <a href="https://es.wikipedia.org/wiki/Interoperabilidad"><em>interoperabilidad</em></a> <em>como la habilidad de dos o más sistemas o componentes para intercambiar información y utilizar la información intercambiada.</em></p>
+</blockquote>
+<p>En este caso lo que se intenta probar es que la interacción entre distintas operaciones o APIs funcione como se espera.</p>
+<p>En el ejemplo de crear una persona o usuario se tenía el parámetro “age”, si dicho parámetro en la operación de crear (POST) solo acepta enteros de largo 2 (por ejemplo “20”) se esperaría que al consultar el usuario con otra API, el parámetro “age” también admita solo números enteros de largo 2, en caso contrario, si admite un string (por ejemplo “veinte”) estaríamos en presencia de un potencial problema de interoperabilidad. Es importante que si detectamos estos tipos de comportamientos comuniquemos al equipo y consultemos si el mismo es el deseado y en caso caso afirmativo asegurar que la API esté bien documentada, especificando los tipos de datos de cada parámetro o campo y evitarle problemas de interoperabilidad a quienes quieran hacer uso de nuestra API.</p>
+<h2 id="4--seguridad">4- Seguridad</h2>
+<p>Otro aspecto a considerar según la heurística es la <strong>seguridad</strong> de nuestra operación, lo cual implica una enormidad de desafíos. Por ejemplo, esto puede incluir autenticación o aspectos de seguridad en los parámetros, como por ejemplo verificar el comportamiento enviando scripts como valores:</p>
+<p>{
+“firstname” : “<script>alert(\“test1\”)</script>”,
+“lastname” : “Pérez”,
+“age” : 30
+}</p>
+<p>Si al ejecutar la consulta de este registro obtenemos ese valor, podríamos tener una posible vulnerabilidad. Una forma de verlo es si convertimos la respuesta html, se puede observar que se ejecuta el script ingresado dentro del parámetro “firstname” (esto daría lugar a ciertas vulnerabilidades):</p>
+<figure class="aligncenter size-large is-resized"><img src="/wp-content/uploads/2021/06/image1-1024x338.png" alt="" class="wp-image-3113" width="425" height="140"></figure>
+<p>En mi opinión es importante tener un set de pruebas básicas sobre seguridad en los datos más allá de tener o no pruebas específicas sobre la seguridad de la API realizadas por especialistas en ese rubro.</p>
+<h2 id="5--excepciones">5- Excepciones</h2>
+<p>El siguiente aspecto según la heurística es sobre el manejo de los <strong>errores</strong> por parte de la API, lo cual incluye tanto el código de respuesta http como un mensaje informando el error si corresponde. Continuando con el ejemplo planteado y suponiendo que el campo “firstname” es obligatorio, al enviar el siguiente cuerpo (sin enviar el parámetro “firstname”):</p>
+<p>{
+“lastname” : “Pérez”,
+“age” : 30
+}</p>
+<p>Se esperaría que devuelva un código de respuesta “400 Bad Request” con un mensaje informando el error, por ejemplo: <em>“Error, No se envió campo ‘firstname’”.</em>  Si por el contrario observamos que devuelve un código de respuesta incorrecto, como podría llegar a ser “500 Internal Server Error” (lo que indicaría que el servidor no fue capaz de procesar la invocación y se produjo un error no controlado), o peor, “200 OK”, o un mensaje de error incorrecto (por ejemplo un mensaje vacío) estaríamos frente a un error de manejo de errores por parte de la API.</p>
+<h2 id="6--datos">6- Datos</h2>
+<p>Por último pero no menos importante, se deberían probar aspectos relacionados a los <strong>datos,</strong> entre ellos la persistencia para el caso que corresponda. Siguiendo con el ejemplo anterior si creamos una persona o usuario con los siguientes datos:</p>
+<p>{
+“firstname” : “Juan”,
+“lastname” : “Pérez”,
+“age” : 30
+}</p>
+<p>Si existiese una operación de consulta de personas o usuarios dentro de la API (sería una operación GET) deberíamos verificar que se devuelvan los datos tal cual los ingresamos, en este caso los campos “firstname” con el valor “Juan”, “lastname” con valor “Pérez” y por último “age” con el valor “30”. Aquí también podemos aplicar nuestras típicas técnicas de testing para determinar datos de prueba interesantes, como por ejemplo clases de equivalencia y <a href="/pt/pairwise-testing/">combinación por pares</a>, o ya que estamos hablando de bases de datos, aplicaría usar la técnica CRUD. </p>
+<h2 id="conclusión">Conclusión</h2>
+<p>Dada la experiencia obtenida tras el uso de la heurística tanto para la creación de casos de pruebas como la ejecución de las mismas, puedo decir que me resultó muy útil, incluso para la ejecución de pruebas exploratorias llegando a verificar varios puntos en conjunto.</p>
+<p>La heurística podría llegar a servir de alguna manera para estandarizar dentro de un equipo de varios testers la forma de probar una API, manteniendo una estructura y enfoque. Da un modelo de referencia para tener en cuenta al pensar la cobertura que nos interesa alcanzar al probar una API. </p>
+<p>Existen otras formas muy interesantes de probar una API (incluso otras heurísticas, por ejemplo recomiendo leer sobre la heurística <a href="https://redesvanessa-eng.medium.com/call-darth-vader-to-help-you-test-the-apis-34965ba3d926">VADER</a>). En definitiva, hay que lograr encontrar la forma de probar que sea más adecuada para tu equipo de trabajo o contexto de proyecto.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorias e tags"> <li> <a href="/pt/category/automation/">  Automation </a> </li><li> <a href="/pt/category/blog/">  Blog </a> </li><li> <a href="/pt/category/escritor-invitado/">  Escritor invitado </a> </li><li> <a href="/pt/category/testing/">  Testing </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Receba as novidades</h2><p class="muted">Um e-mail quando houver algo novo: chamadas de peer workshops, palestras e o que eu publicar. Cancele quando quiser.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Inscrevendo…" data-ok="Pronto! Se você receber um e-mail de confirmação, abra-o para concluir a inscrição." data-error="Não foi possível fazer a inscrição. Tente novamente em alguns minutos."><label for="subscribe-email-box" class="visually-hidden">Seu e-mail</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Seu e-mail"><button class="btn btn-cta" type="submit">Inscrever-me</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador e Chief Quality Officer da <a href="https://abstracta.us/">Abstracta</a>. Site pessoal. </p> <ul> <li><a href="/pt/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Meu livro</a></li> <li><a href="/pt/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/pt/contato/">Contato</a></li> <li><a href="#newsletter">Inscrever-me</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

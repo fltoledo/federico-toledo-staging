@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LeanTesting: herramienta de gestión de pruebas - Federico Toledo</title><meta name="description" content="En este post, analizaremos la herramienta LeanTesting para la gestión de pruebas e incidentes, la cual es bien intuitiva y fácil de usar, tiene una modalidad gratuita como para considerarla sin tener que asumir costos. Este post fue iniciado por Patricia Lima, y luego lo terminamos con Sebastián Rodríguez. ¡Gracias a ambos por los aportes! […]"><link rel="canonical" href="https://federico-toledo.com/leantesting-herramienta-de-gestion-de-pruebas/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="pt_BR"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/leantesting-herramienta-de-gestion-de-pruebas/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/leantesting-herramienta-de-gestion-de-pruebas/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/leantesting-herramienta-de-gestion-de-pruebas/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/leantesting-herramienta-de-gestion-de-pruebas/"><meta property="og:type" content="article"><meta property="og:title" content="LeanTesting: herramienta de gestión de pruebas - Federico Toledo"><meta property="og:description" content="En este post, analizaremos la herramienta LeanTesting para la gestión de pruebas e incidentes, la cual es bien intuitiva y fácil de usar, tiene una modalidad gratuita como para considerarla sin tener que asumir costos. Este post fue iniciado por Patricia Lima, y luego lo terminamos con Sebastián Rodríguez. ¡Gracias a ambos por los aportes! […]"><meta property="og:url" content="https://federico-toledo.com/leantesting-herramienta-de-gestion-de-pruebas/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://ec2-54-193-104-198.us-west-1.compute.amazonaws.com/wp-content/uploads/2018/10/leantesting-8.png"><meta property="article:published_time" content="2018-10-18T19:24:02.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Pular para o conteúdo</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/pt/" aria-label="Federico Toledo, início">FT</a> <a class="header-title" href="/pt/">fltoledo</a> <form class="header-search" role="search" action="/pt/busca/" method="get"> <label class="visually-hidden" for="header-q">Buscar no site</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Português"> PT <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/leantesting-herramienta-de-gestion-de-pruebas/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/leantesting-herramienta-de-gestion-de-pruebas/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/leantesting-herramienta-de-gestion-de-pruebas/" lang="pt-BR" hreflang="pt-BR" aria-current="true"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/pt/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/pt/palestras/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Palestras <span class="counter">247</span> </a><a href="/pt/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Arquivo <span class="counter">423</span> </a><a href="/pt/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/pt/publicacoes/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicações  </a><a href="/pt/sobre-mim/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> Sobre mim  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Localização"> <a href="/pt/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/pt/category/blog/">arquivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">leantesting-herramienta-de-gestion-de-pruebas</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2018-10-18" data-pagefind-sort="fecha:2018-10-18"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado em <time datetime="2018-10-18T19:24:02.000Z">18 de outubro de 2018</time> </span> </p> <span class="muted">Editado em 10 de dezembro de 2019</span> </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este post faz parte do arquivo.</strong> Publiquei em 2018, em espanhol, e não mantenho mais este blog: pode estar desatualizado.  <a href="/pt/category/blog/">Ver o arquivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">LeanTesting: herramienta de gestión de pruebas</h1> <p>En este post, analizaremos la herramienta <a href="about:blank">LeanTesting</a> para la gestión de pruebas e incidentes, la cual es bien intuitiva y fácil de usar, tiene una modalidad gratuita como para considerarla sin tener que asumir costos.</p>
+<p>Este post fue iniciado por <a href="https://www.linkedin.com/in/patricia-lima-85278352/">Patricia Lima</a>, y luego lo terminamos con <a href="https://www.linkedin.com/in/sebasti%C3%A1n-rodr%C3%ADguez-bottero-9b095330/">Sebastián Rodríguez</a>. ¡Gracias a ambos por los aportes!</p>
+<hr>
+<figure class="wp-block-gallery columns-2 is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img width="572" height="480" src="/wp-content/uploads/2019/12/patricia-lima.png" alt="" data-id="2221" data-full-url="http://federico-toledo.com/wp-content/uploads/2019/12/patricia-lima.png" data-link="http://federico-toledo.com/leantesting-herramienta-de-gestion-de-pruebas/patricia-lima/" class="wp-image-2221"></figure></li><li class="blocks-gallery-item"><figure><img width="730" height="484" alt="" data-id="2222" data-full-url="http://federico-toledo.com/wp-content/uploads/2019/12/sebastian-rodriguez.png" data-link="http://federico-toledo.com/leantesting-herramienta-de-gestion-de-pruebas/sebastian-rodriguez/" class="wp-image-2222 lazyload" src="/wp-content/uploads/2019/12/sebastian-rodriguez.png"></figure></li></ul></figure>
+<hr>
+<h2 id="overview">Overview</h2>
+<p>Se trata de una aplicación web, que ofrece la gestión de casos de prueba y de incidentes, con una variedad amplia de reportes.</p>
+<figure class="wp-block-image"><img width="1217" height="597" alt="" class="wp-image-1691 lazyload" src="/wp-content/uploads/2018/10/leantesting.png"></figure>
+<h2 id="primeros-pasos-con-leantesting">Primeros pasos con LeanTesting</h2>
+<p>El primer paso que solicita la app LeanTesting, es la creación de una cuenta. Ésta se efectúa simplemente contando con una dirección de correo electrónico, se activa yendo al link que llega a la casilla de correo ingresada.</p>
+<p>Ya con la cuenta creada, en el login, se invita a crear una Organización, y luego en pasos posteriores se crea Proyecto, Versión del mismo, y ofrece posibilidad de invitar a Usuarios Internos y/o Usuarios Externos.</p>
+<p>Al Finalizar esta etapa se ingresa al Overview de todo el proyecto, en el cual se puede visualizar:</p>
+<ul>
+<li>Etapa en la que se encuentra cada bug, a nivel de cantidad y porcentaje.</li>
+<li>Número de Bugs clasificados en función de severidad.</li>
+<li>Número de Bugs clasificados en función de prioridad.</li>
+<li>Se muestra un gráfico indicador de número de bugs reportados y bugs corregidos.</li>
+<li>Último caso de prueba ejecutado.</li>
+</ul>
+<figure class="wp-block-image"><img width="1361" height="654" alt="" class="wp-image-1692 lazyload" src="/wp-content/uploads/2018/10/leantesting-2.png"></figure>
+<p>En nuestras últimas pruebas en el mes de setiembre de 2018, este correo electrónico no estaba llegando y no pudimos conseguir que nos respondan por el problema.</p>
+<h2 id="gestión-de-casos-de-prueba">Gestión de Casos de Prueba</h2>
+<p>En los <strong>Test suite</strong> se crean, organizan y ejecutan los casos de prueba de cada proyecto.</p>
+<p>La creación de <strong>casos de prueba</strong> es bien intuitiva, donde se pueden registrar los siguientes datos:</p>
+<ul>
+<li>Precondiciones</li>
+<li>Pasos a ejecutar</li>
+<li>Resultado esperado</li>
+<li>Prioridad</li>
+<li>Tiempo estimado de ejecución</li>
+<li>Archivos adjuntos (vídeos e imágenes)</li>
+</ul>
+<p>Los resultados posibles para la ejecución de un caso de prueba son: <em>Pass, Fail, Could no test, Not applicable</em>. Permite reportar bugs en simultáneo con la ejecución del caso, es decir, luego que se crea el bug y se cierra la ventana, se continúa en la ventana de ejecución del caso de prueba con el que se estaba trabajando.<br>
+La herramienta permite seleccionar el dispositivo utilizado en la ejecución, a partir de un combo con opciones de distintos modelos y sistemas operativos. Lamentablemente no se pueden agregar nuevos modelos de dispositivos ni nuevas versiones de OS, y la herramienta parece haber quedado desactualizada en este sentido.</p>
+<figure class="wp-block-image"><img width="992" height="399" alt="" class="wp-image-1693 lazyload" src="/wp-content/uploads/2018/10/leantesting-3.png"></figure>
+<figure class="wp-block-image"><img width="988" height="408" alt="" class="wp-image-1694 lazyload" src="/wp-content/uploads/2018/10/leantesting-4.png"></figure>
+<h2 id="gestión-de-incidentes">Gestión de Incidentes</h2>
+<p>La herramienta ofrece la funcionalidad de <strong>Bug Tracking</strong>, pudiendo crear los incidentes, listar aplicando filtros, exportar a csv, editar, mover a otro proyecto, entre otros.</p>
+<p>El detalle que se puede visualizar para cada bug incluye:</p>
+<ul>
+<li>Nombre</li>
+<li>Tipo (si se definió alguno)</li>
+<li>Versión</li>
+<li>Componente que integra</li>
+<li>Estado</li>
+<li>Severidad</li>
+<li>Prioridad</li>
+<li>Frecuencia con la que ocurre</li>
+<li>Imágenes y videos adjuntos</li>
+<li>Usuario que reportó el bug</li>
+<li>Usuario que está asignado el bug</li>
+<li>Fecha y hora de creación</li>
+</ul>
+<figure class="wp-block-image"><img width="1348" height="538" alt="" class="wp-image-1695 lazyload" src="/wp-content/uploads/2018/10/leantesting-5.png"></figure>
+<h2 id="métricas-y-seguimiento-de-proyectos">Métricas y seguimiento de proyectos</h2>
+<p>La aplicación ofrece métricas relacionadas a los incidentes y casos de prueba.</p>
+<h3 id="métricas-relacionadas-con-bugs-reportados">Métricas relacionadas con bugs reportados</h3>
+<p>El <strong>overview</strong> ofrece:</p>
+<ol>
+<li>Detalle de número de bugs en función de la etapa en que se encuentra.</li>
+<li>Porcentaje de bugs en cada etapa.</li>
+<li>Número de bugs reportados según severidad.</li>
+<li>Número de bugs reportados según prioridad.</li>
+<li>Gráfico en el que se muestra número de bugs reportados y número de bugs cerrados, en función de la fecha.</li>
+</ol>
+<figure class="wp-block-image"><img width="1365" height="662" alt="" class="wp-image-1696 lazyload" src="/wp-content/uploads/2018/10/leantesting-6.png"></figure>
+<h3 id="métricas-relacionadas-con-casos-de-prueba">Métricas relacionadas con casos de prueba</h3>
+<p>El <strong>overview</strong> ofrece:</p>
+<ol>
+<li>Visualización de los últimos cuatro casos de prueba ejecutados.</li>
+<li>Número de bugs reportados relacionados a los últimos cuatro casos de prueba ejecutados.</li>
+<li>Fecha de ejecución de los últimos cuatro casos de prueba ejecutados.</li>
+<li>Resultados de las ejecuciones de los últimos cuatro casos de prueba ejecutados, a nivel de porcentajes.</li>
+</ol>
+<figure class="wp-block-image"><img width="1240" height="610" alt="" class="wp-image-1697 lazyload" src="/wp-content/uploads/2018/10/leantesting-7.png"></figure>
+<p>Además,a nivel de <strong>test suite</strong> ofrece:</p>
+<ul>
+<li>Resumen con usuario y fecha de creación de test suite, y última modificación.</li>
+<li>Resumen con cantidad de carpetas dentro de la test suite y números de casos de prueba.</li>
+<li>Resultado de los últimos 3 casos de prueba ejecutados.</li>
+<li>Listado de la totalidad de casos de prueba.</li>
+<li>Cantidad de bugs asociados a los casos de prueba ejecutados, en función de severidad.</li>
+<li>Fecha de ejecución de cada caso de prueba ejecutado.</li>
+<li>Si el caso de prueba no está ejecutado, se muestra como “pendiente”.</li>
+<li>Resultado de cada ejecución.</li>
+<li>Porcentaje “pendiente” de ejecución de cada caso.</li>
+</ul>
+<figure class="wp-block-image"><img width="1220" height="661" alt="" class="wp-image-1698 lazyload" src="/wp-content/uploads/2018/10/leantesting-8.png"></figure>
+<h2 id="cierre-opiniones-de-leantesting">Cierre: Opiniones de LeanTesting</h2>
+<p>Para cerrar compartimos algunas opiniones de estas pruebas que realizamos:</p>
+<p><strong>Ventaja</strong>: La herramienta parece muy simple de usar y con una interfaz muy intuitiva. Mucho más amigable para el usuario que <a href="/pt/alternativas-testlink-redmine-redcase/">TestLink</a> y Mantis.</p>
+<p><strong>Desventaja</strong>: Lamentablemente, <strong>parece que la herramienta ya no tiene más mantenimiento</strong>,</p>
+<ol>
+<li>Cuando se quiere reportar un nuevo Bug, dentro de “Platform details”, las listas de modelos y sistemas operativos están desactualizadas. Revisando las listas, pude comprobar que no son actualizadas desde el 2016. La herramienta no permite agregar modelos y sistemas operativos nuevos, solo se pueden utilizar los que están las listas.</li>
+<li>No hay nadie que dé respuesta por las consultas hechas.</li>
+<li>No está funcionando la validación del email para activar la cuenta.</li>
+<li>En su página de Twitter (<strong>@damnbugs</strong>) no hay actividad desde abril de este año. No responden tampoco a los mensajes directos.</li>
+<li>La extensión para Google Chrome no se encuentra más en la Web Store.</li>
+<li>La extensión de Firefox no funciona en las versiones más nuevas del navegador y su última actualización fue hace dos años.</li>
+</ol>
+<p>En conclusión, si bien me había hecho ilusiones de que LeanTesting podía ser un sustituto a TestLink, el panorama al día de hoy no es muy alentador.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorias e tags"> <li> <a href="/pt/category/blog/">  Blog </a> </li><li> <a href="/pt/category/escritor-invitado/">  Escritor invitado </a> </li><li> <a href="/pt/category/testing/">  Testing </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Receba as novidades</h2><p class="muted">Um e-mail quando houver algo novo: chamadas de peer workshops, palestras e o que eu publicar. Cancele quando quiser.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Inscrevendo…" data-ok="Pronto! Se você receber um e-mail de confirmação, abra-o para concluir a inscrição." data-error="Não foi possível fazer a inscrição. Tente novamente em alguns minutos."><label for="subscribe-email-box" class="visually-hidden">Seu e-mail</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Seu e-mail"><button class="btn btn-cta" type="submit">Inscrever-me</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador e Chief Quality Officer da <a href="https://abstracta.us/">Abstracta</a>. Site pessoal. </p> <ul> <li><a href="/pt/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Meu livro</a></li> <li><a href="/pt/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/pt/contato/">Contato</a></li> <li><a href="#newsletter">Inscrever-me</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>

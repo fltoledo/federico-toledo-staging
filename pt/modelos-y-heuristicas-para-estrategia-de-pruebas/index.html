@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="pt-BR"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Modelos y heurísticas para estrategia de pruebas - Federico Toledo</title><meta name="description" content="Veremos distintos modelos y heurísticas (algunos son mindmaps, otros son otras representaciones) para definir una estrategia de pruebas."><link rel="canonical" href="https://federico-toledo.com/modelos-y-heuristicas-para-estrategia-de-pruebas/"><meta name="robots" content="noindex"><link rel="icon" href="/favicon.png"><link rel="alternate" type="application/rss+xml" title="Federico Toledo" href="/rss.xml"><link rel="sitemap" href="/sitemap-index.xml"><meta property="og:locale" content="pt_BR"><link rel="alternate" hreflang="es" href="https://federico-toledo.com/modelos-y-heuristicas-para-estrategia-de-pruebas/"><link rel="alternate" hreflang="en" href="https://federico-toledo.com/en/modelos-y-heuristicas-para-estrategia-de-pruebas/"><link rel="alternate" hreflang="pt-BR" href="https://federico-toledo.com/pt/modelos-y-heuristicas-para-estrategia-de-pruebas/"><link rel="alternate" hreflang="x-default" href="https://federico-toledo.com/modelos-y-heuristicas-para-estrategia-de-pruebas/"><meta property="og:type" content="article"><meta property="og:title" content="Modelos y heurísticas para estrategia de pruebas - Federico Toledo"><meta property="og:description" content="Veremos distintos modelos y heurísticas (algunos son mindmaps, otros son otras representaciones) para definir una estrategia de pruebas."><meta property="og:url" content="https://federico-toledo.com/modelos-y-heuristicas-para-estrategia-de-pruebas/"><meta property="og:site_name" content="Federico Toledo"><meta property="og:image" content="https://federico-toledo.com/wp-content/uploads/2017/09/htsm.png"><meta property="article:published_time" content="2017-09-07T13:36:46.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fltoledo"><meta name="twitter:creator" content="@fltoledo"><link rel="stylesheet" href="/_astro/_pw_.B6-UfvqX.css"></head> <body> <a class="skip" href="#main">Pular para o conteúdo</a> <div class="staging-banner" role="note" data-pagefind-ignore> <strong>Staging</strong> · branch <code>main</code>  · <a href="https://github.com/fltoledo/federico-toledo.com/commit/03689bd45275445e720deaba835b01c151826e12">03689bd</a>  
+· no es el sitio publicado. <a href="https://federico-toledo.com/">Ir a federico-toledo.com</a> </div> <header class="site-header"> <div class="header-row"> <a class="logo" href="/pt/" aria-label="Federico Toledo, início">FT</a> <a class="header-title" href="/pt/">fltoledo</a> <form class="header-search" role="search" action="/pt/busca/" method="get"> <label class="visually-hidden" for="header-q">Buscar no site</label> <input id="header-q" type="search" name="q" placeholder="Buscar…" autocomplete="off"> <kbd aria-hidden="true">/</kbd> </form> <details class="lang-menu"> <summary aria-label="Idioma: Português"> PT <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="m4.4 6 3.6 3.6L11.6 6l.9.9L8 11.4 3.5 6.9z" fill="currentColor"></path></svg> </summary> <ul> <li> <a href="/modelos-y-heuristicas-para-estrategia-de-pruebas/" lang="es" hreflang="es"> Español </a> </li><li> <a href="/en/modelos-y-heuristicas-para-estrategia-de-pruebas/" lang="en" hreflang="en"> English </a> </li><li> <a href="/pt/modelos-y-heuristicas-para-estrategia-de-pruebas/" lang="pt-BR" hreflang="pt-BR" aria-current="true"> Português </a> </li> </ul> </details> <div class="header-cta"> <a class="btn btn-cta" href="https://abstracta.us/">Abstracta ↗</a> </div> </div> </header> <nav class="profile-tabs" aria-label="Principal"> <div class="profile-tabs-inner"> <a href="/pt/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75A.75.75 0 0 1 .75 2h4.5c1.1 0 2.1.5 2.75 1.3A3.5 3.5 0 0 1 10.75 2h4.5a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.6a2.3 2.3 0 0 0-1.9 1l-.1.1a.75.75 0 0 1-1.3 0l-.1-.1a2.3 2.3 0 0 0-1.9-1H.75A.75.75 0 0 1 0 13.25zm7.25 2.5c0-1-.8-1.75-1.75-1.75H1.5v9h3.85c.7 0 1.3.2 1.9.5zm1.5 7.75c.6-.3 1.2-.5 1.9-.5h3.85v-9h-4c-1 0-1.75.8-1.75 1.75z" fill="currentColor"></path> </svg> Overview  </a><a href="/pt/palestras/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5v4a2.5 2.5 0 0 1-5 0v-4A2.5 2.5 0 0 1 8 1zm-4.25 6a.75.75 0 0 1 .75.75 3.5 3.5 0 0 0 7 0 .75.75 0 0 1 1.5 0 5 5 0 0 1-4.25 4.94V14h2a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1 0-1.5h2v-1.31A5 5 0 0 1 3 7.75.75.75 0 0 1 3.75 7z" fill="currentColor"></path> </svg> Palestras <span class="counter">247</span> </a><a href="/pt/category/blog/" aria-current="page"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M0 2.75C0 1.8.8 1 1.75 1h12.5c1 0 1.75.8 1.75 1.75v1.5c0 .65-.36 1.2-.9 1.5v7.5c0 .97-.78 1.75-1.75 1.75H2.65c-.97 0-1.75-.78-1.75-1.75v-7.5A1.75 1.75 0 0 1 0 4.25zm2.4 3.25v7.25c0 .14.11.25.25.25h10.7c.14 0 .25-.11.25-.25V6zM1.75 2.5a.25.25 0 0 0-.25.25v1.5c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25v-1.5a.25.25 0 0 0-.25-.25zM6 8.25A.75.75 0 0 1 6.75 7.5h2.5a.75.75 0 0 1 0 1.5h-2.5A.75.75 0 0 1 6 8.25z" fill="currentColor"></path> </svg> Arquivo <span class="counter">423</span> </a><a href="/pt/peer-workshops/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M5.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM2 13c0-2.2 1.6-3.8 3.5-3.8S9 10.8 9 13v.5H2zm8.2-8.8a1.7 1.7 0 1 1 0 3.4 1.7 1.7 0 0 1 0-3.4zM10 13c0-1.3-.4-2.4-1-3.2.4-.2.8-.3 1.2-.3 1.6 0 2.8 1.3 2.8 3.2v.8h-3z" fill="currentColor"></path> </svg> Peer workshops  </a><a href="/pt/publicacoes/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M2 1.75C2 .78 2.78 0 3.75 0h8.5C13.22 0 14 .78 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25zm1.75-.25a.25.25 0 0 0-.25.25v12.5c0 .14.11.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25zM5 4.5h6V6H5zm0 3h6V9H5zm0 3h4V12H5z" fill="currentColor"></path> </svg> Publicações  </a><a href="/pt/sobre-mim/"> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M8 1.5a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM3.5 14.25c0-2.5 2-4.25 4.5-4.25s4.5 1.75 4.5 4.25v.25h-9z" fill="currentColor"></path> </svg> Sobre mim  </a> </div> </nav>  <main id="main" class="file-layout"> <nav class="breadcrumb" aria-label="Localização"> <a href="/pt/">fltoledo</a> <span aria-hidden="true">/</span>  <a href="/pt/category/blog/">arquivo</a> <span aria-hidden="true">/</span>  <span aria-current="page">modelos-y-heuristicas-para-estrategia-de-pruebas</span> </nav>  <article class="box" data-pagefind-filter="tipo:Archivo" data-pagefind-meta="fecha:2017-09-07" data-pagefind-sort="fecha:2017-09-07"> <header class="box-header" data-pagefind-ignore> <p class="commit-bar"> <img src="/_astro/retrato.Ci8fP4WU_1ap35w.webp" srcset="/_astro/retrato.Ci8fP4WU_Z1CCT9t.webp 40w" alt="Federico Toledo" sizes="20px" loading="lazy" style="aspect-ratio: 1 / 1" decoding="async" fetchpriority="auto" width="1086" height="1086" class="foto avatar"> <strong>Federico Toledo</strong> <span> publicado em <time datetime="2017-09-07T13:36:46.000Z">7 de setembro de 2017</time> </span> </p> <span class="muted">Editado em 10 de dezembro de 2019</span> </header> <div class="archived-banner" role="note" data-pagefind-ignore> <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"> <path d="M1.5 2h13l.5.5v3l-.5.5H14v7.5l-.5.5h-11l-.5-.5V6h-.5L1 5.5v-3zM3 6v7h10V6zm-1-1h12V3H2zm4 2.5h4V9H6z" fill="currentColor"></path> </svg> <p> <strong>Este post faz parte do arquivo.</strong> Publiquei em 2017, em espanhol, e não mantenho mais este blog: pode estar desatualizado.  <a href="/pt/category/blog/">Ver o arquivo</a> </p> </div> <div class="file-body markdown" lang="es"> <h1 class="file-title" data-pagefind-meta="title">Modelos y heurísticas para estrategia de pruebas</h1> <p>Siguiendo con el post que hablaba sobre <a href="/pt/mindmaps-para-testing/">cómo usar mindmaps para testing</a>, en este veremos distintos modelos y heurísticas (algunos son mindmaps, otros son otras representaciones) para definir una estrategia de pruebas.</p>
+<p>Mientras leía su resumen, también veía una asociación directa con lo que hacemos cada vez que preparamos una <strong>propuesta de trabajo para un posible cliente</strong>. Una vez que esta propuesta es aceptada, es fundamental que todo este modelo sea comprendido a la perfección por el equipo que finalmente se hará cargo del proyecto de pruebas (no siempre sucede que el que prepara la propuesta es el mismo que ejecuta el proyecto, por temas de tiempos y procesos de venta, etc.).</p>
+<h2 id="the-heuristic-test-strategy-model">The Heuristic Test Strategy Model</h2>
+<p>Este modelo fue propuesto por James Bach <a href="http://www.satisfice.com/tools/htsm.pdf">acá</a>, y acá veremos una aproximación al mismo. Este modelo consiste en un conjunto de elementos para diseñar una estrategia de pruebas, la cual puede ser representada con mindmaps para facilitar su visibilidad y entendimiento. El propósito inmediato de este modelo es recordar a los tester sobre qué enfocarse cuando se crean pruebas. La siguiente imagen representa la vista más global:</p>
+<figure class="aligncenter"><img width="300" height="192" src="/wp-content/uploads/2017/09/htsm-300x192.png" alt="" class="wp-image-836"></figure>
+<p>Este modelo tiene una serie de elementos a tener en cuenta cuando se realiza:</p>
+<ul>
+<li><strong>El entorno del proyecto:</strong> incluye recursos, restricciones y otros elementos del proyecto que pueden permitir o dificultar nuestras pruebas. A veces un tester debe desafiar las restricciones, y a veces aceptarlas.</li>
+<li><strong>Elementos del producto:</strong> son las cosas que uno tiene la intención de probar. El software es complejo e invisible, hay que tener cuidado de cubrir todo lo que importa, no sólo las partes que son fáciles de ver.</li>
+<li><strong>Los criterios de calidad:</strong> son las reglas, valores y fuentes que permiten probar si el producto tiene problemas. Los criterios de calidad son multidimensionales y a menudo ocultos o contradictorios.</li>
+<li><strong>Las técnicas de test:</strong> son heurísticas para crear casos de pruebas que tienen como entrada los tres puntos anteriores (tal como se representa el la imagen). Todas las técnicas implican algún tipo de análisis del entorno del proyecto, los elementos del producto y los criterios de calidad.</li>
+<li><strong>La calidad percibida:</strong> es el resultado de las pruebas. Nunca se puede conocer la calidad “real” de un producto de software, pero a través de la aplicación de una variedad de pruebas, se puede hacer una evaluación informada de la misma.</li>
+</ul>
+<p>Iremos viendo cada punto con más detalle.</p>
+<h2 id="entorno-del-proyecto">Entorno del proyecto</h2>
+<p>Crear y ejecutar pruebas es el corazón del proyecto de pruebas. Sin embargo, hay muchos factores en el entorno del proyecto que son fundamentales para su decisión sobre qué pruebas concretas crear:</p>
+<ol>
+<li><strong>Misión</strong>: El propósito en este proyecto, tal como lo entiende el equipo y sus clientes.
+<ul>
+<li>¿Conocemos a los clientes, sus problemas, necesidades, lo que esperan del proyecto?</li>
+</ul>
+</li>
+<li><strong>Información</strong>: Información sobre el producto o proyecto que se necesita para las pruebas.
+<ul>
+<li>¿A quiénes podremos consultar? ¿hay documentos, estadísticas, información disponible?</li>
+</ul>
+</li>
+<li><strong>Relación con desarrolladores</strong>: ¿Cómo te llevas con los programadores?
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hubris">Hubris</a></li>
+<li>Defensivo</li>
+<li><a href="https://es.wikipedia.org/wiki/Rapport">Rapport</a></li>
+<li>Feedback loop</li>
+<li>Feedback</li>
+</ul>
+</li>
+<li><strong>Equipo de pruebas</strong>: Cualquier persona que realice o apoye las pruebas.
+<ul>
+<li>¿Quiénes estarán probando y qué skills tienen?</li>
+<li>¿Desde dónde estarán trabajando (juntos, remoto)?</li>
+<li>¿Alguien más estará ayudando o apoyando?</li>
+</ul>
+</li>
+<li><strong>Equipos y Herramientas</strong>: Hardware, software o documentos necesarios para administrar las pruebas.
+<ul>
+<li>Hardware y software.</li>
+<li>Herramientas, automatización.</li>
+<li>Matrices, checklists, algún lugar donde registrar las evidencias de pruebas o bugs.</li>
+</ul>
+</li>
+<li><strong>Agenda/plan</strong>: La secuencia, duración y sincronización de los eventos del proyecto.
+<ul>
+<li>¿Cuáles son los hitos que hay que cumplir? Debemos conocer si hay una fecha de entrega o puesta en producción.</li>
+<li>¿Cuándo está planificado contar con las distintas versiones del software a probar?</li>
+<li>¿Cuánto tiempo disponible tenemos para probar?</li>
+</ul>
+</li>
+<li><strong>Elementos de prueba</strong>: El producto a ensayar.
+<ul>
+<li>Definir el alcance, ¿qué se va a probar y qué no?</li>
+<li>Es necesario tener disponibilidad y acceso al sistema a probar (¿es un sistema web? ¿tenemos acceso remoto? ¿necesitamos VPN?)</li>
+<li>¿El producto está estable o está constantemente cambiando? En cualquier caso, ¿se considera re-test en el alcance? ¿cuántos ciclos?</li>
+<li>¿Qué tan fácil de probar es el producto?</li>
+</ul>
+</li>
+<li><strong>Entregables</strong>: Los productos observables del proyecto de prueba.
+<ul>
+<li>Definir el contenido y propósito de los reportes necesarios.</li>
+<li>¿Es necesario cumplir con algún estándar o norma?</li>
+<li>Además de reportes, ¿se reportarán los incidentes/evidencia de pruebas/etc., en alguna plataforma específica?</li>
+</ul>
+</li>
+</ol>
+<h2 id="elementos-del-producto">Elementos del producto</h2>
+<p>En este punto el modelo relevante es el de la heurística <a href="http://www.satisfice.com/tools/htsm.pdf#page=4">SFDIPOT</a> (Structure, Functions, Data, Interfaces, Platform, Operations, Time, <a href="http://www.developsense.com/blog/2014/07/how-models-change/">según la última actualización</a>) de <a href="https://twitter.com/jamesmarcusbach">James Bach</a> y <a href="/pt/software-testing-guru-michael-bolton/">Michel Bolton</a>. Este modelo es una especie de inventario de aspectos del producto a tener en cuenta cuando pensamos en qué probar.</p>
+<p>Los productos tienen muchas dimensiones, por lo tanto, para probar bien debemos examinar esas dimensiones. Los testers que se centren en sólo en algunas de estas dimensiones o elementos son propensos a perder errores importantes.</p>
+<ol>
+<li><strong>Estructura</strong>: Todo lo que comprende el producto físico.</li>
+<li><strong>Función</strong>: Todo lo que hace el producto, sus funcionalidades.</li>
+<li><strong>Datos</strong>: Todo lo que el producto procesa.</li>
+<li><strong>Interfaces</strong>: Cada conducto por el cual se accede o se expresa el producto.</li>
+<li><strong>Plataforma</strong>: Todo de lo que depende el producto (y que está fuera del proyecto).</li>
+<li><strong>Operaciones</strong>: Cómo se utilizará el producto.</li>
+<li><strong>Tiempo</strong>: Cualquier relación entre el producto y el tiempo.</li>
+</ol>
+<p><a href="http://automation-beyond.com/2015/02/04/sfdipot-mindmap/">Este mindmap</a> está excelente, porque refina estos elementos y alimenta con muchas ideas para pensar qué aspectos probar de un sistema:</p>
+<figure class="aligncenter"><img width="925" height="1024" alt="" class="wp-image-837 lazyload" src="/wp-content/uploads/2017/09/SFDiPOT-925x1024.png"></figure>
+<h2 id="técnicas-generales-de-prueba">Técnicas generales de prueba</h2>
+<p>Por “técnica general” queremos decir que la técnica es lo suficientemente simple y universal como para aplicarla a una amplia variedad de contextos. Muchas técnicas específicas se basan en uno o más de estos nueve aspectos:</p>
+<ol>
+<li><strong>Pruebas de funcionamiento</strong>: Prueba de lo que puede hacer.</li>
+<li><strong>Pruebas de afirmaciones</strong>: Desafía todas las afirmaciones sobre el producto, ya sea su manual, certificaciones, indicaciones que cumple con determinado SLA, etc.</li>
+<li><strong>Pruebas de dominios</strong>: Dividir y conquistar los datos.</li>
+<li><strong>Pruebas de usuario</strong>: Involucrar a los usuarios.</li>
+<li><strong>Pruebas de estrés</strong>: Abrumar el producto.</li>
+<li><strong>Pruebas de riesgo</strong>: Imagina un problema, luego buscalo.</li>
+<li><strong>Pruebas de flujo</strong>: Hacer una cosa después de otra, pensando los distintos flujos que pueden haber (por ejemplo, pensando en la máquina de estados que representa el comportamiento del sistema).</li>
+<li><strong>Comprobación automática</strong>: Comprobar un millón de hechos diferentes, apoyándose en herramientas.</li>
+<li><strong>Prueba de escenario</strong>: Prueba de situaciones posibles a las que estará expuesto el producto.</li>
+</ol>
+<h2 id="categorías-de-criterios-de-calidad">Categorías de Criterios de Calidad</h2>
+<p>Un criterio de calidad es un requisito que define lo que el producto debe ser. Al pensar en diferentes tipos de criterios, se estará en mejores condiciones para planificar las pruebas que descubren problemas importantes y de forma rápida.</p>
+<p>Esto hace un tiempo en <a href="http://abstracta.us">Abstracta</a> lo representamos en lo que le llamamos <a href="https://abstracta.us/software-testing/the-software-testing-wheel/">“the testing wheel”</a>, donde vinculamos los factores y atributos de calidad (según l<a href="http://iso25000.com/index.php/en/">a norma ISO 25.010, de calidad de producto de software</a>) con los distintos tipos de testing existentes.</p>
+<figure class="aligncenter is-resized"><img alt="" class="wp-image-838 lazyload" width="515" height="545" src="/wp-content/uploads/2017/09/Testing-Wheel-Design-rgb-967x1024.jpg"></figure>
+<p>Volviendo a lo referido por Bach, menciona estos:</p>
+<ol>
+<li><strong>Capacidad</strong>: ¿El producto puede realizar las funciones requeridas?</li>
+<li><strong>Confiabilidad</strong>: ¿Funcionará bien y resistirá fallas en todas las situaciones requeridas?</li>
+<li><strong>Usabilidad</strong>: ¿Qué tan fácil es para un usuario real utilizar el producto?</li>
+<li><strong>Carisma</strong>: ¿Qué tan atractivo es el producto?</li>
+<li><strong>Seguridad</strong>: ¿Qué tan bien está protegido el producto contra el uso no autorizado o la intrusión?</li>
+<li><strong>Escalabilidad</strong>: ¿Qué tan bien escala el producto? o sea, ¿sigue respondiendo adecuadamente cuando los requerimientos/usuarios concurrentes aumentan?</li>
+<li><strong>Compatibilidad</strong>: ¿Qué tan bien funciona con los componentes y configuraciones externos?</li>
+<li><strong>Desempeño</strong>: ¿Qué tan rápido es y qué tantos recursos consume?</li>
+<li><strong>Instalación</strong>: ¿Con qué facilidad puede instalarse en su(s) plataforma(s) de destino?</li>
+<li><strong>Desarrollo</strong>: ¿Qué tan bien podemos crear, probar y modificar?</li>
+</ol>
+<h2 id="cerrando">Cerrando</h2>
+<p>Este post también es parte de la investigación realizada por Emiliano Cruz, del equipo de <a href="http://abstracta.us/">Abstracta</a>, así que ¡gracias!</p>
+<hr>
+<figure class="aligncenter size-large is-resized"><img alt="" class="wp-image-2205 lazyload" width="271" height="228" src="/wp-content/uploads/2019/12/emiliano-cruz.png"></figure>
+<hr>
+<p>Me encantaría saber si a vos también te sirven estos modelos, si le agregarías o modificarías algo.</p> <footer class="file-topics" data-pagefind-ignore> <ul class="topics" aria-label="Categorias e tags"> <li> <a href="/pt/category/blog/">  Blog </a> </li><li> <a href="/pt/category/escritor-invitado/">  Escritor invitado </a> </li><li> <a href="/pt/category/mindmaps/">  Mindmaps </a> </li><li> <a href="/pt/category/testing/">  Testing </a> </li> </ul> </footer> </div> </article> </main>  <section class="subscribe" id="newsletter" aria-labelledby="newsletter-title" tabindex="-1"><div><h2 id="newsletter-title">Receba as novidades</h2><p class="muted">Um e-mail quando houver algo novo: chamadas de peer workshops, palestras e o que eu publicar. Cancele quando quiser.</p></div><form class="subscribe-form" action="https://app.kit.com/forms/10054775/subscriptions" method="post" data-sending="Inscrevendo…" data-ok="Pronto! Se você receber um e-mail de confirmação, abra-o para concluir a inscrição." data-error="Não foi possível fazer a inscrição. Tente novamente em alguns minutos."><label for="subscribe-email-box" class="visually-hidden">Seu e-mail</label><input id="subscribe-email-box" type="email" name="email_address" required autocomplete="email" placeholder="Seu e-mail"><button class="btn btn-cta" type="submit">Inscrever-me</button><p class="subscribe-status" role="status"></p></form></section><script type="module">document.querySelectorAll(".subscribe-form").forEach(t=>{if(t.dataset.ready)return;t.dataset.ready="1";const e=t.querySelector(".subscribe-status"),s=t.dataset;t.addEventListener("submit",async c=>{c.preventDefault(),e.className="subscribe-status",e.textContent=s.sending;let a;try{a=await fetch(t.action,{method:"POST",headers:{Accept:"application/json"},body:new FormData(t)})}catch{t.submit();return}const n=await a.json().catch(()=>null);a.ok&&n?.status==="success"?(t.reset(),e.className="subscribe-status ok",e.textContent=s.ok):(e.className="subscribe-status error",e.textContent=s.error)})});</script> <footer class="site-footer"> <div class="footer-row"> <p>
+© 2026 Federico Toledo · Cofundador e Chief Quality Officer da <a href="https://abstracta.us/">Abstracta</a>. Site pessoal. </p> <ul> <li><a href="/pt/libro-introduccion-a-las-pruebas-de-sistemas-de-informacion-3ra-edicion-2024/">Meu livro</a></li> <li><a href="/pt/aviso-legal/">Aviso legal</a></li> <li><a href="/rss.xml">RSS</a></li> <li><a href="/pt/contato/">Contato</a></li> <li><a href="#newsletter">Inscrever-me</a></li> </ul> </div> </footer> <script type="module">const t=document.querySelector(".profile-tabs-inner"),r=t?.querySelector("a[aria-current]");t&&r&&t.scrollWidth>t.clientWidth&&(t.scrollLeft=r.offsetLeft-(t.clientWidth-r.offsetWidth)/2);document.addEventListener("keydown",e=>{const c=e.target;if(e.key!=="/"||e.metaKey||e.ctrlKey||c.closest("input, textarea, select, [contenteditable]"))return;const n=document.querySelector("#q, #header-q");n&&n.offsetParent!==null&&(e.preventDefault(),n.focus())});</script> </body> </html>
